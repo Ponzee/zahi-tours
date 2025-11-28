@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 
 export default function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
       {/* Header */}
@@ -8,7 +13,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-300 to-rose-300 shadow-inner" />
-            <span className="font-semibold tracking-tight">
+            <span className="font-semibold tracking-tight text-sm sm:text-base">
               The Holy Land – By Zahi Shaked
             </span>
           </div>
@@ -20,13 +25,33 @@ export default function HomePage() {
             <a href="#about" className="hover:text-neutral-600">About</a>
             <a href="#contact" className="hover:text-neutral-600">Contact</a>
           </nav>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-100"
+            aria-label="Toggle menu"
+          >
+            Menu
+          </button>
           <a
             href="#contact"
-            className="rounded-full bg-neutral-900 text-white text-sm px-4 py-2 hidden sm:inline-flex hover:bg-neutral-800"
+            className="rounded-full bg-neutral-900 text-white text-sm px-4 py-2 hidden md:inline-flex hover:bg-neutral-800"
           >
             Request a Private Tour
           </a>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-neutral-200 bg-white">
+            <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+              <a href="#tours" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Watch</a>
+              <a href="#support" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Support</a>
+              <a href="#shop" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Shop</a>
+              <a href="#courses" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Courses</a>
+              <a href="#about" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>About</a>
+              <a href="#contact" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-neutral-900 text-white hover:bg-neutral-800" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</a>
+            </nav>
+          </div>
+        )}
       </header>
 
       {/* Channel Banner */}
@@ -38,12 +63,12 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover object-[left_center]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
-        <div className="relative mx-auto flex max-w-5xl items-center justify-end px-6 py-10 text-white">
-          <div className="max-w-xl text-right">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/50 to-black/80 md:from-black/10 md:via-black/40 md:to-black/80" />
+        <div className="relative mx-auto flex max-w-5xl items-center justify-end px-4 py-8 md:px-6 md:py-10 text-white">
+          <div className="max-w-xl text-left md:text-right">
             <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Walk the Holy Land with the guide you already know</h1>
-            <p className="max-w-2xl text-sm sm:text-base text-slate-100/90">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2">Walk the Holy Land with the guide you already know</h1>
+            <p className="max-w-full md:max-w-2xl text-sm sm:text-base text-slate-100/90 mt-3">
               Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
             </p>
           </div>
@@ -54,29 +79,29 @@ export default function HomePage() {
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-gradient-to-b from-amber-50 via-white to-white">
-          <div className="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
+          <div className="max-w-6xl mx-auto px-4 py-8 md:py-12 lg:py-20 flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
                 Private Holy Land tours, crafted personally by Zahi Shaked
               </h1>
-              <p className="mt-4 text-lg text-neutral-700 max-w-prose">
+              <p className="mt-4 text-sm sm:text-base md:text-lg text-neutral-700 max-w-full md:max-w-prose">
                 From Jerusalem's Old City to the Galilee and desert, Zahi builds private tours around your pace and interests – Bible, history, archaeology or just great stories from his YouTube channel, brought to life in front of you.
               </p>
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <a
                   href="#support"
-                  className="rounded-full bg-neutral-900 text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800"
+                  className="w-full sm:w-auto rounded-full bg-neutral-900 text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800 text-center"
                 >
                   Support Zahi's Work
                 </a>
                 <a
                   href="https://www.youtube.com/@zahishaked"
-                  className="rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 bg-white hover:bg-neutral-50"
+                  className="w-full sm:w-auto rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 bg-white hover:bg-neutral-50 text-center"
                 >
                   Watch on YouTube
                 </a>
               </div>
-              <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-neutral-700">
+              <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs sm:text-sm text-neutral-700">
                 <div className="rounded-xl bg-white border border-neutral-200 p-3 text-center">
                   <dt className="text-xs text-neutral-500">YouTube community</dt>
                   <dd className="text-lg font-semibold">190k+</dd>
@@ -97,7 +122,7 @@ export default function HomePage() {
             </div>
 
             {/* Hero video */}
-            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+            <div className="relative w-full mt-8 lg:mt-0" style={{ paddingTop: "56.25%" }}>
               <iframe
                 src="https://www.youtube.com/embed/ECjDgNEY8tQ"
                 className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
@@ -109,17 +134,17 @@ export default function HomePage() {
         </section>
 
         {/* Tours */}
-        <section id="tours" className="py-14 border-t border-neutral-200 bg-white">
-          <div className="max-w-6xl mx-auto px-4">
+        <section id="tours" className="py-8 md:py-14 border-t border-neutral-200 bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                 Explore Zahi's work
               </h2>
-              <p className="mt-2 text-neutral-600">
+              <p className="mt-2 text-sm sm:text-base text-neutral-600">
                 Whether you're watching from home or planning a visit, there are many ways to walk the Holy Land with Zahi.
               </p>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {[
                 {
                   title: "Watch Zahi on YouTube",
@@ -157,8 +182,8 @@ export default function HomePage() {
                   className="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                 >
                   <div className="aspect-[4/3] bg-neutral-200" />
-                  <div className="p-5">
-                    <h3 className="font-semibold text-lg tracking-tight">
+                  <div className="p-4 sm:p-5">
+                    <h3 className="font-semibold text-base sm:text-lg tracking-tight">
                       {item.title}
                     </h3>
                     <p className="mt-3 text-sm text-neutral-700">
@@ -167,7 +192,7 @@ export default function HomePage() {
                     <div className="mt-4 flex justify-between items-center text-sm">
                       <a
                         href={item.ctaHref}
-                        className="font-medium text-neutral-900 hover:underline"
+                        className="font-medium text-neutral-900 hover:underline py-2"
                       >
                         {item.ctaText}
                       </a>
@@ -180,24 +205,24 @@ export default function HomePage() {
         </section>
 
         {/* About */}
-        <section id="about" className="py-14 border-t border-neutral-200 bg-gradient-to-b from-white to-amber-50/60">
-          <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
+        <section id="about" className="py-8 md:py-14 border-t border-neutral-200 bg-gradient-to-b from-white to-amber-50/60">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 lg:gap-10">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
                 Meet Zahi Shaked
               </h2>
-              <p className="mt-4 text-neutral-700 leading-relaxed">
+              <p className="mt-4 text-sm sm:text-base text-neutral-700 leading-relaxed">
                 For over 20 years, Zahi has guided visitors through the Holy Land, blending history, Scripture, archaeology and everyday life. His YouTube channel has become one of the largest Holy Land travel archives online, with thousands of videos filmed on location.
               </p>
-              <p className="mt-3 text-neutral-700 leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-neutral-700 leading-relaxed">
                 What started as a way to help his guests remember their tours has grown into a global community of viewers who walk the streets of Jerusalem, the Galilee and the desert with him every week.
               </p>
-              <p className="mt-3 text-neutral-700 leading-relaxed">
+              <p className="mt-3 text-sm sm:text-base text-neutral-700 leading-relaxed">
                 Today, Zahi splits his time between guiding private groups on the ground and creating free educational content for anyone who loves the Holy Land.
               </p>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-3 mt-8 lg:mt-0">
               <div className="aspect-video rounded-2xl bg-neutral-200 flex items-center justify-center text-center p-4">
                 <div>
                   <p className="font-medium">YouTube playlist</p>
@@ -211,26 +236,26 @@ export default function HomePage() {
         </section>
 
         {/* Contact section */}
-        <section id="contact" className="py-14 border-t border-neutral-200 bg-white">
-          <div className="max-w-3xl mx-auto px-4 text-center">
+        <section id="contact" className="py-8 md:py-14 border-t border-neutral-200 bg-white">
+          <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
               Get in touch with Zahi
             </h2>
-            <p className="mt-4 text-neutral-700">
+            <p className="mt-4 text-sm sm:text-base text-neutral-700 px-2">
               Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
-            <div className="mt-6 max-w-md mx-auto text-left space-y-3 text-sm text-neutral-800">
+            <div className="mt-6 max-w-md mx-auto text-left space-y-4 text-sm sm:text-base text-neutral-800">
               <div className="flex items-center justify-between">
-                <span>WhatsApp</span>
+                <span className="text-neutral-600">WhatsApp</span>
                 <span className="font-medium text-neutral-900">+972-5X-XXX-XXXX</span>
               </div>
               <div className="flex items-center justify-between">
-                <span>Email</span>
+                <span className="text-neutral-600">Email</span>
                 <span className="font-medium text-neutral-900">guide@example.com</span>
               </div>
               <div className="flex items-center justify-between">
-                <span>Based in</span>
+                <span className="text-neutral-600">Based in</span>
                 <span className="font-medium text-neutral-900">Jerusalem & Tel Aviv</span>
               </div>
             </div>
@@ -239,7 +264,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-200 bg-white py-4 text-center text-xs text-neutral-500">
+      <footer className="border-t border-neutral-200 bg-white py-4 px-4 text-center text-xs text-neutral-500">
         © {new Date().getFullYear()} The Holy Land – By Zahi Shaked.
       </footer>
     </div>
