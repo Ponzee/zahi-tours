@@ -47,11 +47,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { data: profile } = await supabase
+    const { data: profile, error: profileError } = await supabase
       .from('profiles')
       .select('email')
       .eq('id', userId)
       .single();
+
+    if (profileError || !profile) {
+      console.error('Error fetching profile:', profileError);
+      // Continue without email - Stripe will prompt for it
+    }
 
     const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
 
