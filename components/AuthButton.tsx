@@ -17,6 +17,7 @@ export default function AuthButton() {
     }
 
     const checkUser = async () => {
+      if (!supabase) return;
       try {
         const { data: { user } } = await supabase.auth.getUser();
         setUser(user);
@@ -28,6 +29,8 @@ export default function AuthButton() {
     };
 
     checkUser();
+
+    if (!supabase) return;
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
