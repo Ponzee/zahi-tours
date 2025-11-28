@@ -11,10 +11,11 @@ export default function AccountPage() {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isSignIn, setIsSignIn] = useState(true);
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectPath = searchParams.get("redirect");
+  const signupParam = searchParams.get("signup");
+  const [isSignIn, setIsSignIn] = useState(!signupParam);
 
   useEffect(() => {
     const checkUser = async () => {

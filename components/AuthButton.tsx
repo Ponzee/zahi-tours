@@ -16,9 +16,14 @@ export default function AuthButton() {
     }
 
     const checkUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setUser(user);
-      setLoading(false);
+      try {
+        const { data: { user } } = await supabase.auth.getUser();
+        setUser(user);
+      } catch (error) {
+        console.error('Error checking user:', error);
+      } finally {
+        setLoading(false);
+      }
     };
 
     checkUser();
@@ -41,6 +46,26 @@ export default function AuthButton() {
   if (loading) {
     return (
       <span className="text-sm text-neutral-600">Loading...</span>
+    );
+  }
+
+  // If Supabase is not configured, show sign in/sign up buttons anyway
+  if (!supabase) {
+    return (
+      <div className="flex items-center gap-3">
+        <a
+          href="/account"
+          className="text-sm text-neutral-900 hover:text-neutral-600"
+        >
+          Sign In
+        </a>
+        <a
+          href="/account?signup=true"
+          className="text-sm rounded-full bg-neutral-900 text-white px-4 py-2 hover:bg-neutral-800"
+        >
+          Sign Up
+        </a>
+      </div>
     );
   }
 
@@ -76,13 +101,22 @@ export default function AuthButton() {
     );
   }
 
+  // Not logged in - show both Sign In and Sign Up
   return (
-    <a
-      href="/account"
-      className="text-sm text-neutral-900 hover:text-neutral-600"
-    >
-      Sign In
-    </a>
+    <div className="flex items-center gap-3">
+      <a
+        href="/account"
+        className="text-sm text-neutral-900 hover:text-neutral-600"
+      >
+        Sign In
+      </a>
+      <a
+        href="/account?signup=true"
+        className="text-sm rounded-full bg-neutral-900 text-white px-4 py-2 hover:bg-neutral-800"
+      >
+        Sign Up
+      </a>
+    </div>
   );
 }
 
