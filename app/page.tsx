@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import AuthButton from "@/components/AuthButton";
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -23,13 +24,14 @@ export default function HomePage() {
               The Holy Land – By Zahi Shaked
             </span>
           </div>
-          <nav className="hidden md:flex gap-6 text-sm">
+          <nav className="hidden md:flex gap-6 text-sm items-center">
             <a href="#tours" className="hover:text-neutral-600">Watch</a>
-            <a href="#support" className="hover:text-neutral-600">Support</a>
-            <a href="#shop" className="hover:text-neutral-600">Shop</a>
+            <a href="/support" className="hover:text-neutral-600">Support</a>
+            <a href="/shop" className="hover:text-neutral-600">Shop</a>
             <a href="#courses" className="hover:text-neutral-600">Courses</a>
             <a href="#about" className="hover:text-neutral-600">About</a>
             <a href="#contact" className="hover:text-neutral-600">Contact</a>
+            <AuthButton />
           </nav>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -49,11 +51,12 @@ export default function HomePage() {
           <div className="md:hidden border-t border-neutral-200 bg-white">
             <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
               <a href="#tours" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Watch</a>
-              <a href="#support" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Support</a>
-              <a href="#shop" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Shop</a>
+              <a href="/support" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Support</a>
+              <a href="/shop" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Shop</a>
               <a href="#courses" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Courses</a>
               <a href="#about" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>About</a>
               <a href="#contact" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+              <a href="/account" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Account</a>
               <a href="#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-neutral-900 text-white hover:bg-neutral-800" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</a>
             </nav>
           </div>
