@@ -1,24 +1,34 @@
+import Image from "next/image";
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
       {/* Header */}
-      <header className="border-b border-neutral-200 bg-white/80 backdrop-blur sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <header className="relative overflow-hidden rounded-b-3xl bg-slate-900 sticky top-0 z-20">
+        <Image
+          src="/channel-banner.jpg"
+          alt="Zahi Shaked guiding at an ancient theater in Israel"
+          fill
+          className="absolute inset-0 w-full h-full object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
+        <div className="relative z-10 max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-300 to-rose-300 shadow-inner" />
-            <span className="font-semibold tracking-tight">
+            <span className="font-semibold tracking-tight text-white">
               The Holy Land – By Zahi Shaked
             </span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#tours" className="hover:text-neutral-600">Tours</a>
-            <a href="#virtual" className="hover:text-neutral-600">Virtual</a>
-            <a href="#about" className="hover:text-neutral-600">About</a>
-            <a href="#contact" className="hover:text-neutral-600">Contact</a>
+            <a href="#tours" className="text-white/90 hover:text-white">Tours</a>
+            <a href="#virtual" className="text-white/90 hover:text-white">Virtual</a>
+            <a href="#about" className="text-white/90 hover:text-white">About</a>
+            <a href="#contact" className="text-white/90 hover:text-white">Contact</a>
           </nav>
           <a
             href="#contact"
-            className="rounded-full bg-neutral-900 text-white text-sm px-4 py-2 hidden sm:inline-flex hover:bg-neutral-800"
+            className="rounded-full bg-white text-neutral-900 text-sm px-4 py-2 hidden sm:inline-flex hover:bg-amber-50 font-medium"
           >
             Request a Private Tour
           </a>
