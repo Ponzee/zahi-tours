@@ -61,7 +61,30 @@ export default function HomePage() {
       </header>
 
       {/* Channel Banner */}
-      <section className="relative w-full overflow-hidden bg-slate-900">
+      {/* Mobile: Text on solid background */}
+      <section className="md:hidden bg-gradient-to-b from-amber-50 via-white to-white py-12 px-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-sm font-semibold uppercase tracking-wide text-amber-600">The Holy Land – By Zahi Shaked</p>
+          <h1 className="text-2xl sm:text-3xl font-semibold mt-2 text-neutral-900">Walk the Holy Land with the guide you already know</h1>
+          <p className="max-w-full text-sm sm:text-base text-neutral-700 mt-3">
+            Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
+          </p>
+        </div>
+      </section>
+
+      {/* Mobile: Image below text */}
+      <div className="md:hidden w-full relative aspect-[16/9]">
+        <Image
+          src="/channel-banner.jpg"
+          alt="Zahi Shaked guiding at an ancient theater in Israel"
+          fill
+          className="object-cover object-[left_center]"
+          priority
+        />
+      </div>
+
+      {/* Desktop: Text over image with overlay */}
+      <section className="hidden md:block relative w-full overflow-hidden bg-slate-900">
         <Image
           src="/channel-banner.jpg"
           alt="Zahi Shaked guiding at an ancient theater in Israel"
@@ -69,12 +92,12 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover object-[left_center]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/50 to-black/80 md:from-black/10 md:via-black/40 md:to-black/80" />
-        <div className="relative mx-auto flex max-w-5xl items-center justify-end px-4 py-8 md:px-6 md:py-10 text-white">
-          <div className="max-w-xl text-left md:text-right">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
+        <div className="relative mx-auto flex max-w-5xl items-center justify-end px-6 py-10 text-white">
+          <div className="max-w-xl text-right">
             <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2">Walk the Holy Land with the guide you already know</h1>
-            <p className="max-w-full md:max-w-2xl text-sm sm:text-base text-slate-100/90 mt-3">
+            <p className="max-w-2xl text-sm sm:text-base text-slate-100/90 mt-3">
               Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
             </p>
           </div>
