@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zahi Shaked — Holy Land Tours",
+  title: "The Holy Land – By Zahi Shaked",
   description: "Private, story-rich tours of Jerusalem, Tel Aviv, the Galilee and the Dead Sea with licensed Israeli tour guide Zahi Shaked.",
   openGraph: {
-    title: "Zahi Shaked — Holy Land Tours",
+    title: "The Holy Land – By Zahi Shaked",
     description: "Private, story-rich tours of Jerusalem, Tel Aviv, the Galilee and the Dead Sea with licensed Israeli tour guide Zahi Shaked.",
     url: "https://zahi.tours",
     type: "website",
