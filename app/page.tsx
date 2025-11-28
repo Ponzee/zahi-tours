@@ -28,21 +28,23 @@ export default function HomePage() {
       </header>
 
       {/* Channel Banner */}
-      <section className="relative w-full overflow-hidden rounded-b-3xl bg-slate-900">
+      <section className="relative w-full overflow-hidden bg-slate-900">
         <Image
           src="/channel-banner.jpg"
           alt="Zahi Shaked guiding at an ancient theater in Israel"
           fill
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover object-[left_center]"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/70" />
-        <div className="relative mx-auto flex max-w-5xl flex-col gap-3 px-6 py-10 text-white">
-          <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Private, story-rich tours with a local expert guide</h1>
-          <p className="max-w-2xl text-sm sm:text-base text-slate-100/90">
-            Zahi has guided thousands of visitors through Jerusalem, the Galilee, and the desert — blending history, Bible, and local life into one immersive story.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
+        <div className="relative mx-auto flex max-w-5xl items-center justify-end px-6 py-10 text-white">
+          <div className="max-w-xl text-right">
+            <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Private, story-rich tours with a local expert guide</h1>
+            <p className="max-w-2xl text-sm sm:text-base text-slate-100/90">
+              Zahi has guided thousands of visitors through Jerusalem, the Galilee, and the desert — blending history, Bible, and local life into one immersive story.
+            </p>
+          </div>
         </div>
       </section>
 
