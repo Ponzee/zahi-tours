@@ -11,8 +11,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
       {/* Header */}
       <header className="border-b border-neutral-200 bg-white/80 backdrop-blur sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
+        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <Image
               src="/favicon.png"
               alt="Zahi Shaked Logo"
@@ -24,15 +24,23 @@ export default function HomePage() {
               The Holy Land – By Zahi Shaked
             </span>
           </div>
-          <nav className="hidden md:flex gap-6 text-sm items-center">
-            <a href="#tours" className="hover:text-neutral-600">Watch</a>
-            <a href="/support" className="hover:text-neutral-600">Support</a>
-            <a href="/shop" className="hover:text-neutral-600">Shop</a>
-            <a href="#courses" className="hover:text-neutral-600">Courses</a>
-            <a href="#about" className="hover:text-neutral-600">About</a>
-            <a href="#contact" className="hover:text-neutral-600">Contact</a>
-            <AuthButton />
+          <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
+            <a href="#tours" className="hover:text-neutral-600 whitespace-nowrap">Watch</a>
+            <a href="/support" className="hover:text-neutral-600 whitespace-nowrap">Support</a>
+            <a href="/shop" className="hover:text-neutral-600 whitespace-nowrap">Shop</a>
+            <a href="#courses" className="hover:text-neutral-600 whitespace-nowrap">Courses</a>
+            <a href="#about" className="hover:text-neutral-600 whitespace-nowrap">About</a>
+            <a href="#contact" className="hover:text-neutral-600 whitespace-nowrap">Contact</a>
           </nav>
+          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+            <AuthButton />
+            <a
+              href="#contact"
+              className="rounded-full bg-neutral-900 text-white text-sm px-4 py-2 hover:bg-neutral-800 whitespace-nowrap"
+            >
+              Request a Private Tour
+            </a>
+          </div>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-100"
@@ -40,12 +48,6 @@ export default function HomePage() {
           >
             Menu
           </button>
-          <a
-            href="#contact"
-            className="rounded-full bg-neutral-900 text-white text-sm px-4 py-2 hidden md:inline-flex hover:bg-neutral-800"
-          >
-            Request a Private Tour
-          </a>
         </div>
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-neutral-200 bg-white">

@@ -115,10 +115,12 @@ export default function AccountPage() {
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                autoComplete="email"
                 className="w-full rounded-lg border border-neutral-300 px-4 py-2 text-sm"
               />
             </div>
@@ -129,10 +131,12 @@ export default function AccountPage() {
               </label>
               <input
                 id="password"
+                name="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete={isSignIn ? "current-password" : "new-password"}
                 className="w-full rounded-lg border border-neutral-300 px-4 py-2 text-sm"
               />
             </div>
