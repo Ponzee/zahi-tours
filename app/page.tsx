@@ -93,7 +93,7 @@ export default function HomePage() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
-        <div className="relative mx-auto flex max-w-5xl items-center justify-end lg:justify-start px-6 lg:pl-[72px] py-10 text-white">
+        <div className="relative mx-auto flex max-w-5xl items-center justify-end lg:justify-start px-6 lg:pl-[350px] py-10 text-white">
           <div className="max-w-xl text-right lg:text-left">
             <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2">Walk the Holy Land with the guide you already know</h1>
