@@ -40,9 +40,9 @@ export default function HomePage() {
         <div className="relative mx-auto flex max-w-5xl items-center justify-end px-6 py-10 text-white">
           <div className="max-w-xl text-right">
             <p className="text-sm font-semibold uppercase tracking-wide text-amber-200">The Holy Land – By Zahi Shaked</p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Private, story-rich tours with a local expert guide</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">Walk the Holy Land with the guide you already know</h1>
             <p className="max-w-2xl text-sm sm:text-base text-slate-100/90">
-              Zahi has guided thousands of visitors through Jerusalem, the Galilee, and the desert — blending history, Bible, and local life into one immersive story.
+              Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
             </p>
           </div>
         </div>
@@ -55,12 +55,10 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Private, story-rich tours of the Holy Land – By Zahi Shaked
+                Private Holy Land tours, crafted personally by Zahi Shaked
               </h1>
               <p className="mt-4 text-lg text-neutral-700 max-w-prose">
-                With over two decades of guiding and a 190k+ YouTube community,
-                Zahi brings Jerusalem, Galilee, Jaffa and the desert to life —
-                at your pace, with your story.
+                From Jerusalem's Old City to the Galilee and desert, Zahi builds private tours around your pace and interests – Bible, history, archaeology or just great stories from his YouTube channel, brought to life in front of you.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
