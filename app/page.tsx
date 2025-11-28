@@ -12,7 +12,13 @@ export default function HomePage() {
       <header className="border-b border-neutral-200 bg-white/80 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-300 to-rose-300 shadow-inner" />
+            <Image
+              src="/favicon.png"
+              alt="Zahi Shaked Logo"
+              width={40}
+              height={40}
+              className="rounded-xl"
+            />
             <span className="font-semibold tracking-tight text-sm sm:text-base">
               The Holy Land – By Zahi Shaked
             </span>
