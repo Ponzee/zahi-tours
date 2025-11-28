@@ -78,7 +78,7 @@ export default function HomePage() {
           src="/channel-banner.jpg"
           alt="Zahi Shaked guiding at an ancient theater in Israel"
           fill
-          className="object-cover object-[35%_50%]"
+          className="object-cover object-[20%_50%]"
           priority
         />
       </div>
