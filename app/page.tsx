@@ -7,7 +7,7 @@ export default function HomePage() {
           <div className="flex items-center gap-2">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-amber-300 to-rose-300 shadow-inner" />
             <span className="font-semibold tracking-tight">
-              Zahi Shaked — Holy Land Tours
+              The Holy Land – By Zahi Shaked
             </span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
@@ -32,7 +32,7 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
-                Private, story-rich tours of the Holy Land
+                Private, story-rich tours of the Holy Land – By Zahi Shaked
               </h1>
               <p className="mt-4 text-lg text-neutral-700 max-w-prose">
                 With over two decades of guiding and a 190k+ YouTube community,
@@ -220,7 +220,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="border-t border-neutral-200 bg-white py-4 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Zahi Shaked — Holy Land Tours.
+        © {new Date().getFullYear()} The Holy Land – By Zahi Shaked.
       </footer>
     </div>
   );
