@@ -73,15 +73,14 @@ export default function HomePage() {
               </dl>
             </div>
 
-            {/* Placeholder for hero image / video */}
-            <div className="aspect-video rounded-2xl bg-neutral-200 shadow-xl ring-1 ring-black/10 flex items-center justify-center text-center p-6">
-              <div>
-                <p className="font-medium">Hero video / image placeholder</p>
-                <p className="mt-2 text-sm text-neutral-600">
-                  Here we’ll embed one of Zahi’s best Jerusalem / Holy Land tours
-                  from YouTube, or a strong hero image.
-                </p>
-              </div>
+            {/* Hero video */}
+            <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+              <iframe
+                src="https://www.youtube.com/embed/ECjDgNEY8tQ"
+                className="absolute top-0 left-0 w-full h-full rounded-xl shadow-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
         </section>
