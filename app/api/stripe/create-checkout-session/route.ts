@@ -40,8 +40,15 @@ export async function POST(request: NextRequest) {
     }
 
     // Get user email from Supabase
+    if (!supabase) {
+      return NextResponse.json(
+        { error: 'Supabase not configured' },
+        { status: 500 }
+      );
+    }
+
     const { data: profile } = await supabase
-      ?.from('profiles')
+      .from('profiles')
       .select('email')
       .eq('id', userId)
       .single();

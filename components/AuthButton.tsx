@@ -10,6 +10,7 @@ export default function AuthButton() {
   const router = useRouter();
 
   useEffect(() => {
+    // If Supabase is not configured, immediately show buttons
     if (!supabase) {
       setLoading(false);
       return;
@@ -30,6 +31,7 @@ export default function AuthButton() {
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
+      setLoading(false);
     });
 
     return () => {

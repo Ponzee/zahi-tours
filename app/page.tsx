@@ -56,7 +56,9 @@ export default function HomePage() {
               <a href="#courses" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Courses</a>
               <a href="#about" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>About</a>
               <a href="#contact" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-              <a href="/account" className="py-2 text-sm font-medium text-neutral-900 hover:text-neutral-600" onClick={() => setMobileMenuOpen(false)}>Account</a>
+              <div className="pt-2 border-t border-neutral-200">
+                <AuthButton />
+              </div>
               <a href="#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-neutral-900 text-white hover:bg-neutral-800" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</a>
             </nav>
           </div>
