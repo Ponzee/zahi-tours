@@ -13,8 +13,10 @@ export default function HomePage() {
             </span>
           </div>
           <nav className="hidden md:flex gap-6 text-sm">
-            <a href="#tours" className="hover:text-neutral-600">Tours</a>
-            <a href="#virtual" className="hover:text-neutral-600">Virtual</a>
+            <a href="#tours" className="hover:text-neutral-600">Watch</a>
+            <a href="#support" className="hover:text-neutral-600">Support</a>
+            <a href="#shop" className="hover:text-neutral-600">Shop</a>
+            <a href="#courses" className="hover:text-neutral-600">Courses</a>
             <a href="#about" className="hover:text-neutral-600">About</a>
             <a href="#contact" className="hover:text-neutral-600">Contact</a>
           </nav>
@@ -62,16 +64,16 @@ export default function HomePage() {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="#contact"
+                  href="#support"
                   className="rounded-full bg-neutral-900 text-white px-5 py-3 text-sm font-medium hover:bg-neutral-800"
                 >
-                  Request a Private Tour
+                  Support Zahi's Work
                 </a>
                 <a
-                  href="#tours"
+                  href="https://www.youtube.com/@zahishaked"
                   className="rounded-full border border-neutral-300 px-5 py-3 text-sm font-medium text-neutral-800 bg-white hover:bg-neutral-50"
                 >
-                  Explore popular routes
+                  Watch on YouTube
                 </a>
               </div>
               <dl className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm text-neutral-700">
@@ -109,62 +111,66 @@ export default function HomePage() {
         {/* Tours */}
         <section id="tours" className="py-14 border-t border-neutral-200 bg-white">
           <div className="max-w-6xl mx-auto px-4">
-            <div className="flex items-end justify-between gap-4 mb-8">
+            <div className="mb-8">
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Popular private tours
+                Explore Zahi's work
               </h2>
+              <p className="mt-2 text-neutral-600">
+                Whether you're watching from home or planning a visit, there are many ways to walk the Holy Land with Zahi.
+              </p>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  title: "Jerusalem Old City Essentials",
-                  bullets: ["Western Wall", "Holy Sepulchre", "Rooftops"],
+                  title: "Watch Zahi on YouTube",
+                  body: "Thousands of free on-location videos from Jerusalem, the Galilee, the desert and more.",
+                  ctaText: "Open YouTube channel",
+                  ctaHref: "https://www.youtube.com/@zahishaked",
                 },
                 {
-                  title: "Jaffa & Tel Aviv Walks",
-                  bullets: ["Old Port", "Flea Market", "Boulevards"],
+                  title: "Support Zahi's Work",
+                  body: "Help Zahi keep documenting the Holy Land with independent, ad-light, educational videos.",
+                  ctaText: "Become a supporter",
+                  ctaHref: "#support",
                 },
                 {
-                  title: "Dead Sea & Masada Day Trip",
-                  bullets: ["Cable car", "Float", "Desert views"],
+                  title: "Shop Holy Land Gifts (Coming soon)",
+                  body: "Journals, maps, digital photo packs and more inspired by Zahi's tours.",
+                  ctaText: "Get notified",
+                  ctaHref: "#shop",
                 },
                 {
-                  title: "Galilee & Nazareth",
-                  bullets: ["Sea of Galilee", "Capernaum", "Nazareth"],
+                  title: "Online Courses (Coming soon)",
+                  body: "Learn about Jerusalem, the Galilee and Bible archaeology through structured video courses.",
+                  ctaText: "Join the waitlist",
+                  ctaHref: "#courses",
                 },
                 {
-                  title: "Bar-Mitzvah & Family Routes",
-                  bullets: ["Custom pace", "Photo spots", "Meaningful moments"],
+                  title: "Book a Private Tour",
+                  body: "If you're visiting Israel, you can still request a custom one-day or multi-day route with Zahi.",
+                  ctaText: "Request a tour",
+                  ctaHref: "#contact",
                 },
-                {
-                  title: "Fully Custom Itineraries",
-                  bullets: ["Your priorities", "Flexible start", "All levels"],
-                },
-              ].map((tour) => (
+              ].map((item) => (
                 <article
-                  key={tour.title}
+                  key={item.title}
                   className="rounded-2xl border border-neutral-200 bg-white shadow-sm hover:shadow-md transition-shadow overflow-hidden"
                 >
                   <div className="aspect-[4/3] bg-neutral-200" />
                   <div className="p-5">
                     <h3 className="font-semibold text-lg tracking-tight">
-                      {tour.title}
+                      {item.title}
                     </h3>
-                    <ul className="mt-3 flex flex-wrap gap-2 text-xs text-neutral-700">
-                      {tour.bullets.map((b) => (
-                        <li key={b} className="px-2 py-1 rounded-full bg-neutral-100">{b}</li>
-                      ))}
-                    </ul>
+                    <p className="mt-3 text-sm text-neutral-700">
+                      {item.body}
+                    </p>
                     <div className="mt-4 flex justify-between items-center text-sm">
                       <a
-                        href="#contact"
+                        href={item.ctaHref}
                         className="font-medium text-neutral-900 hover:underline"
                       >
-                        Request this tour
+                        {item.ctaText}
                       </a>
-                      <span className="text-neutral-500 text-xs">
-                        1 full day • private
-                      </span>
                     </div>
                   </div>
                 </article>
@@ -178,34 +184,28 @@ export default function HomePage() {
           <div className="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Meet Zahi
+                Meet Zahi Shaked
               </h2>
               <p className="mt-4 text-neutral-700 leading-relaxed">
-                Zahi Shaked is a licensed Israeli tour guide, sharing the
-                history, faith and everyday life of the Holy Land since 2000.
-                Through thousands of tours on the ground and hundreds of videos
-                online, he helps visitors connect real places with the stories
-                behind them.
+                For over 20 years, Zahi has guided visitors through the Holy Land, blending history, Scripture, archaeology and everyday life. His YouTube channel has become one of the largest Holy Land travel archives online, with thousands of videos filmed on location.
               </p>
               <p className="mt-3 text-neutral-700 leading-relaxed">
-                Whether you're planning a once-in-a-lifetime pilgrimage, a
-                family trip, or a focused day in Jerusalem, your route is
-                tailored around your pace, questions, and background.
+                What started as a way to help his guests remember their tours has grown into a global community of viewers who walk the streets of Jerusalem, the Galilee and the desert with him every week.
+              </p>
+              <p className="mt-3 text-neutral-700 leading-relaxed">
+                Today, Zahi splits his time between guiding private groups on the ground and creating free educational content for anyone who loves the Holy Land.
               </p>
             </div>
 
             <div className="space-y-3">
               <div className="aspect-video rounded-2xl bg-neutral-200 flex items-center justify-center text-center p-4">
                 <div>
-                  <p className="font-medium">YouTube playlist placeholder</p>
+                  <p className="font-medium">YouTube playlist</p>
                   <p className="mt-1 text-sm text-neutral-600">
-                    Here we’ll embed a curated playlist for guests.
+                    A curated playlist for viewers to watch before or between visits.
                   </p>
                 </div>
               </div>
-              <p className="text-xs text-neutral-500">
-                Placeholder — we'll add real media soon.
-              </p>
             </div>
           </div>
         </section>
@@ -214,10 +214,10 @@ export default function HomePage() {
         <section id="contact" className="py-14 border-t border-neutral-200 bg-white">
           <div className="max-w-3xl mx-auto px-4 text-center">
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
-              Ready to plan your day in the Holy Land?
+              Get in touch with Zahi
             </h2>
             <p className="mt-4 text-neutral-700">
-              Share your dates, starting point (Jerusalem / Tel Aviv) and what matters most.
+              Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
             <div className="mt-6 max-w-md mx-auto text-left space-y-3 text-sm text-neutral-800">
