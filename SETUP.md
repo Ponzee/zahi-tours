@@ -40,12 +40,20 @@ This will create:
 - Row Level Security (RLS) policies
 - A trigger to automatically create profiles when users sign up
 
-### 2.3 Get Supabase Keys
+### 2.3 Get Supabase API Keys
 
 From your Supabase dashboard:
-- **Project URL**: Settings > API > Project URL
-- **Anon Key**: Settings > API > Project API keys > `anon` `public`
-- **Service Role Key**: Settings > API > Project API keys > `service_role` `secret` (keep this secure!)
+1. Go to **Settings** > **API**
+2. You'll see two tabs:
+   - **"Publishable and secret API keys"** (new system - recommended)
+   - **"Legacy anon, service_role API keys"** (still supported)
+
+**Using the New API Key System (Recommended):**
+- **Project URL**: Copy from Settings > API > Project URL
+- **Publishable Key**: Copy from the "Publishable key" field (safe for browser/client-side)
+- **Secret Key**: Copy from the "Secret key" field (server-side only - keep this secure!)
+
+**Note:** The code supports both new and legacy key names for compatibility.
 
 ## Step 3: Set Up Stripe
 
@@ -102,8 +110,12 @@ Create a `.env.local` file in the root of your project with:
 ```env
 # Supabase Configuration
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+SUPABASE_SECRET_KEY=your_supabase_secret_key
+
+# Legacy key names (still supported for backward compatibility)
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+# SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
 
 # Stripe Configuration
 STRIPE_SECRET_KEY=sk_test_your_stripe_secret_key
@@ -158,7 +170,8 @@ NEXT_PUBLIC_SITE_URL=https://zahi.tours
 
 ## Security Notes
 
-- Never expose `SUPABASE_SERVICE_ROLE_KEY` or `STRIPE_SECRET_KEY` in client-side code
+- Never expose `SUPABASE_SECRET_KEY` (or `SUPABASE_SERVICE_ROLE_KEY`) or `STRIPE_SECRET_KEY` in client-side code
+- The publishable key is safe to use in the browser when RLS is enabled
 - Always use environment variables for sensitive keys
 - The webhook endpoint should verify Stripe signatures
 - RLS policies in Supabase ensure users can only see their own data
