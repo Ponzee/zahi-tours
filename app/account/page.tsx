@@ -91,10 +91,11 @@ function AccountPageContent() {
       if (error) throw error;
 
       setUser(data.user);
+      // Redirect to homepage after sign-in, unless there's a specific redirect path
       if (redirectPath) {
         router.push(redirectPath);
       } else {
-        router.refresh();
+        router.push('/');
       }
     } catch (error: any) {
       alert(`Error: ${error.message}`);
@@ -129,7 +130,8 @@ function AccountPageContent() {
 
     try {
       const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
-      const redirectTo = redirectPath ? `${baseUrl}${redirectPath}` : `${baseUrl}/account`;
+      // Redirect to homepage after OAuth sign-in, unless there's a specific redirect path
+      const redirectTo = redirectPath ? `${baseUrl}${redirectPath}` : `${baseUrl}/`;
 
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
