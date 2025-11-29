@@ -68,9 +68,14 @@ function AccountPageContent() {
     if (!supabase) return;
 
     try {
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
+      
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
+        options: {
+          emailRedirectTo: `${baseUrl}/account`,
+        },
       });
 
       if (error) throw error;
