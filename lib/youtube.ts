@@ -163,7 +163,7 @@ export async function fetchMostViewedVideos(limit: number = 6): Promise<YouTubeV
     const videoDetails = videosDetailData?.items || [];
 
     // Create a map of video details by ID for quick lookup
-    const detailsMap = new Map(
+    const detailsMap = new Map<string, any>(
       videoDetails.map((video: any) => [video.id, video])
     );
 
@@ -174,7 +174,7 @@ export async function fetchMostViewedVideos(limit: number = 6): Promise<YouTubeV
         const snippet = item.snippet;
         const videoId = item.id.videoId;
         const videoDetail = detailsMap.get(videoId);
-        const detailSnippet = videoDetail?.snippet || snippet;
+        const detailSnippet = (videoDetail?.snippet || snippet) as any;
         const description = detailSnippet.description || '';
         
         // Truncate description to 140-160 chars
