@@ -89,7 +89,7 @@ export default function HomePage() {
       </div>
 
       {/* Desktop: Channel Banner - Thin banner strip matching content width */}
-      <section className="hidden md:block bg-slate-900 py-0">
+      <section className="hidden md:block py-0">
         <div className="max-w-6xl mx-auto relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
           <Image
             src="/channel-banner.jpg"
