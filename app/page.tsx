@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import AuthButton from "@/components/AuthButton";
 
 export default function HomePage() {
@@ -12,7 +13,7 @@ export default function HomePage() {
       {/* Header */}
       <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity">
             <Image
               src="/favicon.png"
               alt="Zahi Shaked Logo"
@@ -23,7 +24,7 @@ export default function HomePage() {
             <span className="font-semibold tracking-tight text-sm sm:text-base text-[#1a1612]">
               The Holy Land – By Zahi Shaked
             </span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
             <a href="#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</a>
             <a href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</a>
