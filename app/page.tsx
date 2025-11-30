@@ -1,70 +1,15 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import AuthButton from "@/components/AuthButton";
+import Header from "@/components/Header";
+import VideoCard from "@/components/VideoCard";
+import { fetchLatestVideos } from "@/lib/youtube";
 
-export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default async function HomePage() {
+  // Fetch latest videos server-side (cached for 1 hour)
+  const videos = await fetchLatestVideos(6);
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
-      {/* Header */}
-      <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity">
-            <Image
-              src="/favicon.png"
-              alt="Zahi Shaked Logo"
-              width={40}
-              height={40}
-              className="rounded-xl"
-            />
-            <span className="font-semibold tracking-tight text-sm sm:text-base text-[#1a1612]">
-              The Holy Land – By Zahi Shaked
-            </span>
-          </Link>
-          <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
-            <a href="#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</a>
-            <a href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</a>
-            <a href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</a>
-            <a href="#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</a>
-            <a href="#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</a>
-          </nav>
-          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
-            <AuthButton />
-            <a
-              href="#contact"
-              className="rounded-full bg-[#c2410c] text-white text-sm px-4 py-2 hover:bg-[#9a3412] whitespace-nowrap transition-colors"
-            >
-              Request a Private Tour
-            </a>
-          </div>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-[#1a1612] hover:bg-[#f5f2ed] transition-colors"
-            aria-label="Toggle menu"
-          >
-            Menu
-          </button>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#e5ddd4] bg-white">
-            <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
-              <a href="#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</a>
-              <a href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</a>
-              <a href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</a>
-              <a href="#about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</a>
-              <a href="#contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-              <div className="pt-2 border-t border-[#e5ddd4]">
-                <AuthButton />
-              </div>
-              <a href="#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-[#c2410c] text-white hover:bg-[#9a3412] transition-colors" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</a>
-            </nav>
-          </div>
-        )}
-      </header>
+      <Header />
 
       {/* Channel Banner - Mobile: Text first, then image */}
       <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-12 px-4">
@@ -174,8 +119,39 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Latest from YouTube Section */}
+        <section className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+            <div className="mb-10 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
+                Latest from YouTube
+              </h2>
+              <p className="mt-3 text-base md:text-lg text-[#3d3529] max-w-2xl">
+                Watch Zahi's most recent videos from the Holy Land.
+              </p>
+            </div>
+
+            {videos.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                {videos.map((video) => (
+                  <VideoCard key={video.id} video={video} />
+                ))}
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] p-8 md:p-12 text-center">
+                <p className="text-base md:text-lg text-[#3d3529]">
+                  Latest videos will appear here once configured.
+                </p>
+                <p className="mt-2 text-sm text-[#3d3529]">
+                  Configure YOUTUBE_API_KEY and YOUTUBE_CHANNEL_ID in Vercel environment variables.
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* Explore Zahi's Work Section */}
-        <section id="tours" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+        <section id="tours" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
           <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
@@ -204,12 +180,6 @@ export default function HomePage() {
                   body: "Journals, maps, digital photo packs and more inspired by Zahi's tours.",
                   ctaText: "Get notified",
                   ctaHref: "/shop",
-                },
-                {
-                  title: "Online Courses (Coming soon)",
-                  body: "Learn about Jerusalem, the Galilee and Bible archaeology through structured video courses.",
-                  ctaText: "Join the waitlist",
-                  ctaHref: "#courses",
                 },
                 {
                   title: "Book a Private Tour",

@@ -83,15 +83,46 @@ From Stripe Dashboard:
 2. Enable the customer portal
 3. Configure what customers can do (cancel subscriptions, update payment methods, etc.)
 
-## Step 4: Set Up Stripe Webhook
+## Step 4: Set Up YouTube Data API (Optional)
 
-### 4.1 Local Development (using Stripe CLI)
+### 4.1 Get YouTube API Key
 
-1. Install [Stripe CLI](https://stripe.com/docs/stripe-cli)
-2. Run: `stripe listen --forward-to localhost:3000/api/stripe/webhook`
-3. Copy the webhook signing secret (starts with `whsec_...`)
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Select your project (or create a new one)
+3. Navigate to **APIs & Services** > **Library**
+4. Search for "YouTube Data API v3"
+5. Click on it and click **Enable**
+6. Go to **APIs & Services** > **Credentials**
+7. Click **Create Credentials** > **API Key**
+8. Copy the API key (starts with `AIza...`)
+9. Optionally restrict the API key to YouTube Data API v3 only
 
-### 4.2 Production (Vercel)
+### 4.2 Get YouTube Channel ID
+
+1. Go to [YouTube](https://www.youtube.com/@zahishaked)
+2. The channel ID can be found in the channel's URL or:
+   - Go to YouTube Studio > Settings > Channel > Advanced settings
+   - Look for "Channel ID" (format: `UC...` or similar)
+   - Or use a tool like [Comment Picker](https://commentpicker.com/youtube-channel-id.php) to find it
+
+### 4.3 Add to Vercel Environment Variables
+
+1. Go to **Vercel Dashboard** → Your Project → **Settings** → **Environment Variables**
+2. Add:
+   - **Key:** `YOUTUBE_API_KEY`
+   - **Value:** Your API key from Step 4.1
+   - **Environment:** Production, Preview, Development
+3. Add:
+   - **Key:** `YOUTUBE_CHANNEL_ID`
+   - **Value:** Your channel ID from Step 4.2
+   - **Environment:** Production, Preview, Development
+4. Save and redeploy
+
+**Note:** If these variables are not set, the "Latest from YouTube" section will show a fallback message instead of breaking the site.
+
+## Step 5: Set Up Stripe Webhook
+
+### 5.1 Production (Vercel)
 
 1. Go to Stripe Dashboard > Developers > Webhooks
 2. Click "Add endpoint"
@@ -103,9 +134,13 @@ From Stripe Dashboard:
    - `customer.subscription.updated`
 5. Copy the webhook signing secret
 
-## Step 5: Environment Variables
+## Step 6: Environment Variables
 
-Create a `.env.local` file in the root of your project with:
+**For Vercel Production Deployment:**
+
+Add all environment variables in **Vercel Dashboard → Project → Settings → Environment Variables**.
+
+**Required Variables:**
 
 ```env
 # Supabase Configuration
@@ -126,19 +161,25 @@ STRIPE_PRICE_ID_TIER3=price_your_tier3_price_id
 
 # Site URL (for redirects)
 NEXT_PUBLIC_SITE_URL=https://zahi.tours
+
+# YouTube Data API (Optional - for Latest Videos section)
+YOUTUBE_API_KEY=your_youtube_api_key
+YOUTUBE_CHANNEL_ID=your_youtube_channel_id
 ```
 
 **Important**: 
-- Never commit `.env.local` to git
-- For Vercel deployment, add these variables in Vercel Dashboard > Settings > Environment Variables
+- All variables must be configured in **Vercel Dashboard → Settings → Environment Variables**
+- Never commit secrets to git
+- `YOUTUBE_API_KEY` and `YOUTUBE_CHANNEL_ID` are server-only (no `NEXT_PUBLIC_` prefix)
+- If YouTube variables are not set, the Latest Videos section will show a fallback message
 
-## Step 6: Test the System
+## Step 7: Test the System
 
-1. Start your development server: `npm run dev`
-2. Visit `http://localhost:3000/support`
-3. Try signing up for an account
-4. Test the checkout flow (use Stripe test card: `4242 4242 4242 4242`)
-5. Verify the webhook is receiving events (check Stripe Dashboard > Webhooks)
+1. Visit `https://zahi.tours/support` on your live site
+2. Try signing up for an account
+3. Test the checkout flow (use Stripe test card: `4242 4242 4242 4242`)
+4. Verify the webhook is receiving events (check Stripe Dashboard > Webhooks)
+5. Check that the "Latest from YouTube" section displays videos (if YouTube API is configured)
 
 ## New Routes Created
 
