@@ -87,10 +87,23 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
             WebkitOverflowScrolling: 'touch',
           }}
         >
-          {videos.map((video) => (
-            <VideoCard key={video.id} video={video} variant="compact" />
-          ))}
+          {displayVideos.map((video, index) => 
+            video ? (
+              <VideoCard key={video.id} video={video} variant="compact" />
+            ) : (
+              <SkeletonCard key={`skeleton-${index}`} />
+            )
+          )}
         </div>
+        
+        {/* Show message below carousel when no videos */}
+        {videos.length === 0 && (
+          <div className="mt-6 text-center">
+            <p className="text-sm text-[#3d3529]">
+              Configure YOUTUBE_API_KEY and YOUTUBE_CHANNEL_ID in Vercel to see videos.
+            </p>
+          </div>
+        )}
 
         {/* Right scroll button - desktop only */}
         {showRightButton && (
