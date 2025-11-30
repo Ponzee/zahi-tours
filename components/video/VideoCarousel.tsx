@@ -48,15 +48,22 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
     });
   };
 
-  if (videos.length === 0) {
-    return (
-      <div className="py-8 text-center">
-        <p className="text-sm text-[#3d3529]">
-          {title} videos will appear here once configured.
-        </p>
+  // Skeleton card component for loading/empty state
+  const SkeletonCard = () => (
+    <div
+      className="flex-shrink-0 rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] overflow-hidden"
+      style={{ width: '280px', minWidth: '280px', scrollSnapAlign: 'start' }}
+    >
+      <div className="relative aspect-video bg-gradient-to-br from-[#e5ddd4] to-[#d4c9bc] animate-pulse" />
+      <div className="p-3">
+        <div className="h-4 bg-[#e5ddd4] rounded mb-2 animate-pulse" />
+        <div className="h-4 bg-[#e5ddd4] rounded w-3/4 animate-pulse" />
       </div>
-    );
-  }
+    </div>
+  );
+
+  // Show skeleton cards when no videos (better UX than just text)
+  const displayVideos = videos.length > 0 ? videos : Array(6).fill(null);
 
   return (
     <div className="w-full">
