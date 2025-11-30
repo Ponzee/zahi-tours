@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Header from "@/components/Header";
-import VideoCard from "@/components/VideoCard";
-import { fetchLatestVideos } from "@/lib/youtube";
+import VideoCarousel from "@/components/video/VideoCarousel";
+import { fetchLatestVideos, fetchMostViewedVideos } from "@/lib/youtube";
 
 export default async function HomePage() {
-  // Fetch latest videos server-side (cached for 1 hour)
-  const videos = await fetchLatestVideos(6);
+  // Fetch both latest and most viewed videos server-side (cached for 1 hour)
+  const [latestVideos, mostViewedVideos] = await Promise.all([
+    fetchLatestVideos(6),
+    fetchMostViewedVideos(6),
+  ]);
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
@@ -119,34 +122,22 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Latest from YouTube Section */}
+        {/* Watch Section - Latest and Most Watched Carousels */}
         <section className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
           <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
-                Latest from YouTube
+                Watch
               </h2>
               <p className="mt-3 text-base md:text-lg text-[#3d3529] max-w-2xl">
-                Watch Zahi's most recent videos from the Holy Land.
+                Explore Zahi's latest videos and most-watched classics from the Holy Land.
               </p>
             </div>
 
-            {videos.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                {videos.map((video) => (
-                  <VideoCard key={video.id} video={video} />
-                ))}
-              </div>
-            ) : (
-              <div className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] p-8 md:p-12 text-center">
-                <p className="text-base md:text-lg text-[#3d3529]">
-                  Latest videos will appear here once configured.
-                </p>
-                <p className="mt-2 text-sm text-[#3d3529]">
-                  Configure YOUTUBE_API_KEY and YOUTUBE_CHANNEL_ID in Vercel environment variables.
-                </p>
-              </div>
-            )}
+            <div className="space-y-12 md:space-y-16">
+              <VideoCarousel title="Latest from YouTube" videos={latestVideos} />
+              <VideoCarousel title="Most Watched Classics" videos={mostViewedVideos} />
+            </div>
           </div>
         </section>
 
