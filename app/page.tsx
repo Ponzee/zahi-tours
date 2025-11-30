@@ -29,7 +29,6 @@ export default function HomePage() {
             <a href="#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</a>
             <a href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</a>
             <a href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</a>
-            <a href="#courses" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Courses</a>
             <a href="#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</a>
             <a href="#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</a>
           </nav>
@@ -56,7 +55,6 @@ export default function HomePage() {
               <a href="#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</a>
               <a href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</a>
               <a href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</a>
-              <a href="#courses" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Courses</a>
               <a href="#about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</a>
               <a href="#contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
               <div className="pt-2 border-t border-[#e5ddd4]">
