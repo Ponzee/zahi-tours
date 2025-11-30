@@ -50,7 +50,7 @@ export default function AuthButton() {
 
   if (loading) {
     return (
-      <span className="text-sm text-neutral-600">Loading...</span>
+      <span className="text-sm text-[#3d3529]">Loading...</span>
     );
   }
 
@@ -60,13 +60,13 @@ export default function AuthButton() {
       <div className="flex items-center gap-3">
         <a
           href="/account"
-          className="text-sm text-neutral-900 hover:text-neutral-600"
+          className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors"
         >
           Sign In
         </a>
         <a
           href="/account?signup=true"
-          className="text-sm rounded-full bg-neutral-900 text-white px-4 py-2 hover:bg-neutral-800"
+          className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors"
         >
           Sign Up
         </a>
@@ -77,26 +77,26 @@ export default function AuthButton() {
   if (user) {
     return (
       <div className="relative group">
-        <button className="text-sm text-neutral-900 hover:text-neutral-600">
+        <button className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors">
           {user.email?.split("@")[0]}
         </button>
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-neutral-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+        <div className="absolute right-0 mt-2 w-48 bg-white border border-[#e5ddd4] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
           <div className="py-2">
             <a
               href="/account"
-              className="block px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-50"
+              className="block px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
             >
               Account
             </a>
             <a
               href="/member"
-              className="block px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-50"
+              className="block px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
             >
               Member Hub
             </a>
             <button
               onClick={handleSignOut}
-              className="w-full text-left px-4 py-2 text-sm text-neutral-900 hover:bg-neutral-50"
+              className="w-full text-left px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
             >
               Sign Out
             </button>
@@ -111,13 +111,13 @@ export default function AuthButton() {
     <div className="flex items-center gap-3">
       <a
         href="/account"
-        className="text-sm text-neutral-900 hover:text-neutral-600"
+        className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors"
       >
         Sign In
       </a>
       <a
         href="/account?signup=true"
-        className="text-sm rounded-full bg-neutral-900 text-white px-4 py-2 hover:bg-neutral-800"
+        className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors"
       >
         Sign Up
       </a>
