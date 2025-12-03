@@ -38,7 +38,7 @@ export default async function ShopPage() {
                   key={product.id}
                   className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col"
                 >
-                  <div className="relative aspect-[4/3] bg-amber-50">
+                  <div className="group relative aspect-[4/3] bg-amber-50 cursor-pointer">
                     {product.image_url ? (
                       <>
                         <Image
