@@ -5,7 +5,7 @@ This guide will help you set up the Patreon-style membership system with Stripe 
 ## Prerequisites
 
 1. A Supabase account and project
-2. A Stripe account (test mode is fine for development)
+2. A Stripe account with live mode enabled (switch to test mode only when validating changes)
 3. Node.js and npm installed
 
 ## Step 1: Install Dependencies
@@ -138,7 +138,7 @@ From Stripe Dashboard:
 
 **For Vercel Production Deployment:**
 
-Add all environment variables in **Vercel Dashboard → Project → Settings → Environment Variables**.
+Add all environment variables in **Vercel Dashboard → Project → Settings → Environment Variables**. Use the same values for Production, Preview, and Development scopes so every deployment behaves like production.
 
 **Required Variables:**
 
@@ -199,7 +199,7 @@ YOUTUBE_CHANNEL_ID=your_youtube_channel_id
 1. ✅ Run database schema SQL in Supabase
 2. ✅ Create 3 products/prices in Stripe Dashboard
 3. ✅ Set up Stripe webhook endpoint
-4. ✅ Add environment variables to `.env.local` and Vercel
+4. ✅ Add environment variables to Vercel
 5. ✅ Enable Stripe Customer Portal
 
 ## Troubleshooting
@@ -216,4 +216,3 @@ YOUTUBE_CHANNEL_ID=your_youtube_channel_id
 - Always use environment variables for sensitive keys
 - The webhook endpoint should verify Stripe signatures
 - RLS policies in Supabase ensure users can only see their own data
-

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe, STRIPE_PRICE_IDS } from '@/lib/stripe';
 import { supabase } from '@/lib/supabaseClient';
+import { SITE_URL } from '@/lib/config';
 
 export async function POST(request: NextRequest) {
   if (!stripe) {
@@ -58,8 +59,6 @@ export async function POST(request: NextRequest) {
       // Continue without email - Stripe will prompt for it
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
-
     const session = await stripe.checkout.sessions.create({
       customer_email: profile?.email,
       client_reference_id: userId,
@@ -70,8 +69,8 @@ export async function POST(request: NextRequest) {
         },
       ],
       mode: 'subscription',
-      success_url: `${baseUrl}/member?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/support?canceled=true`,
+      success_url: `${SITE_URL}/member?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${SITE_URL}/support?canceled=true`,
       metadata: {
         tier,
         user_id: userId,
@@ -87,4 +86,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

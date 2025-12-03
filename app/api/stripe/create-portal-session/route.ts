@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { createServerClient } from '@/lib/supabaseClient';
+import { SITE_URL } from '@/lib/config';
 
 export async function POST(request: NextRequest) {
   if (!stripe) {
@@ -35,11 +36,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
-
     const session = await stripe.billingPortal.sessions.create({
       customer: subscription.stripe_customer_id,
-      return_url: `${baseUrl}/account`,
+      return_url: `${SITE_URL}/account`,
     });
 
     return NextResponse.json({ url: session.url });
@@ -51,4 +50,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

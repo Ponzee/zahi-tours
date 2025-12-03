@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter, useSearchParams } from "next/navigation";
 import ManageSubscriptionButton from "@/components/ManageSubscriptionButton";
+import { SITE_URL } from "@/lib/config";
 
 function AccountPageContent() {
   const [user, setUser] = useState<any>(null);
@@ -107,13 +108,11 @@ function AccountPageContent() {
     if (!supabase) return;
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
-      
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
-          emailRedirectTo: `${baseUrl}/account`,
+          emailRedirectTo: `${SITE_URL}/account`,
         },
       });
 
@@ -129,9 +128,8 @@ function AccountPageContent() {
     if (!supabase) return;
 
     try {
-      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://zahi.tours';
       // Redirect to homepage after OAuth sign-in, unless there's a specific redirect path
-      const redirectTo = redirectPath ? `${baseUrl}${redirectPath}` : `${baseUrl}/`;
+      const redirectTo = redirectPath ? `${SITE_URL}${redirectPath}` : `${SITE_URL}/`;
 
       const { error } = await supabase.auth.signInWithOAuth({
         provider,
@@ -351,4 +349,3 @@ export default function AccountPage() {
     </Suspense>
   );
 }
-
