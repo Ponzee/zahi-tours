@@ -34,7 +34,11 @@ export default async function ShopPage() {
             </div>
           ) : (
             <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {products.map((product) => (
+              {products.map((product) => {
+                const imageUrl = product.image_url
+                  ? product.image_url.replace(/\.avif$/, ".webp")
+                  : null;
+                return (
                 <article
                   key={product.id}
                   className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-2xl transition-all overflow-hidden flex flex-col"
@@ -43,13 +47,13 @@ export default async function ShopPage() {
                     {product.image_url ? (
                       <>
                         <Image
-                          src={product.image_url}
+                          src={imageUrl ?? product.image_url}
                           alt={product.name}
                           fill
                           className="object-cover"
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         />
-                        <ImagePreview src={product.image_url} alt={product.name} />
+                        <ImagePreview src={imageUrl ?? product.image_url} alt={product.name} />
                       </>
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-[#c2410c] text-sm font-medium">
@@ -80,7 +84,8 @@ export default async function ShopPage() {
                     </div>
                   </div>
                 </article>
-              ))}
+              );
+            })}
             </div>
           )}
 
