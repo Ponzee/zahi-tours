@@ -43,7 +43,7 @@ export default async function ShopPage() {
                         src={product.image_url}
                         alt={product.name}
                         fill
-                        className="object-cover"
+                        className="object-cover object-[50%_80%]"
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       />
                     ) : (
@@ -73,6 +73,16 @@ export default async function ShopPage() {
                         Checkout coming soon
                       </button>
                     </div>
+                    {product.image_url && (
+                      <a
+                        href={product.image_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 text-xs font-medium text-[#c2410c] hover:text-[#9a3412] self-start"
+                      >
+                        View full photo
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
