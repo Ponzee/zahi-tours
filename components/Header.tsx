@@ -28,20 +28,20 @@ export default function Header() {
           </span>
         </Link>
         <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
-          <a href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</a>
-          <a href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</a>
-          <a href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</a>
-          <a href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</a>
-          <a href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</a>
+          <Link href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</Link>
+          <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</Link>
+          <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</Link>
+          <Link href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</Link>
+          <Link href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <AuthButton />
-          <a
+          <Link
             href="/#contact"
             className="rounded-full bg-[#c2410c] text-white text-sm px-4 py-2 hover:bg-[#9a3412] whitespace-nowrap transition-colors"
           >
             Request a Private Tour
-          </a>
+          </Link>
         </div>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -54,19 +54,18 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[#e5ddd4] bg-white">
           <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
-            <a href="/#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</a>
-            <a href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</a>
-            <a href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</a>
-            <a href="/#about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</a>
-            <a href="/#contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</a>
+            <Link href="/#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
+            <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</Link>
+            <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+            <Link href="/#about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/#contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <div className="pt-2 border-t border-[#e5ddd4]">
               <AuthButton />
             </div>
-            <a href="/#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-[#c2410c] text-white hover:bg-[#9a3412] transition-colors" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</a>
+            <Link href="/#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-[#c2410c] text-white hover:bg-[#9a3412] transition-colors" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</Link>
           </nav>
         </div>
       )}
     </header>
   );
 }
-
