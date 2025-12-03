@@ -3,6 +3,7 @@ import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
 import ProductDescription from "./ProductDescription";
 import ProductGallery from "./ProductGallery";
+import CheckoutButton from "@/components/shop/CheckoutButton";
 
 export const revalidate = 60;
 
@@ -58,12 +59,10 @@ export default async function ShopPage() {
                           currency: product.currency.toUpperCase(),
                         })}
                       </span>
-                      <button
-                        className="rounded-full bg-[#c2410c] text-white px-4 py-2 text-sm font-medium opacity-60 cursor-not-allowed"
-                        disabled
-                      >
-                        Checkout coming soon
-                      </button>
+                      <CheckoutButton
+                        productId={product.id}
+                        productName={product.name}
+                      />
                     </div>
                   </div>
                 </article>
