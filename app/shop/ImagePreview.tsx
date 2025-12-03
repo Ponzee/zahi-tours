@@ -50,8 +50,9 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
             role="dialog"
             aria-modal="true"
           >
-            <div className="overflow-hidden rounded-[30px] bg-[#f7f0e4] shadow-[0_40px_90px_rgba(0,0,0,0.55)] ring-1 ring-black/40">
-              <div className="relative aspect-[3/4] w-full bg-[#f7efe3]">
+            <div className="relative overflow-hidden rounded-[30px] shadow-[0_40px_90px_rgba(0,0,0,0.55)]">
+              <div className="absolute inset-0 rounded-[30px] bg-gradient-to-b from-white/15 to-black/40 blur-2xl opacity-40 pointer-events-none" />
+              <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[30px] bg-[#0b0b0b]">
                 <Image
                   src={src}
                   alt={alt}
