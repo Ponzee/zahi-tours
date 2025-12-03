@@ -84,7 +84,7 @@ export default function SupportPage() {
       }
 
       if (url) {
-        window.location.href = url;
+        router.push(url);
       }
     } catch (error) {
       console.error("Error:", error);
