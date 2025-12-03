@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import VideoCarousel from "@/components/video/VideoCarousel";
 import { fetchLatestVideos, fetchMostViewedVideos } from "@/lib/youtube";
+import SiteFooter from "@/components/SiteFooter";
 
 export default async function HomePage() {
   // Fetch both latest and most viewed videos server-side (cached for 1 hour)
@@ -271,9 +272,7 @@ export default async function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#e5ddd4] bg-white py-6 px-4 text-center text-sm text-[#3d3529]">
-        © {new Date().getFullYear()} The Holy Land – By Zahi Shaked.
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

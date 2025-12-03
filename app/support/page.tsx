@@ -6,6 +6,7 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 import AuthButton from "@/components/AuthButton";
+import SiteFooter from "@/components/SiteFooter";
 
 const tiers = [
   {
@@ -201,9 +202,7 @@ export default function SupportPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-[#e5ddd4] bg-white py-6 px-4 text-center text-sm text-[#3d3529]">
-        © {new Date().getFullYear()} The Holy Land – By Zahi Shaked.
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

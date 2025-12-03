@@ -1,3 +1,5 @@
+import SiteFooter from "@/components/SiteFooter";
+
 export default function ShopPage() {
   const products = [
     {
@@ -35,8 +37,8 @@ export default function ShopPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900">
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
+      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 flex-1 w-full">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Shop Holy Land Gifts
@@ -82,7 +84,7 @@ export default function ShopPage() {
           <p>More products coming soon!</p>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
-

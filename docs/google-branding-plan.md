@@ -14,7 +14,7 @@ Use this checklist to reach Google’s “Publishing status: In production” wi
 4. In Google Cloud Console → OAuth consent screen → Authorized domains, add both domains once verification succeeds.
 
 ## 3. Publish Required Policies on the Site
-- Create `/privacy` and `/terms` pages in the Next.js app with permanent URLs (linked from the footer and `/account`).
+- `/privacy` and `/terms` are live routes in the Next.js app (`https://zahi.tours/privacy` and `https://zahi.tours/terms`) and are linked in every footer plus the account screen.
 - Include: data collected, purpose, 3rd-party processors (Stripe, Supabase, Google), contact email, and last-updated date.
 - Host a dedicated support/contact page or mailto link referenced in the consent screen.
 

@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { getActiveSubscriptionForUser } from "@/lib/getActiveSubscriptionForUser";
 import ManageSubscriptionButton from "@/components/ManageSubscriptionButton";
+import SiteFooter from "@/components/SiteFooter";
 
 async function getServerSideUser() {
   if (!supabase) return null;
@@ -25,8 +26,8 @@ export default async function MemberPage() {
 
 
   return (
-    <div className="min-h-screen bg-neutral-50 text-neutral-900">
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+    <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
+      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 flex-1 w-full">
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Welcome, Supporter of The Holy Land
@@ -129,7 +130,7 @@ export default async function MemberPage() {
           </div>
         </div>
       </div>
+      <SiteFooter />
     </div>
   );
 }
-
