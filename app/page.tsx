@@ -260,7 +260,12 @@ export default async function HomePage() {
               </div>
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">Email</span>
-                <span className="font-semibold text-[#1a1612]">zahishaked@gmail.com</span>
+                <a
+                  href="mailto:zahishaked@gmail.com"
+                  className="font-semibold text-[#1a1612] hover:text-[#c2410c]"
+                >
+                  zahishaked@gmail.com
+                </a>
               </div>
               <div className="flex items-center justify-between py-3">
                 <span className="text-[#3d3529]">Based in</span>
