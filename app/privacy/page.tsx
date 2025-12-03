@@ -14,7 +14,7 @@ const privacySections = [
       "Account information you provide when creating an account or becoming a supporter (name, email, password).",
       "Billing information handled securely by Stripe when you purchase a membership or product.",
       "Usage data such as pages visited, membership actions, and video engagement captured through analytics to improve the experience.",
-      "Communications you send via email, forms, or WhatsApp when requesting tours or support.",
+      "Communications you send via email, forms, or WhatsApp (+972-54-690-5522) when requesting tours or support.",
     ],
   },
   {

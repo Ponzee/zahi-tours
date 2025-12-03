@@ -35,7 +35,7 @@ const termsSections = [
   {
     title: "4. Tours & Experiences",
     body: [
-      "Tour availability, pricing, and itineraries are confirmed individually via email or WhatsApp.",
+      "Tour availability, pricing, and itineraries are confirmed individually via email or WhatsApp (+972-54-690-5522).",
       "Deposits or payments made for private tours are subject to the separate booking terms shared during confirmation.",
       "Travel insurance, visas, and border compliance remain your responsibility.",
     ],

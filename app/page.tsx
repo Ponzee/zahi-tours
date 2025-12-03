@@ -256,7 +256,7 @@ export default async function HomePage() {
             <div className="mt-8 max-w-md mx-auto text-left space-y-4 text-base md:text-lg">
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">WhatsApp</span>
-                <span className="font-semibold text-[#1a1612]">+972-5X-XXX-XXXX</span>
+                <span className="font-semibold text-[#1a1612]">+972-54-690-5522</span>
               </div>
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">Email</span>
