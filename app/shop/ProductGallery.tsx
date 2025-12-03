@@ -55,21 +55,21 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
           open={open}
           setOpen={setOpen}
         />
+        {galleryImages.length > 1 && (
+          <div className="pointer-events-auto absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-3">
+            {galleryImages.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSelectedIndex(idx)}
+                className={`h-3 w-3 rounded-full border border-white/70 shadow-sm transition ${
+                  selectedIndex === idx ? "bg-white" : "bg-white/30"
+                }`}
+                aria-label={`Show image ${idx + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
-      {galleryImages.length > 1 && (
-        <div className="flex items-center justify-center gap-2 py-3">
-          {galleryImages.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setSelectedIndex(idx)}
-              className={`h-2.5 w-2.5 rounded-full border border-[#c2410c]/30 transition ${
-                selectedIndex === idx ? "bg-[#c2410c]" : "bg-[#f5e7da]"
-              }`}
-              aria-label={`Show image ${idx + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

@@ -89,12 +89,12 @@ export default function ImagePreview({
                   priority
                 />
                 {gallery.length > 1 && (
-                  <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-2">
+                  <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-3">
                     {gallery.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setActiveIndex(idx)}
-                        className={`h-2.5 w-2.5 rounded-full border border-white/60 transition ${
+                        className={`h-3 w-3 rounded-full border border-white/70 shadow-sm transition ${
                           activeIndex === idx ? "bg-white" : "bg-white/30"
                         }`}
                         aria-label={`Show image ${idx + 1}`}
