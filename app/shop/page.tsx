@@ -39,14 +39,14 @@ export default async function ShopPage() {
                   key={product.id}
                   className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-2xl transition-all overflow-hidden flex flex-col"
                 >
-                  <div className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-b-none bg-gradient-to-br from-[#f8edde] via-[#fdf6ec] to-[#f5e5d5]">
+                  <div className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden rounded-b-none bg-[#fdf6ec]">
                     {product.image_url ? (
                       <>
                         <Image
                           src={product.image_url}
                           alt={product.name}
                           fill
-                          className="object-contain"
+                          className="object-cover"
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         />
                         <ImagePreview src={product.image_url} alt={product.name} />

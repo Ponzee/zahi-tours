@@ -51,12 +51,12 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
             aria-modal="true"
           >
             <div className="overflow-hidden rounded-[28px] border border-white/40 bg-white/95 shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
-              <div className="relative aspect-[4/5] w-full bg-[#f8f0e4]">
+              <div className="relative aspect-[3/4] w-full bg-[#f8f0e4]">
                 <Image
                   src={src}
                   alt={alt}
                   fill
-                  className="object-contain p-6"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 75vw"
                   priority
                 />
