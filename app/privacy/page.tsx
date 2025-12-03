@@ -93,16 +93,37 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-[#1a1612]">
               Contact Us
             </h2>
-            <p className="mt-4 text-sm md:text-base leading-relaxed">
-              Questions about this policy or your data rights? Email{" "}
-              <a
-                href="mailto:zahishaked@gmail.com"
-                className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
-              >
-                zahishaked@gmail.com
-              </a>{" "}
-              or use the contact section on the homepage. We respond to privacy requests within 30 days.
-            </p>
+            <div className="mt-4 space-y-3 text-sm md:text-base leading-relaxed">
+              <p>
+                Questions about this policy or your data rights? Email{" "}
+                <a
+                  href="mailto:zahishaked@gmail.com"
+                  className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
+                >
+                  zahishaked@gmail.com
+                </a>{" "}
+                or send a WhatsApp message to +972-54-690-5522. We respond to privacy requests within 30 days.
+              </p>
+              <p>
+                For tour updates and announcements you can also follow{" "}
+                <a href="https://www.youtube.com/@zahishaked" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  YouTube
+                </a>
+                ,{" "}
+                <a href="https://www.facebook.com/zahishakedisraelitourguide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  Facebook
+                </a>
+                ,{" "}
+                <a href="https://www.instagram.com/zahi_shaked_israeli_tour_guide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  Instagram
+                </a>{" "}
+                or{" "}
+                <a href="https://linktr.ee/zahishakedtourguide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  linktr.ee/zahishakedtourguide
+                </a>
+                .
+              </p>
+            </div>
           </section>
         </div>
       </main>

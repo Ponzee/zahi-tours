@@ -266,6 +266,23 @@ export default async function HomePage() {
                 <span className="text-[#3d3529]">Based in</span>
                 <span className="font-semibold text-[#1a1612]">Jerusalem & Tel Aviv</span>
               </div>
+              <div className="pt-4 border-t border-[#e5ddd4] space-y-2 text-sm md:text-base">
+                <p className="font-semibold text-[#1a1612]">Follow Zahi</p>
+                <div className="flex flex-wrap gap-3 text-[#c2410c]">
+                  <a href="https://www.youtube.com/@zahishaked" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    YouTube
+                  </a>
+                  <a href="https://www.facebook.com/zahishakedisraelitourguide" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Facebook
+                  </a>
+                  <a href="https://www.instagram.com/zahi_shaked_israeli_tour_guide" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Instagram
+                  </a>
+                  <a href="https://linktr.ee/zahishakedtourguide" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Linktree
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -101,16 +101,37 @@ export default function TermsPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-[#1a1612]">
               Contact
             </h2>
-            <p className="mt-4 text-sm md:text-base leading-relaxed">
-              For questions about these Terms, tour agreements, or billing, email{" "}
-              <a
-                href="mailto:zahishaked@gmail.com"
-                className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
-              >
-                zahishaked@gmail.com
-              </a>{" "}
-              and include relevant booking or membership details.
-            </p>
+            <div className="mt-4 space-y-3 text-sm md:text-base leading-relaxed">
+              <p>
+                For questions about these Terms, tour agreements, or billing, email{" "}
+                <a
+                  href="mailto:zahishaked@gmail.com"
+                  className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
+                >
+                  zahishaked@gmail.com
+                </a>{" "}
+                or message +972-54-690-5522 on WhatsApp and include relevant booking or membership details.
+              </p>
+              <p>
+                You can also reach Zahi through{" "}
+                <a href="https://www.youtube.com/@zahishaked" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  YouTube
+                </a>
+                ,{" "}
+                <a href="https://www.facebook.com/zahishakedisraelitourguide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  Facebook
+                </a>
+                ,{" "}
+                <a href="https://www.instagram.com/zahi_shaked_israeli_tour_guide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  Instagram
+                </a>{" "}
+                or{" "}
+                <a href="https://linktr.ee/zahishakedtourguide" target="_blank" rel="noopener noreferrer" className="text-[#c2410c] font-semibold hover:text-[#9a3412]">
+                  linktr.ee/zahishakedtourguide
+                </a>
+                .
+              </p>
+            </div>
           </section>
         </div>
       </main>
