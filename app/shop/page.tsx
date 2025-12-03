@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
 import ImagePreview from "./ImagePreview";
+import ProductDescription from "./ProductDescription";
 
 export const revalidate = 60;
 
@@ -36,16 +37,16 @@ export default async function ShopPage() {
               {products.map((product) => (
                 <article
                   key={product.id}
-                  className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-lg transition-all overflow-hidden flex flex-col"
+                  className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-2xl transition-all overflow-hidden flex flex-col"
                 >
-                  <div className="group relative aspect-[4/3] bg-amber-50 cursor-pointer">
+                  <div className="group relative aspect-[4/3] cursor-zoom-in overflow-hidden rounded-b-none bg-amber-50">
                     {product.image_url ? (
                       <>
                         <Image
                           src={product.image_url}
                           alt={product.name}
                           fill
-                          className="object-cover object-[50%_80%]"
+                          className="object-contain p-2"
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         />
                         <ImagePreview src={product.image_url} alt={product.name} />
@@ -60,10 +61,10 @@ export default async function ShopPage() {
                     <h3 className="font-bold text-xl tracking-tight text-[#1a1612]">
                       {product.name}
                     </h3>
-                    <p className="text-sm md:text-base text-[#3d3529] mt-3 mb-4 leading-relaxed flex-1">
-                      {product.description}
-                    </p>
-                    <div className="flex items-baseline justify-between">
+                    <div className="flex-1 w-full">
+                      <ProductDescription text={product.description} />
+                    </div>
+                    <div className="mt-4 flex items-baseline justify-between">
                       <span className="text-2xl font-semibold text-[#1a1612]">
                         {(product.price_cents / 100).toLocaleString(undefined, {
                           style: "currency",
