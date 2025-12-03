@@ -17,14 +17,13 @@ export default function SiteFooter() {
             Terms of Service
           </Link>
           <a
-            href="mailto:support@zahi.tours"
+            href="mailto:zahishaked@gmail.com"
             className="hover:text-[#c2410c] transition-colors"
           >
-            support@zahi.tours
+            zahishaked@gmail.com
           </a>
         </div>
       </div>
     </footer>
   );
 }
-

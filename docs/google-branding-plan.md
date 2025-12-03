@@ -5,7 +5,7 @@ Use this checklist to reach Google’s “Publishing status: In production” wi
 ## 1. Prepare Brand Assets
 - Square logo (120 × 120 recommended) hosted at `https://zahi.tours` or uploaded directly in Google Cloud.
 - Marketing copy: app name `Zahi Tours` and a short description that matches the live site.
-- Support email routed to your domain (e.g., `support@zahi.tours`) and monitored inbox access.
+- Support email monitored at `zahishaked@gmail.com` (update if you move to a branded inbox).
 
 ## 2. Verify Domains in Google Search Console
 1. Sign in to [Google Search Console](https://search.google.com/search-console).

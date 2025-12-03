@@ -104,10 +104,10 @@ export default function TermsPage() {
             <p className="mt-4 text-sm md:text-base leading-relaxed">
               For questions about these Terms, tour agreements, or billing, email{" "}
               <a
-                href="mailto:support@zahi.tours"
+                href="mailto:zahishaked@gmail.com"
                 className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
               >
-                support@zahi.tours
+                zahishaked@gmail.com
               </a>{" "}
               and include relevant booking or membership details.
             </p>
@@ -119,4 +119,3 @@ export default function TermsPage() {
     </div>
   );
 }
-

@@ -38,10 +38,10 @@ const privacySections = [
   {
     title: "Your Choices",
     content: [
-      "You may update account details anytime from /account or by emailing support@zahi.tours.",
+      "You may update account details anytime from /account or by emailing zahishaked@gmail.com.",
       "You can cancel memberships through the Stripe customer portal link provided in /account.",
       "Unsubscribe links are included in marketing emails; transactional messages may still be sent when necessary.",
-      "Request data export or deletion by contacting support@zahi.tours and we will respond within 30 days.",
+      "Request data export or deletion by contacting zahishaked@gmail.com and we will respond within 30 days.",
     ],
   },
   {
@@ -96,10 +96,10 @@ export default function PrivacyPage() {
             <p className="mt-4 text-sm md:text-base leading-relaxed">
               Questions about this policy or your data rights? Email{" "}
               <a
-                href="mailto:support@zahi.tours"
+                href="mailto:zahishaked@gmail.com"
                 className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
               >
-                support@zahi.tours
+                zahishaked@gmail.com
               </a>{" "}
               or use the contact section on the homepage. We respond to privacy requests within 30 days.
             </p>
@@ -111,4 +111,3 @@ export default function PrivacyPage() {
     </div>
   );
 }
-
