@@ -41,31 +41,32 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
       </button>
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6"
           onClick={() => setOpen(false)}
         >
           <div
-            className="relative w-full max-w-3xl rounded-[32px] bg-gradient-to-b from-white via-white to-[#f8f2eb] p-6 shadow-[0_25px_80px_rgba(0,0,0,0.35)]"
+            className="relative w-full max-w-2xl"
             onClick={(e) => e.stopPropagation()}
             role="dialog"
             aria-modal="true"
           >
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute left-5 top-5 flex h-10 w-10 items-center justify-center rounded-full bg-black/80 text-white text-lg shadow-lg hover:bg-black"
-              aria-label="Close photo"
-            >
-              ×
-            </button>
-            <div className="relative mt-8 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-[#eadfce] bg-[#fdf9f3]">
-              <Image
-                src={src}
-                alt={alt}
-                fill
-                className="object-contain"
-                sizes="(max-width: 768px) 100vw, 75vw"
-                priority
-              />
+            <div className="overflow-hidden rounded-[28px] border border-white/40 bg-white/95 shadow-[0_25px_80px_rgba(0,0,0,0.35)]">
+              <div className="relative aspect-[4/5] w-full bg-[#f8f0e4]">
+                <Image
+                  src={src}
+                  alt={alt}
+                  fill
+                  className="object-contain p-6"
+                  sizes="(max-width: 768px) 100vw, 75vw"
+                  priority
+                />
+              </div>
+              <button
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center justify-center bg-[#1a1612] py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-black"
+              >
+                Close
+              </button>
             </div>
           </div>
         </div>
