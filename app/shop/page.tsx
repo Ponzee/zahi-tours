@@ -2,6 +2,7 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
+import ImagePreview from "./ImagePreview";
 
 export const revalidate = 60;
 
@@ -39,13 +40,16 @@ export default async function ShopPage() {
                 >
                   <div className="relative aspect-[4/3] bg-amber-50">
                     {product.image_url ? (
-                      <Image
-                        src={product.image_url}
-                        alt={product.name}
-                        fill
-                        className="object-cover object-[50%_80%]"
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
+                      <>
+                        <Image
+                          src={product.image_url}
+                          alt={product.name}
+                          fill
+                          className="object-cover object-[50%_80%]"
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                        <ImagePreview src={product.image_url} alt={product.name} />
+                      </>
                     ) : (
                       <div className="w-full h-full flex items-center justify-center text-[#c2410c] text-sm font-medium">
                         Photo coming soon
@@ -73,16 +77,6 @@ export default async function ShopPage() {
                         Checkout coming soon
                       </button>
                     </div>
-                    {product.image_url && (
-                      <a
-                        href={product.image_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-3 text-xs font-medium text-[#c2410c] hover:text-[#9a3412] self-start"
-                      >
-                        View full photo
-                      </a>
-                    )}
                   </div>
                 </article>
               ))}
