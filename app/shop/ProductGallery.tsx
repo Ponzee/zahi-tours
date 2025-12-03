@@ -61,7 +61,7 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
               <button
                 key={idx}
                 onClick={() => setSelectedIndex(idx)}
-                className={`h-3 w-3 rounded-full border border-white/70 shadow-sm transition ${
+                className={`h-6 w-6 rounded-full border-2 border-white/70 shadow-sm transition ${
                   selectedIndex === idx ? "bg-white" : "bg-white/30"
                 }`}
                 aria-label={`Show image ${idx + 1}`}
