@@ -7,6 +7,8 @@ export const metadata = {
     "Terms that govern the use of zahi.tours, the membership program, and private tour services.",
 };
 
+const LAST_UPDATED = "April 2025";
+
 const termsSections = [
   {
     title: "1. Overview",
@@ -72,7 +74,7 @@ export default function TermsPage() {
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
-            Last updated: March 2025
+            Last updated: {LAST_UPDATED}
           </p>
           <h1 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#1a1612]">
             Terms of Service

@@ -7,6 +7,8 @@ export const metadata = {
     "How Zahi Tours collects, uses, and protects personal information across tours, memberships, and digital products.",
 };
 
+const LAST_UPDATED = "April 2025";
+
 const privacySections = [
   {
     title: "Information We Collect",
@@ -62,7 +64,7 @@ export default function PrivacyPage() {
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
-            Last updated: March 2025
+            Last updated: {LAST_UPDATED}
           </p>
           <h1 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#1a1612]">
             Privacy Policy

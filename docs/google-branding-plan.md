@@ -42,6 +42,7 @@ Use this checklist to reach Google’s “Publishing status: In production” wi
 
 ## 7. Post-Approval Maintenance
 - Keep policy pages updated whenever you add features.
+- When policies change, bump the `LAST_UPDATED` constants in `/privacy` and `/terms` before deploying.
 - Re-run `npm run lint` and dependency updates monthly to stay compliant with Google’s security checks.
 - Re-verify domains if DNS or hosting changes; otherwise OAuth branding may revert.
 
