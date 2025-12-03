@@ -1,9 +1,8 @@
-import Image from "next/image";
 import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
-import ImagePreview from "./ImagePreview";
 import ProductDescription from "./ProductDescription";
+import ProductGallery from "./ProductGallery";
 
 export const revalidate = 60;
 
@@ -35,32 +34,16 @@ export default async function ShopPage() {
           ) : (
             <div className="grid gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {products.map((product) => {
-                const imageUrl = product.image_url
-                  ? product.image_url.replace(/\.avif$/, ".webp")
-                  : null;
                 return (
                 <article
                   key={product.id}
                   className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-2xl transition-all overflow-hidden flex flex-col"
                 >
-                  <div className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden rounded-b-none">
-                    {product.image_url ? (
-                      <>
-                        <Image
-                          src={imageUrl ?? product.image_url}
-                          alt={product.name}
-                          fill
-                          className="object-cover"
-                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        />
-                        <ImagePreview src={imageUrl ?? product.image_url} alt={product.name} />
-                      </>
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center text-[#c2410c] text-sm font-medium">
-                        Photo coming soon
-                      </div>
-                    )}
-                  </div>
+                  <ProductGallery
+                    alt={product.name}
+                    imageUrl={product.image_url}
+                    imageUrls={(product as any).image_urls || undefined}
+                  />
                   <div className="p-5 md:p-6 flex-1 flex flex-col">
                     <h3 className="font-bold text-xl tracking-tight text-[#1a1612]">
                       {product.name}

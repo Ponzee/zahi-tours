@@ -6,29 +6,56 @@ import Image from "next/image";
 interface ImagePreviewProps {
   src: string;
   alt: string;
+  images?: string[];
+  selectedIndex?: number;
+  onSelect?: (index: number) => void;
+  open?: boolean;
+  setOpen?: (value: boolean) => void;
 }
 
-export default function ImagePreview({ src, alt }: ImagePreviewProps) {
-  const [open, setOpen] = useState(false);
+export default function ImagePreview({
+  src,
+  alt,
+  images,
+  selectedIndex,
+  onSelect,
+  open,
+  setOpen,
+}: ImagePreviewProps) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const [internalIndex, setInternalIndex] = useState(0);
+
+  const modalOpen = open !== undefined ? open : internalOpen;
+  const setModalOpen = setOpen !== undefined ? setOpen : setInternalOpen;
+
+  const activeIndex = selectedIndex !== undefined ? selectedIndex : internalIndex;
+  const setActiveIndex = onSelect !== undefined ? onSelect : setInternalIndex;
+
+  const gallery = images && images.length > 0 ? images : [src];
+  const currentImage = gallery[activeIndex] || gallery[0];
 
   useEffect(() => {
-    if (!open) return;
-
+    if (!modalOpen) return;
     const handleKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setOpen(false);
+        setModalOpen(false);
+      }
+      if (event.key === "ArrowRight" && gallery.length > 1) {
+        setActiveIndex((activeIndex + 1) % gallery.length);
+      }
+      if (event.key === "ArrowLeft" && gallery.length > 1) {
+        setActiveIndex((activeIndex - 1 + gallery.length) % gallery.length);
       }
     };
-
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [open]);
+  }, [modalOpen, activeIndex, gallery.length, setActiveIndex, setModalOpen]);
 
   return (
     <>
       <button
         type="button"
-        onClick={() => setOpen(true)}
+        onClick={() => setModalOpen(true)}
         className="absolute inset-0 flex cursor-zoom-in items-center justify-center bg-transparent"
         aria-label={`Open larger photo of ${alt}`}
       >
@@ -39,10 +66,10 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
         </span>
         <span className="sr-only">View larger photo</span>
       </button>
-      {open && (
+      {modalOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-6"
-          onClick={() => setOpen(false)}
+          onClick={() => setModalOpen(false)}
         >
           <div
             className="relative w-full max-w-2xl"
@@ -54,15 +81,29 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
               <div className="absolute inset-0 rounded-[30px] bg-gradient-to-b from-white/15 to-black/40 blur-2xl opacity-40 pointer-events-none" />
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[30px] bg-[#0b0b0b] max-h-[80vh]">
                 <Image
-                  src={src}
+                  src={currentImage}
                   alt={alt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 75vw"
                   priority
                 />
+                {gallery.length > 1 && (
+                  <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-2">
+                    {gallery.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveIndex(idx)}
+                        className={`h-2.5 w-2.5 rounded-full border border-white/60 transition ${
+                          activeIndex === idx ? "bg-white" : "bg-white/30"
+                        }`}
+                        aria-label={`Show image ${idx + 1}`}
+                      />
+                    ))}
+                  </div>
+                )}
                 <button
-                  onClick={() => setOpen(false)}
+                  onClick={() => setModalOpen(false)}
                   className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
                 >
                   Close
