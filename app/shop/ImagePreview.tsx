@@ -60,13 +60,13 @@ export default function ImagePreview({ src, alt }: ImagePreviewProps) {
                   sizes="(max-width: 768px) 100vw, 75vw"
                   priority
                 />
+                <button
+                  onClick={() => setOpen(false)}
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
+                >
+                  Close
+                </button>
               </div>
-              <button
-                onClick={() => setOpen(false)}
-                className="flex w-full items-center justify-center bg-[#1a1612] py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-black"
-              >
-                Close
-              </button>
             </div>
           </div>
         </div>
