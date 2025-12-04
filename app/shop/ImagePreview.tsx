@@ -88,8 +88,14 @@ export default function ImagePreview({
                   sizes="(max-width: 768px) 100vw, 75vw"
                   priority
                 />
+                <button
+                  onClick={() => setModalOpen(false)}
+                  className="absolute bottom-28 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
+                >
+                  Close
+                </button>
                 {gallery.length > 1 && (
-                  <div className="absolute bottom-20 left-1/2 flex -translate-x-1/2 items-center gap-4">
+                  <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-4">
                     {gallery.map((_, idx) => (
                       <button
                         key={idx}
@@ -102,12 +108,6 @@ export default function ImagePreview({
                     ))}
                   </div>
                 )}
-                <button
-                  onClick={() => setModalOpen(false)}
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </div>
