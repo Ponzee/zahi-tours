@@ -21,7 +21,7 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
         {open ? "Hide item description" : "Show item description"}
       </button>
       <div
-        className={`transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-96 opacity-100 mt-3" : "max-h-0 opacity-0"}`}
+        className={`transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-96 opacity-100 mt-3 overflow-y-auto" : "max-h-0 opacity-0"}`}
         aria-hidden={!open}
       >
         <p className="text-sm md:text-base text-[#3d3529] leading-relaxed bg-white/70 rounded-2xl p-4 border border-[#f0e6da] shadow-sm">
