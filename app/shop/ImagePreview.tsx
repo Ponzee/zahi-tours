@@ -90,7 +90,7 @@ export default function ImagePreview({
                 />
                 <button
                   onClick={() => setModalOpen(false)}
-                  className="absolute bottom-[98px] left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
+                  className="absolute bottom-[103px] left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
                 >
                   Close
                 </button>
