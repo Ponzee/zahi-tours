@@ -37,16 +37,16 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
         </p>
         <style jsx>{`
           .custom-scrollbar::-webkit-scrollbar {
-            width: 12px;
+            width: 24px;
           }
           .custom-scrollbar::-webkit-scrollbar-track {
             background: #f5f2ed;
-            border-radius: 10px;
+            border-radius: 12px;
           }
           .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #c2410c;
-            border-radius: 10px;
-            border: 2px solid #f5f2ed;
+            border-radius: 12px;
+            border: 3px solid #f5f2ed;
           }
           .custom-scrollbar::-webkit-scrollbar-thumb:hover {
             background: #9a3412;
