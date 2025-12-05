@@ -66,3 +66,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Greek Orthodox Cross product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'greek-orthodox-cross',
+  'Greek Orthodox Cross – Blessed in Jerusalem',
+  'Crafted from authentic olive wood, this 19 cm × 19 cm (7.4" × 7.4") Jerusalem Cross is blessed at the Church of the Holy Sepulchre or another sacred site in Jerusalem by Zahi. Each cross is personally carried to a holy location for a special blessing before it ships. The specific cross design may vary according to inventory, ensuring each piece is unique. Each purchase includes the blessed cross, video documentation of the blessing ceremony, and worldwide tracked shipping (fees included).',
+  26000,
+  'usd',
+  '/shop/greek-orthodox-cross/greek-orthodox-cross-01.webp',
+  '[
+    "/shop/greek-orthodox-cross/greek-orthodox-cross-01.webp",
+    "/shop/greek-orthodox-cross/greek-orthodox-cross-02.webp",
+    "/shop/greek-orthodox-cross/greek-orthodox-cross-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
