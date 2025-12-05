@@ -16,18 +16,25 @@ export interface ShopProduct {
 }
 
 export async function fetchActiveProducts(): Promise<ShopProduct[]> {
-  const supabase = createServerClient();
+  try {
+    const supabase = createServerClient();
 
-  const { data, error } = await supabase
-    .from("shop_products")
-    .select("id, slug, name, description, price_cents, currency, image_url, status, stripe_price_id, image_urls")
-    .eq("status", "active")
-    .order("created_at", { ascending: true });
+    const { data, error } = await supabase
+      .from("shop_products")
+      .select("id, slug, name, description, price_cents, currency, image_url, status, stripe_price_id, image_urls")
+      .eq("status", "active")
+      .order("created_at", { ascending: true });
 
-  if (error) {
-    console.error("Error loading shop products", error);
+    if (error) {
+      console.error("Error loading shop products:", error);
+      console.error("Error details:", JSON.stringify(error, null, 2));
+      return [];
+    }
+
+    console.log(`Loaded ${data?.length || 0} active products from database`);
+    return data ?? [];
+  } catch (err: any) {
+    console.error("Exception in fetchActiveProducts:", err);
     return [];
   }
-
-  return data ?? [];
 }
