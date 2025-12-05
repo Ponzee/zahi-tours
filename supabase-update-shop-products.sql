@@ -94,3 +94,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Blessed Jerusalem Cross product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'blessed-jerusalem-cross',
+  'Blessed Jerusalem Cross – Church of the Holy Sepulchre',
+  'Crafted from authentic olive wood, this 19 cm × 19 cm (7.4" × 7.4") Jerusalem Cross is blessed at the Church of the Holy Sepulchre or another sacred site in Jerusalem by Zahi. Each cross is personally carried to a holy location for a special blessing before it ships. The specific cross design may vary according to inventory, ensuring each piece is unique. Each purchase includes the blessed cross, video documentation of the blessing ceremony, and worldwide tracked shipping (fees included).',
+  24000,
+  'usd',
+  '/shop/blessed-jerusalem-cross/blessed-jerusalem-cross-01.webp',
+  '[
+    "/shop/blessed-jerusalem-cross/blessed-jerusalem-cross-01.webp",
+    "/shop/blessed-jerusalem-cross/blessed-jerusalem-cross-02.webp",
+    "/shop/blessed-jerusalem-cross/blessed-jerusalem-cross-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
