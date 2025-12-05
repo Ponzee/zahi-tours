@@ -12,21 +12,33 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGalleryProps) {
   const galleryImages = useMemo(() => {
-    const base = imageUrl ? imageUrl.replace(/\.avif$/, ".webp") : null;
     const images: string[] = [];
+    
+    // If image_urls array is provided, use it directly
     if (imageUrls && imageUrls.length > 0) {
       imageUrls.forEach((img) => images.push(img.replace(/\.avif$/, ".webp")));
-    } else if (base) {
+      return images;
+    }
+    
+    // Otherwise, try to auto-detect images from base imageUrl
+    const base = imageUrl ? imageUrl.replace(/\.avif$/, ".webp") : null;
+    if (base) {
       images.push(base);
-      const match = base.match(/^(.*?)(0?1)(\.\w+)$/);
+      
+      // Try to detect numbered images (01, 02, 03 pattern)
+      // Supports both old format: /shop/product01.webp
+      // and new format: /shop/product/product-01.webp
+      const match = base.match(/^(.*?)(?:-)?(0?1)(\.\w+)$/);
       if (match) {
         const prefix = match[1];
         const ext = match[3];
-        const second = `${prefix}02${ext}`;
-        const third = `${prefix}03${ext}`;
+        const separator = base.includes('/' + prefix.split('/').pop() + '-') ? '-' : '';
+        const second = `${prefix}${separator}02${ext}`;
+        const third = `${prefix}${separator}03${ext}`;
         images.push(second, third);
       }
     }
+    
     return Array.from(new Set(images));
   }, [imageUrl, imageUrls]);
 
