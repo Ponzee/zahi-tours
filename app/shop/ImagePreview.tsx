@@ -61,7 +61,7 @@ export default function ImagePreview({
       >
         <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition group-hover:border-[#c2410c]/60" />
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-        <span className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <span className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-6 py-2 text-sm font-semibold uppercase tracking-wide text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           View
         </span>
         <span className="sr-only">View larger photo</span>
@@ -90,7 +90,7 @@ export default function ImagePreview({
                 />
                 <button
                   onClick={() => setModalOpen(false)}
-                  className="absolute bottom-28 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
+                  className="absolute bottom-28 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
                 >
                   Close
                 </button>
@@ -100,7 +100,7 @@ export default function ImagePreview({
                       <button
                         key={idx}
                         onClick={() => setActiveIndex(idx)}
-                        className={`h-9 w-9 rounded-full border-2 border-white/70 shadow-sm transition ${
+                        className={`h-[72px] w-[72px] rounded-full border-2 border-white/70 shadow-sm transition ${
                           activeIndex === idx ? "bg-white" : "bg-white/30"
                         }`}
                         aria-label={`Show image ${idx + 1}`}
