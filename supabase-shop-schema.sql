@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS shop_products (
   price_cents INTEGER NOT NULL,
   currency TEXT NOT NULL DEFAULT 'usd',
   image_url TEXT,
+  image_urls JSONB,
   status TEXT NOT NULL DEFAULT 'active',
   stripe_price_id TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
