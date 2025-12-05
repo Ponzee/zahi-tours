@@ -33,6 +33,20 @@ export default function ImagePreview({
 
   const gallery = images && images.length > 0 ? images : [src];
   const currentImage = gallery[activeIndex] || gallery[0];
+  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
+
+  // Preload all images when modal opens
+  useEffect(() => {
+    if (!modalOpen) return;
+    
+    gallery.forEach((imgSrc) => {
+      const img = new window.Image();
+      img.src = imgSrc;
+      img.onload = () => {
+        setImagesLoaded((prev) => new Set(prev).add(imgSrc));
+      };
+    });
+  }, [modalOpen, gallery]);
 
   useEffect(() => {
     if (!modalOpen) return;
@@ -80,14 +94,20 @@ export default function ImagePreview({
             <div className="relative overflow-hidden rounded-[30px] shadow-[0_40px_90px_rgba(0,0,0,0.55)]">
               <div className="absolute inset-0 rounded-[30px] bg-gradient-to-b from-white/15 to-black/40 blur-2xl opacity-40 pointer-events-none" />
               <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[30px] bg-[#0b0b0b] max-h-[80vh]">
-                <Image
-                  src={currentImage}
-                  alt={alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 75vw"
-                  priority
-                />
+                {/* Render all images with opacity transition for smooth switching */}
+                {gallery.map((imgSrc, idx) => (
+                  <Image
+                    key={imgSrc}
+                    src={imgSrc}
+                    alt={alt}
+                    fill
+                    className={`object-cover transition-opacity duration-300 ${
+                      idx === activeIndex ? "opacity-100" : "opacity-0 absolute"
+                    }`}
+                    sizes="(max-width: 768px) 100vw, 75vw"
+                    priority={idx === 0}
+                  />
+                ))}
                 <button
                   onClick={() => setModalOpen(false)}
                   className="absolute bottom-[103px] left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"

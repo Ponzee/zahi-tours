@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Image from "next/image";
 import ImagePreview from "./ImagePreview";
 
@@ -44,6 +44,19 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [open, setOpen] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
+
+  // Preload all images when component mounts
+  useEffect(() => {
+    galleryImages.forEach((imgSrc) => {
+      const img = new window.Image();
+      img.src = imgSrc;
+      img.onload = () => {
+        setImagesLoaded((prev) => new Set(prev).add(imgSrc));
+      };
+    });
+  }, [galleryImages]);
+
   const current = galleryImages[selectedIndex] || galleryImages[0];
 
   if (!current) return null;
@@ -51,13 +64,21 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
   return (
     <div className="w-full">
       <div className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden rounded-b-none">
-        <Image
-          src={current}
-          alt={alt}
-          fill
-          className="object-cover"
-          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-        />
+        {/* Render all images with opacity transition for smooth switching */}
+        {galleryImages.map((imgSrc, idx) => (
+          <Image
+            key={imgSrc}
+            src={imgSrc}
+            alt={alt}
+            fill
+            className={`object-cover transition-opacity duration-300 ${
+              idx === selectedIndex ? "opacity-100" : "opacity-0 absolute"
+            }`}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            loading={idx === 0 ? "eager" : "lazy"}
+            priority={idx === 0}
+          />
+        ))}
         <ImagePreview
           src={current}
           alt={alt}
@@ -73,8 +94,8 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
               <button
                 key={idx}
                 onClick={() => setSelectedIndex(idx)}
-                className={`h-12 w-12 rounded-full border-2 border-white/70 shadow-sm transition ${
-                  selectedIndex === idx ? "bg-white" : "bg-white/30"
+                className={`h-12 w-12 rounded-full border-2 border-white/70 shadow-sm transition-all duration-200 ${
+                  selectedIndex === idx ? "bg-white scale-110" : "bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Show image ${idx + 1}`}
               />
