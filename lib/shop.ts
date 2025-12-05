@@ -19,7 +19,19 @@ export async function fetchActiveProducts(): Promise<ShopProduct[]> {
   try {
     const supabase = createServerClient();
 
-    // First, try to select all columns (Supabase will ignore missing ones)
+    // First, test if we can query ANY products (for debugging)
+    const { data: allData, error: allError } = await supabase
+      .from("shop_products")
+      .select("*")
+      .limit(10);
+
+    console.log("DEBUG: All products query result:", {
+      count: allData?.length || 0,
+      error: allError,
+      sample: allData?.[0] ? { id: allData[0].id, name: allData[0].name, status: allData[0].status } : null
+    });
+
+    // Now filter by active status
     const { data, error } = await supabase
       .from("shop_products")
       .select("*")
@@ -35,6 +47,8 @@ export async function fetchActiveProducts(): Promise<ShopProduct[]> {
     console.log(`Loaded ${data?.length || 0} active products from database`);
     if (data && data.length > 0) {
       console.log("Sample product:", JSON.stringify(data[0], null, 2));
+    } else {
+      console.warn("No active products found. All products statuses:", allData?.map(p => ({ id: p.id, status: p.status })));
     }
     
     return data ?? [];
