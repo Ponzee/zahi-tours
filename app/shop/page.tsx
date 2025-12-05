@@ -46,13 +46,11 @@ export default async function ShopPage() {
                     imageUrls={(product as any).image_urls || undefined}
                   />
                   <div className="p-5 md:p-6 flex-1 flex flex-col min-h-0">
-                    <h3 className="font-bold text-xl tracking-tight text-[#1a1612] mb-3">
+                    <h3 className="font-bold text-xl tracking-tight text-[#1a1612] mb-4">
                       {product.name}
                     </h3>
-                    <div className="flex-1 w-full min-h-0 overflow-hidden">
-                      <ProductDescription text={product.description} />
-                    </div>
-                    <div className="mt-4 pt-4 border-t border-[#e5ddd4] flex items-baseline justify-between flex-shrink-0">
+                    {/* Price and button - always visible at top */}
+                    <div className="mb-4 pb-4 border-b border-[#e5ddd4] flex items-baseline justify-between flex-shrink-0">
                       <span className="text-2xl font-semibold text-[#1a1612]">
                         {(product.price_cents / 100).toLocaleString(undefined, {
                           style: "currency",
@@ -63,6 +61,10 @@ export default async function ShopPage() {
                         productId={product.id}
                         productName={product.name}
                       />
+                    </div>
+                    {/* Description - expands below price/button */}
+                    <div className="flex-1 w-full min-h-0 overflow-hidden">
+                      <ProductDescription text={product.description} />
                     </div>
                   </div>
                 </article>

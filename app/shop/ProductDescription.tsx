@@ -12,13 +12,21 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
   if (!text) return null;
 
   return (
-    <div className="mt-2">
+    <div>
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="text-sm font-semibold text-[#c2410c] underline-offset-4 transition-colors hover:text-[#9a3412]"
+        className="w-full text-base md:text-lg font-semibold text-[#c2410c] hover:text-[#9a3412] transition-colors py-2 px-3 rounded-lg hover:bg-[#f5f2ed] flex items-center justify-center gap-2"
       >
-        {open ? "Hide item description" : "Show item description"}
+        <span>{open ? "Hide item description" : "Show item description"}</span>
+        <svg 
+          className={`w-5 h-5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+          fill="none" 
+          stroke="currentColor" 
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
       </button>
       <div
         className={`transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-96 opacity-100 mt-3 overflow-y-auto" : "max-h-0 opacity-0"}`}
