@@ -29,12 +29,29 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
         </svg>
       </button>
       <div
-        className={`transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-96 opacity-100 mt-3 overflow-y-auto" : "max-h-0 opacity-0"}`}
+        className={`transition-all duration-300 ease-out overflow-hidden ${open ? "max-h-96 opacity-100 mt-3 overflow-y-auto custom-scrollbar" : "max-h-0 opacity-0"}`}
         aria-hidden={!open}
       >
         <p className="text-sm md:text-base text-[#3d3529] leading-relaxed bg-white/70 rounded-2xl p-4 border border-[#f0e6da] shadow-sm">
           {text}
         </p>
+        <style jsx>{`
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 12px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f5f2ed;
+            border-radius: 10px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c2410c;
+            border-radius: 10px;
+            border: 2px solid #f5f2ed;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #9a3412;
+          }
+        `}</style>
       </div>
     </div>
   );
