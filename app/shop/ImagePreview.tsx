@@ -61,7 +61,7 @@ export default function ImagePreview({
       >
         <div className="absolute inset-0 rounded-2xl border-2 border-transparent transition group-hover:border-[#c2410c]/60" />
         <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/50 via-black/0 to-black/0 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-        <span className="pointer-events-none absolute bottom-24 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-6 py-2 text-sm font-semibold uppercase tracking-wide text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <span className="pointer-events-none absolute bottom-27 left-1/2 -translate-x-1/2 rounded-full bg-black/70 px-6 py-2 text-sm font-semibold uppercase tracking-wide text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           View
         </span>
         <span className="sr-only">View larger photo</span>
@@ -90,12 +90,12 @@ export default function ImagePreview({
                 />
                 <button
                   onClick={() => setModalOpen(false)}
-                  className="absolute bottom-40 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
+                  className="absolute bottom-27 left-1/2 -translate-x-1/2 rounded-full bg-[#1a1612]/85 px-12 py-4 text-sm font-semibold uppercase tracking-wide text-white shadow-lg hover:bg-black"
                 >
                   Close
                 </button>
                 {gallery.length > 1 && (
-                  <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 items-center gap-4">
+                  <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-4">
                     {gallery.map((_, idx) => (
                       <button
                         key={idx}
