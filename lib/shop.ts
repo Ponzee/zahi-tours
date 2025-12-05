@@ -19,9 +19,10 @@ export async function fetchActiveProducts(): Promise<ShopProduct[]> {
   try {
     const supabase = createServerClient();
 
+    // First, try to select all columns (Supabase will ignore missing ones)
     const { data, error } = await supabase
       .from("shop_products")
-      .select("id, slug, name, description, price_cents, currency, image_url, status, stripe_price_id, image_urls")
+      .select("*")
       .eq("status", "active")
       .order("created_at", { ascending: true });
 
@@ -32,9 +33,14 @@ export async function fetchActiveProducts(): Promise<ShopProduct[]> {
     }
 
     console.log(`Loaded ${data?.length || 0} active products from database`);
+    if (data && data.length > 0) {
+      console.log("Sample product:", JSON.stringify(data[0], null, 2));
+    }
+    
     return data ?? [];
   } catch (err: any) {
     console.error("Exception in fetchActiveProducts:", err);
+    console.error("Exception stack:", err?.stack);
     return [];
   }
 }
