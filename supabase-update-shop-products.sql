@@ -262,3 +262,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new High-Quality Wooden Mezuzah product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'high-quality-wooden-mezuzah',
+  'High-Quality Wooden Mezuzah – Designed for Christians',
+  'Crafted from authentic olive wood, this beautifully designed mezuzah features intricate carvings including a menorah, Star of David, and Christian fish symbol, with "Jerusalem" inscribed in both English and Hebrew. Designed specifically for Christians, each mezuzah is unique with a variable selection of designs available. Your purchase includes a special YouTube video filmed at a location in the Old City of Jerusalem, showcasing your mezuzah in this sacred setting. The mezuzah will be carefully packaged and shipped directly to your home with worldwide tracked shipping (fees included).',
+  24000,
+  'usd',
+  '/shop/high-quality-wooden-mezuzah/high-quality-wooden-mezuzah-01.webp',
+  '[
+    "/shop/high-quality-wooden-mezuzah/high-quality-wooden-mezuzah-01.webp",
+    "/shop/high-quality-wooden-mezuzah/high-quality-wooden-mezuzah-02.webp",
+    "/shop/high-quality-wooden-mezuzah/high-quality-wooden-mezuzah-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
