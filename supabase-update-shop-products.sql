@@ -206,3 +206,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Classic Roman Catholic Latin Cross product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'classic-roman-catholic-latin-cross',
+  'Classic Roman Catholic Latin Cross – Blessed in Jerusalem',
+  'Crafted from authentic olive wood, this classic Latin (Roman Catholic) cross is blessed at the Church of the Holy Sepulchre or at one of the Via Dolorosa stations in Jerusalem by Zahi. Each cross is personally carried to a holy location for a special blessing before it ships. The specific cross design may vary according to inventory, ensuring each piece is unique. Each purchase includes the blessed cross, video documentation of the blessing ceremony, and worldwide tracked shipping (fees included).',
+  24000,
+  'usd',
+  '/shop/classic-roman-catholic-latin-cross/classic-roman-catholic-latin-cross-01.webp',
+  '[
+    "/shop/classic-roman-catholic-latin-cross/classic-roman-catholic-latin-cross-01.webp",
+    "/shop/classic-roman-catholic-latin-cross/classic-roman-catholic-latin-cross-02.webp",
+    "/shop/classic-roman-catholic-latin-cross/classic-roman-catholic-latin-cross-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
