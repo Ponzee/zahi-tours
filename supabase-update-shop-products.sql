@@ -150,3 +150,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new New and Old Testament Bible product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'new-and-old-testament',
+  'New and Old Testament – High Quality Olive Wood Cover, King James',
+  'This beautifully crafted Bible features a high-quality olive wood cover with intricate engravings, including "The Lord''s Prayer" and "Jerusalem" inscriptions. Measuring 16 cm (6.2 inches), this King James Version Bible is a treasured keepsake from the Holy Land. Each purchase includes a personalized video message filmed at a location of your choice in the Old City of Jerusalem, allowing you to share a special message or prayer. The Bible will be carefully packaged and shipped directly to your home with worldwide tracked shipping (fees included).',
+  30000,
+  'usd',
+  '/shop/new-and-old-testament/new-and-old-testament-01.webp',
+  '[
+    "/shop/new-and-old-testament/new-and-old-testament-01.webp",
+    "/shop/new-and-old-testament/new-and-old-testament-02.webp",
+    "/shop/new-and-old-testament/new-and-old-testament-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
