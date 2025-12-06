@@ -178,3 +178,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Roman Catholic Latin Cross with Jerusalem soil product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'roman-catholic-latin-cross',
+  'Roman Catholic Latin Cross – With Jerusalem Soil, Blessed in Jerusalem',
+  'Crafted from authentic olive wood, this Latin (Roman Catholic) cross features a unique addition: soil from Jerusalem contained in special capsules at each end of the cross. Blessed at the Church of the Holy Sepulchre or at one of the Via Dolorosa stations in Jerusalem by Zahi, each cross is personally carried to a holy location for a special blessing before it ships. The specific cross design may vary according to inventory, ensuring each piece is unique. Each purchase includes the blessed cross with Jerusalem soil, video documentation of the blessing ceremony, and worldwide tracked shipping (fees included).',
+  26000,
+  'usd',
+  '/shop/roman-catholic-latin-cross/roman-catholic-latin-cross-01.webp',
+  '[
+    "/shop/roman-catholic-latin-cross/roman-catholic-latin-cross-01.webp",
+    "/shop/roman-catholic-latin-cross/roman-catholic-latin-cross-02.webp",
+    "/shop/roman-catholic-latin-cross/roman-catholic-latin-cross-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
