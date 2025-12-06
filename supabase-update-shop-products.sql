@@ -346,3 +346,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new High-Quality Rosaries product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'high-quality-rosaries',
+  '12 High-Quality Rosaries from Jerusalem – Made of Olive Wood',
+  'This special gift set includes 12 beautifully crafted rosaries made of authentic olive wood from Jerusalem, perfect for sharing with your 12 loved ones. Each rosary features olive wood beads and a silver crucifix, individually packaged in a commemorative box. Your purchase includes a personal YouTube video filmed at one of the holy places of your choice: the Church of the Holy Sepulchre, the Garden of Gethsemane, St. Anne''s Church, or the Cenacle (Room of the Last Supper). This meaningful gift allows you to share the spiritual connection of the Holy Land with those closest to you. Each purchase includes the 12 rosaries, personalized video documentation, and worldwide tracked shipping (fees included).',
+  36000,
+  'usd',
+  '/shop/high-quality-rosaries/high-quality-rosaries-01.webp',
+  '[
+    "/shop/high-quality-rosaries/high-quality-rosaries-01.webp",
+    "/shop/high-quality-rosaries/high-quality-rosaries-02.webp",
+    "/shop/high-quality-rosaries/high-quality-rosaries-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
