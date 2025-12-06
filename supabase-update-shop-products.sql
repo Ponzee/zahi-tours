@@ -122,3 +122,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Latin Cross of Saint Benedict product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'latin-cross-saint-benedict',
+  'Latin Cross of Saint Benedict – Blessed in Jerusalem',
+  'Crafted from authentic olive wood, this Latin (Roman Catholic) cross is blessed at the Church of the Holy Sepulchre or at one of the Via Dolorosa stations in Jerusalem by Zahi. Each cross is personally carried to a holy location for a special blessing before it ships. The specific cross design may vary according to inventory, ensuring each piece is unique. Each purchase includes the blessed cross, video documentation of the blessing ceremony, and worldwide tracked shipping (fees included).',
+  25000,
+  'usd',
+  '/shop/latin-cross-saint-benedict/latin-cross-saint-benedict-01.webp',
+  '[
+    "/shop/latin-cross-saint-benedict/latin-cross-saint-benedict-01.webp",
+    "/shop/latin-cross-saint-benedict/latin-cross-saint-benedict-02.webp",
+    "/shop/latin-cross-saint-benedict/latin-cross-saint-benedict-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
