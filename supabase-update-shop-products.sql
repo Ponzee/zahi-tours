@@ -318,3 +318,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Holy Fire Candles product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'holy-fire-candles',
+  'Holy Fire Candles from Jerusalem – 33 Candles, Lighting Ceremony, Video, and Delivery',
+  'This powerful set includes 33 candles, symbolizing the years of Jesus'' life, making it a meaningful gift for every Christian in need of healing and spiritual connection. The candles will be blessed at all the significant locations in the Church of the Holy Sepulchre (also known as the Church of the Resurrection) in Jerusalem by Zahi. The entire lighting ceremony will be documented in a special video that will be uploaded to Zahi''s YouTube channel, allowing you to share in this sacred moment. The candles, lit by the Holy Fire, can be sent directly to your home at no additional cost if desired. Each purchase includes the blessed candles, video documentation of the ceremony, and worldwide tracked shipping (fees included).',
+  17000,
+  'usd',
+  '/shop/holy-fire-candles/holy-fire-candles-01.webp',
+  '[
+    "/shop/holy-fire-candles/holy-fire-candles-01.webp",
+    "/shop/holy-fire-candles/holy-fire-candles-02.webp",
+    "/shop/holy-fire-candles/holy-fire-candles-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
