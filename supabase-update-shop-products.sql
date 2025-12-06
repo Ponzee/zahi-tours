@@ -234,3 +234,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new Candle Lighting at Jesus Tomb service product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'candle-lighting-jesus-tomb',
+  'Private Candle Lighting at the Tomb of Jesus – Jerusalem + Video',
+  'Experience a deeply personal and sacred moment at the Tomb of Jesus in Jerusalem. Zahi will perform a private candle lighting ceremony at this holiest of sites, and your purchase includes a special video documenting the experience, which will be shared on YouTube. Please send the full message you would like Zahi to say at the tomb of Jesus during the ceremony. If you prefer your message to remain private and not be included in the video, please indicate that in your order notes. This is a unique opportunity to have your prayers and intentions honored at one of Christianity''s most sacred locations.',
+  9900,
+  'usd',
+  '/shop/candle-lighting-jesus-tomb/candle-lighting-jesus-tomb-01.webp',
+  '[
+    "/shop/candle-lighting-jesus-tomb/candle-lighting-jesus-tomb-01.webp",
+    "/shop/candle-lighting-jesus-tomb/candle-lighting-jesus-tomb-02.webp",
+    "/shop/candle-lighting-jesus-tomb/candle-lighting-jesus-tomb-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
