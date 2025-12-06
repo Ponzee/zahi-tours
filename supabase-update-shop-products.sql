@@ -290,3 +290,31 @@ INSERT INTO shop_products (
   image_urls = EXCLUDED.image_urls,
   updated_at = timezone('utc', now());
 
+-- Insert new High-Quality Kosher Jewish Mezuzah product
+INSERT INTO shop_products (
+  slug,
+  name,
+  description,
+  price_cents,
+  currency,
+  image_url,
+  image_urls,
+  status
+) VALUES (
+  'high-quality-jewish-mezuzah',
+  'High-Quality Kosher Jewish Mezuzah – Loved by Christians',
+  'This beautifully crafted kosher Jewish mezuzah features intricate engravings including the Hebrew letter "Shin" (ש), a Star of David, and a detailed Jerusalem cityscape, with "Jerusalem" inscribed in both English and Hebrew. Loved by Christians for its spiritual significance and connection to the Holy Land, each mezuzah is unique with a variable selection of designs available. Your purchase includes a special YouTube video filmed at a location in the Old City of Jerusalem, showcasing your mezuzah in this sacred setting. We recommend blessing the mezuzah at the Western Wall for added spiritual significance. The mezuzah will be carefully packaged and shipped directly to your home with worldwide tracked shipping (fees included).',
+  24000,
+  'usd',
+  '/shop/high-quality-jewish-mezuzah/high-quality-jewish-mezuzah-01.webp',
+  '[
+    "/shop/high-quality-jewish-mezuzah/high-quality-jewish-mezuzah-01.webp",
+    "/shop/high-quality-jewish-mezuzah/high-quality-jewish-mezuzah-02.webp",
+    "/shop/high-quality-jewish-mezuzah/high-quality-jewish-mezuzah-03.webp"
+  ]'::jsonb,
+  'active'
+) ON CONFLICT (slug) DO UPDATE SET
+  image_url = EXCLUDED.image_url,
+  image_urls = EXCLUDED.image_urls,
+  updated_at = timezone('utc', now());
+
