@@ -11,7 +11,6 @@ export interface ShopProduct {
   currency: string;
   image_url: string | null;
   status: string;
-  stripe_price_id: string | null;
   image_urls?: string[] | null;
 }
 
@@ -20,7 +19,7 @@ export async function fetchActiveProducts(): Promise<ShopProduct[]> {
 
   const { data, error } = await supabase
     .from("shop_products")
-    .select("id, slug, name, description, price_cents, currency, image_url, status, stripe_price_id, image_urls")
+    .select("id, slug, name, description, price_cents, currency, image_url, status, image_urls")
     .eq("status", "active")
     .order("created_at", { ascending: true });
 

@@ -60,6 +60,9 @@ export default async function ShopPage() {
                       <CheckoutButton
                         productId={product.id}
                         productName={product.name}
+                        priceCents={product.price_cents}
+                        currency={product.currency}
+                        imageUrl={product.image_url}
                       />
                     </div>
                     {/* Description - expands below price/button */}

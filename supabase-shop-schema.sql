@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS shop_products (
   image_url TEXT,
   image_urls JSONB,
   status TEXT NOT NULL DEFAULT 'active',
-  stripe_price_id TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now()),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT timezone('utc', now())
 );
@@ -23,8 +22,8 @@ CREATE TABLE IF NOT EXISTS shop_orders (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   product_id UUID NOT NULL REFERENCES shop_products(id) ON DELETE CASCADE,
   user_id UUID REFERENCES profiles(id) ON DELETE SET NULL,
-  stripe_session_id TEXT UNIQUE,
-  stripe_payment_intent TEXT,
+  payment_provider TEXT,
+  payment_session_id TEXT,
   buyer_email TEXT NOT NULL,
   buyer_name TEXT,
   shipping_address JSONB,
