@@ -77,26 +77,26 @@ export default function AuthButton() {
   if (user) {
     return (
       <div className="relative group">
-        <button className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors">
+        <button className="rounded-full bg-[#c2410c] text-white text-sm px-4 py-2 hover:bg-[#9a3412] transition-colors whitespace-nowrap font-medium">
           {user.email?.split("@")[0]}
         </button>
-        <div className="absolute right-0 mt-2 w-48 bg-white border border-[#e5ddd4] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
+        <div className="absolute right-0 mt-2 w-56 bg-white border border-[#e5ddd4] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
           <div className="py-2">
             <a
               href="/account"
-              className="block px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
+              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors border-b border-[#f5f2ed]"
             >
               Account
             </a>
             <a
               href="/member"
-              className="block px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
+              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors border-b border-[#f5f2ed]"
             >
               Member Hub
             </a>
             <button
               onClick={handleSignOut}
-              className="w-full text-left px-4 py-2 text-sm text-[#1a1612] hover:bg-[#faf8f5] transition-colors"
+              className="w-full text-left px-5 py-3 text-sm font-medium text-[#c2410c] hover:bg-[#faf8f5] transition-colors"
             >
               Sign Out
             </button>

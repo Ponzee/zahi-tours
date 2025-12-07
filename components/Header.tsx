@@ -63,12 +63,6 @@ export default function Header() {
             )}
           </Link>
           <AuthButton />
-          <Link
-            href="/#contact"
-            className="rounded-full bg-[#c2410c] text-white text-sm px-4 py-2 hover:bg-[#9a3412] whitespace-nowrap transition-colors"
-          >
-            Request a Private Tour
-          </Link>
         </div>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -114,7 +108,6 @@ export default function Header() {
               </Link>
               <AuthButton />
             </div>
-            <Link href="/#contact" className="mt-2 py-2 text-sm font-medium text-center rounded-full bg-[#c2410c] text-white hover:bg-[#9a3412] transition-colors" onClick={() => setMobileMenuOpen(false)}>Request a Private Tour</Link>
           </nav>
         </div>
       )}
