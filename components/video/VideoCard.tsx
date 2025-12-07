@@ -37,7 +37,7 @@ export default function VideoCard({ video, variant = "default" }: VideoCardProps
     >
       <div className="relative aspect-video overflow-hidden bg-neutral-200">
         <Image
-          src={video.thumbnailUrl || '/favicon.png'}
+          src={video.thumbnailUrl || '/icon.png'}
           alt={video.title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"

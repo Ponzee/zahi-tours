@@ -20,7 +20,7 @@ export default function Header() {
           aria-label="Go to homepage"
         >
           <Image
-            src="/favicon.png"
+            src="/icon.png"
             alt="Zahi Shaked Logo"
             width={40}
             height={40}
