@@ -24,3 +24,13 @@ body {
   color: var(--foreground-body);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Prevent sticky header from covering in-page anchors */
+:target {
+  scroll-margin-top: 96px;
+}
+
+/* Apply safe scroll margin to common heading anchors */
+h1, h2, h3, h4, h5, h6 {
+  scroll-margin-top: 96px;
+}
