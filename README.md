@@ -32,3 +32,4 @@ Production Next.js site that powers the Zahi Tours membership program, booking f
 - When rotating secrets (Stripe, Supabase, Google), update them in Vercel first, redeploy, then verify sign-in and checkout flows.
 - For content updates, prefer editing CMS/data sources where possible; code changes should be merged through pull requests to preserve audit history.
 - Verified HTTPS remote for pushes (no functional change).
+ - HTTPS push verified again; PAT cached in Keychain.
