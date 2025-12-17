@@ -7,7 +7,7 @@ export const metadata = {
     "How Zahi Tours collects, uses, and protects personal information across tours, memberships, and digital products.",
 };
 
-const LAST_UPDATED = "April 2025";
+const LAST_UPDATED = "December 2025";
 
 const privacySections = [
   {
@@ -35,6 +35,16 @@ const privacySections = [
       "Stripe processes payments and never shares full card numbers with us.",
       "Google and YouTube services provide OAuth sign-in and embedded media.",
       "We never sell personal data. Access is restricted to the small team operating zahi.tours.",
+    ],
+  },
+  {
+    title: "Data Deletion",
+    id: "data-deletion",
+    content: [
+      "Send an email from the address on your account to zahishaked@gmail.com with the subject “Delete my data.”",
+      "Include the account email and a short note confirming you want your account and personal data deleted.",
+      "We confirm within 7 days and delete Supabase account/profile and active subscription records within 30 days. Stripe customer/billing data is removed where possible; legally required transaction records may be retained.",
+      "If you used Meta/Google login, the request still must come from the same email tied to your account so we can verify ownership.",
     ],
   },
   {
@@ -78,7 +88,11 @@ export default function PrivacyPage() {
 
           <div className="mt-10 space-y-8">
             {privacySections.map((section) => (
-              <section key={section.title} className="bg-white rounded-2xl border border-[#e5ddd4] p-6 md:p-8 shadow-sm">
+              <section
+                key={section.title}
+                id={section.id}
+                className="bg-white rounded-2xl border border-[#e5ddd4] p-6 md:p-8 shadow-sm"
+              >
                 <h2 className="text-2xl font-semibold tracking-tight text-[#1a1612]">
                   {section.title}
                 </h2>
