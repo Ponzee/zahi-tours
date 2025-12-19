@@ -155,7 +155,7 @@ export default function SupportPage() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1a1612]">

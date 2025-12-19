@@ -16,7 +16,9 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="w-full text-base md:text-lg font-semibold text-[#c2410c] hover:text-[#9a3412] transition-colors py-2 px-3 rounded-lg hover:bg-[#f5f2ed] flex items-center justify-center gap-2"
+        className="w-full text-base md:text-lg font-semibold text-[#c2410c] hover:text-[#9a3412] transition-colors py-2 px-3 rounded-lg hover:bg-[#f5f2ed] flex items-center justify-center gap-2 focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
+        aria-expanded={open}
+        aria-controls="product-description"
       >
         <span>{open ? "Hide item description" : "Show item description"}</span>
         <svg 
@@ -24,11 +26,13 @@ export default function ProductDescription({ text }: ProductDescriptionProps) {
           fill="none" 
           stroke="currentColor" 
           viewBox="0 0 24 24"
+          aria-hidden="true"
         >
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
       <div
+        id="product-description"
         className={`transition-all duration-300 ease-out overflow-hidden ${open ? "opacity-100 mt-3" : "max-h-0 opacity-0"}`}
         aria-hidden={!open}
       >

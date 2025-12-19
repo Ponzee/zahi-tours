@@ -13,7 +13,7 @@ export default async function ShopPage() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <div className="text-center mb-12 md:mb-16">
             <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">

@@ -12,11 +12,11 @@ export default function Header() {
   const cartItemCount = getItemCount();
 
   return (
-    <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20">
+    <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20" role="banner">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
         <Link 
           href="/" 
-          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer"
+          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded"
           aria-label="Go to homepage"
         >
           <Image
@@ -30,18 +30,18 @@ export default function Header() {
             The Holy Land – By Zahi Shaked
           </span>
         </Link>
-        <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
-          <Link href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</Link>
-          <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</Link>
-          <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</Link>
-          <Link href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</Link>
-          <Link href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</Link>
+        <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
+          <Link href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Watch</Link>
+          <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Support</Link>
+          <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Shop</Link>
+          <Link href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">About</Link>
+          <Link href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <Link
             href="/shop/cart"
-            className="relative p-2 hover:bg-[#f5f2ed] rounded-lg transition-colors"
-            aria-label="Shopping cart"
+            className="relative p-2 hover:bg-[#f5f2ed] rounded-lg transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
+            aria-label={`Shopping cart${cartItemCount > 0 ? `, ${cartItemCount} ${cartItemCount === 1 ? 'item' : 'items'}` : ''}`}
           >
             <svg
               className="w-6 h-6 text-[#1a1612]"
@@ -66,15 +66,17 @@ export default function Header() {
         </div>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-[#1a1612] hover:bg-[#f5f2ed] transition-colors"
+          className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-[#1a1612] hover:bg-[#f5f2ed] transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
           aria-label="Toggle menu"
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           Menu
         </button>
       </div>
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-[#e5ddd4] bg-white">
-          <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+        <div id="mobile-menu" className="md:hidden border-t border-[#e5ddd4] bg-white" role="menu">
+          <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3" role="navigation" aria-label="Mobile navigation">
             <Link href="/#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
             <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</Link>
             <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</Link>

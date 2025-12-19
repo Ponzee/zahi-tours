@@ -64,6 +64,31 @@ const privacySections = [
       "We retain financial records for legal and tax obligations, even if you close your account.",
     ],
   },
+  {
+    title: "Children's Privacy",
+    content: [
+      "This site is accessible to users of all ages. We welcome visitors of any age to explore our content and learn about the Holy Land.",
+      "If you are under 13 years of age (in the United States) or under 16 years of age (in the European Union), please have a parent or guardian create an account or make purchases on your behalf.",
+      "We do not knowingly collect personal information from children without parental consent. If we become aware that we have collected personal information from a child without parental consent, we will delete that information promptly.",
+      "Parents or guardians who believe their child has provided personal information without consent should contact us immediately at zahishaked@gmail.com.",
+    ],
+  },
+  {
+    title: "International Data Transfers",
+    content: [
+      "Your data may be transferred to and processed in countries outside your country of residence, including Israel, the United States, and the European Union, where our service providers (Vercel, Supabase, Stripe) operate.",
+      "We ensure appropriate safeguards are in place to protect your data in accordance with this Privacy Policy and applicable data protection laws.",
+    ],
+  },
+  {
+    title: "Cookies & Tracking",
+    content: [
+      "We use essential cookies for site functionality and authentication. These cookies are necessary for the site to operate and cannot be disabled.",
+      "We may use analytics services to understand how visitors use our site. These services may use cookies or similar technologies.",
+      "Third-party services (YouTube, Meta, Google) may set their own cookies when you interact with embedded content or use OAuth sign-in.",
+      "You can control cookies through your browser settings, though disabling certain cookies may limit site functionality.",
+    ],
+  },
 ];
 
 export default function PrivacyPage() {
@@ -71,7 +96,7 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
             Last updated: {LAST_UPDATED}

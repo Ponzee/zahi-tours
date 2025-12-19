@@ -36,7 +36,7 @@ export default function CheckoutButton({
       <button
         onClick={handleAddToCart}
         disabled={disabled}
-        className="rounded-full bg-[#c2410c] text-white px-4 py-2 text-sm font-medium transition-all hover:bg-[#9a3412] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="rounded-full bg-[#c2410c] text-white px-4 py-2 text-sm font-medium transition-all hover:bg-[#9a3412] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
         aria-label={`Add ${productName} to cart`}
       >
         Add to Cart

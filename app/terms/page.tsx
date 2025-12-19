@@ -7,13 +7,14 @@ export const metadata = {
     "Terms that govern the use of zahi.tours, the membership program, and private tour services.",
 };
 
-const LAST_UPDATED = "April 2025";
+const LAST_UPDATED = "December 2025";
 
 const termsSections = [
   {
     title: "1. Overview",
     body: [
       "These Terms of Service (“Terms”) govern your access to zahi.tours, the supporter membership, and tour inquiries operated by Zahi Shaked.",
+      "This site is accessible to users of all ages. However, creating an account, purchasing memberships, or booking tours requires you to be of legal age to form a binding contract in your jurisdiction (typically 18 years or older), or have parental consent if you are a minor.",
       "By using the site you confirm that you can form a legally binding contract and agree to comply with these Terms.",
     ],
   },
@@ -54,14 +55,23 @@ const termsSections = [
     title: "6. Disclaimers & Liability",
     body: [
       "Services are provided “as is” without warranty. While we strive for accuracy, itineraries and historical details may change.",
+      "We strive to make this site accessible to all users in accordance with WCAG 2.1 Level AA standards, but we cannot guarantee perfect accessibility at all times.",
       "To the extent permitted by law, Zahi Shaked is not liable for indirect or consequential damages arising from site use, memberships, or travel decisions.",
+      "You agree to indemnify and hold harmless Zahi Shaked from any claims, damages, or expenses arising from your use of the site, violation of these Terms, or infringement of any rights of another party.",
     ],
   },
   {
-    title: "7. Governing Law",
+    title: "8. Force Majeure",
+    body: [
+      "We are not liable for any failure or delay in performance due to circumstances beyond our reasonable control, including but not limited to natural disasters, war, terrorism, pandemics, government actions, or failures of third-party service providers.",
+    ],
+  },
+  {
+    title: "9. Governing Law & Dispute Resolution",
     body: [
       "These Terms are governed by the laws of the State of Israel, without regard to conflict-of-law principles.",
       "Any disputes will first be addressed in writing. If unresolved, parties agree to the exclusive jurisdiction of Israeli courts.",
+      "You agree that any claim or cause of action arising out of or related to these Terms or the site must be filed within one year after such claim or cause of action arose, or be forever barred.",
     ],
   },
 ];
@@ -71,7 +81,7 @@ export default function TermsPage() {
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
       <Header />
 
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
             Last updated: {LAST_UPDATED}

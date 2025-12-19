@@ -20,7 +20,7 @@ export default function CartPage() {
     return (
       <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
         <Header />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
             <div className="text-center">
               <svg
@@ -62,7 +62,7 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612] mb-2">

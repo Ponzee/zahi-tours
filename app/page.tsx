@@ -61,7 +61,7 @@ export default async function HomePage() {
       </section>
 
       {/* Main Content */}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* Tours & Video Section */}
         <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
