@@ -39,8 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        {/* Suppress zustand warnings immediately before React loads */}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {/* Suppress zustand warnings immediately - script runs before React */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -60,10 +62,6 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         {/* Suppress zustand deprecation warnings from Next.js internals (backup) */}
         <SuppressWarnings />
         {/* Skip to main content link for screen readers */}
