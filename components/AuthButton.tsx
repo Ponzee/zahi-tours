@@ -84,19 +84,19 @@ export default function AuthButton() {
           <div className="py-2">
             <a
               href="/account"
-              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors border-b border-[#f5f2ed]"
+              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors duration-150 border-b border-[#f5f2ed]"
             >
               Account
             </a>
             <a
               href="/member"
-              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors border-b border-[#f5f2ed]"
+              className="block px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] transition-colors duration-150 border-b border-[#f5f2ed]"
             >
               Member Hub
             </a>
             <button
               onClick={handleSignOut}
-              className="w-full text-left px-5 py-3 text-sm font-medium text-[#c2410c] hover:bg-[#faf8f5] transition-colors"
+              className="w-full text-left px-5 py-3 text-sm font-medium text-[#c2410c] hover:bg-[#faf8f5] transition-colors duration-150"
             >
               Sign Out
             </button>
