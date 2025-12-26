@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
-import SuppressWarnings from "@/components/SuppressWarnings";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,28 +41,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Suppress zustand warnings immediately - script runs before React */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                if (typeof window !== 'undefined' && window.console) {
-                  const originalWarn = console.warn;
-                  console.warn = function(...args) {
-                    const message = args.map(a => String(a)).join(' ');
-                    if ((message.includes('[DEPRECATED]') || message.includes('DEPRECATED')) &&
-                        (message.includes('zustand') || message.includes('Default export is deprecated'))) {
-                      return;
-                    }
-                    originalWarn.apply(console, args);
-                  };
-                }
-              })();
-            `,
-          }}
-        />
-        {/* Suppress zustand deprecation warnings from Next.js internals (backup) */}
-        <SuppressWarnings />
         {/* Skip to main content link for screen readers */}
         <a
           href="#main-content"
