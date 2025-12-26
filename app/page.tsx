@@ -12,58 +12,13 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="bg-[#faf8f5] text-[#3d3529] overflow-x-hidden">
       <Header />
 
-      {/* Channel Banner - Mobile: Text first, then image */}
-      <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-12 px-4">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land - By Zahi Shaked</p>
-          <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
-          <p className="max-w-full text-sm sm:text-base text-[#3d3529] mt-3 leading-relaxed">
-            Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
-          </p>
-        </div>
-      </section>
-
-      {/* Mobile: Image below text - showing Zahi's face and hand */}
-      <div className="md:hidden w-full relative aspect-[16/9]">
-        <Image
-          src="/channel-banner.jpg"
-          alt="Zahi Shaked guiding at an ancient theater in Israel"
-          fill
-          className="object-cover object-[20%_50%]"
-          priority
-        />
-      </div>
-
-      {/* Desktop: Channel Banner - Thin banner strip matching content width */}
-      <section className="hidden md:block py-0">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative overflow-hidden" style={{ height: '200px' }}>
-          <Image
-            src="/channel-banner.jpg"
-            alt="Zahi Shaked guiding at an ancient theater in Israel"
-            fill
-            className="absolute inset-0 h-full w-full object-cover object-[left_center]"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
-          <div className="relative flex items-center justify-end px-6 lg:pl-[40%] h-full text-white">
-            <div className="max-w-2xl ml-auto text-right lg:text-left">
-              <p className="text-sm font-semibold uppercase tracking-wide text-amber-200/90">The Holy Land - By Zahi Shaked</p>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 leading-tight">Walk the Holy Land with the guide you already know</h1>
-              <p className="max-w-2xl text-sm sm:text-base text-slate-100/90 mt-2 leading-relaxed">
-                Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <main id="main-content" className="flex-1">
-        {/* Tours & Video Section */}
-        <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
+      {/* Main Content - Full Viewport Sections */}
+      <main id="main-content" className="relative">
+        {/* Tours & Video Section - Full Viewport */}
+        <section id="tours" className="min-h-screen flex items-center bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Tours Text Card */}
@@ -123,8 +78,8 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Watch Section - Latest and Most Watched Carousels */}
-        <section className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+        {/* Watch Section - Latest and Most Watched Carousels - Full Viewport */}
+        <section id="watch" className="min-h-screen flex flex-col justify-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
@@ -142,8 +97,8 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
+        {/* About Section - Full Viewport */}
+        <section id="about" className="min-h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[2fr_1.2fr] gap-10 lg:gap-12 items-start">
                 <div className="min-w-0">
@@ -183,8 +138,8 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <section id="contact" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+        {/* Contact Section - Full Viewport */}
+        <section id="contact" className="min-h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
