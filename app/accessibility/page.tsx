@@ -60,7 +60,7 @@ export default function AccessibilityPage() {
       <Header />
 
       <main id="main-content" className="flex-1">
-        <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
             Last updated: {LAST_UPDATED}
           </p>

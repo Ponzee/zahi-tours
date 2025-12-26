@@ -7,7 +7,7 @@ export default function ShopSuccessPage() {
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
       <Header />
       <main id="main-content" className="flex-1">
-        <div className="max-w-2xl mx-auto px-4 py-12 md:py-16 lg:py-20">
+        <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20 max-w-2xl mx-auto">
           <div className="rounded-2xl border border-[#e5ddd4] bg-white p-8 md:p-12 text-center">
             <div className="mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">

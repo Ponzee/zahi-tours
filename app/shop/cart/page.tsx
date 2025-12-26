@@ -21,7 +21,7 @@ export default function CartPage() {
       <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
         <Header />
         <main id="main-content" className="flex-1">
-          <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
+          <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
             <div className="text-center">
               <svg
                 className="w-24 h-24 mx-auto mb-6 text-[#e5ddd4]"

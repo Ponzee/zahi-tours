@@ -17,7 +17,7 @@ export default async function HomePage() {
 
       {/* Channel Banner - Mobile: Text first, then image */}
       <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-12 px-4">
-        <div className="max-w-5xl mx-auto text-center">
+        <div className="w-full px-4 md:px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land – By Zahi Shaked</p>
           <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
           <p className="max-w-full text-sm sm:text-base text-[#3d3529] mt-3 leading-relaxed">
@@ -39,7 +39,7 @@ export default async function HomePage() {
 
       {/* Desktop: Channel Banner - Thin banner strip matching content width */}
       <section className="hidden md:block py-0">
-        <div className="max-w-6xl mx-auto relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
+        <div className="w-full px-4 md:px-6 lg:px-8 relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
           <Image
             src="/channel-banner.jpg"
             alt="Zahi Shaked guiding at an ancient theater in Israel"
@@ -49,7 +49,7 @@ export default async function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
           <div className="relative flex items-center justify-end px-6 lg:pl-[40%] h-full text-white">
-            <div className="max-w-xl text-right lg:text-left">
+            <div className="max-w-2xl ml-auto text-right lg:text-left">
               <p className="text-sm font-semibold uppercase tracking-wide text-amber-200/90">The Holy Land – By Zahi Shaked</p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 leading-tight">Walk the Holy Land with the guide you already know</h1>
               <p className="max-w-2xl text-sm sm:text-base text-slate-100/90 mt-2 leading-relaxed">
@@ -64,7 +64,7 @@ export default async function HomePage() {
       <main id="main-content" className="flex-1">
         {/* Tours & Video Section */}
         <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="w-full px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Tours Text Card */}
               <div className="rounded-2xl bg-[#f5f2ed] p-6 md:p-8 lg:p-10 shadow-sm border border-[#e5ddd4]">
@@ -125,7 +125,7 @@ export default async function HomePage() {
 
         {/* Watch Section - Latest and Most Watched Carousels */}
         <section className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="w-full px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                 Watch
@@ -144,7 +144,7 @@ export default async function HomePage() {
 
         {/* Explore Zahi's Work Section */}
         <section id="tours" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="w-full px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                 Explore Zahi's work
@@ -251,15 +251,15 @@ export default async function HomePage() {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
-          <div className="max-w-3xl mx-auto px-4 md:px-6 text-center">
+          <div className="w-full px-4 md:px-6 lg:px-8 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
             </h2>
-            <p className="mt-4 text-base md:text-lg text-[#3d3529] max-w-2xl mx-auto">
+              <p className="mt-4 text-base md:text-lg text-[#3d3529] max-w-3xl mx-auto">
               Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
-            <div className="mt-8 max-w-md mx-auto text-left space-y-4 text-base md:text-lg">
+            <div className="mt-8 max-w-2xl mx-auto text-left space-y-4 text-base md:text-lg">
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">WhatsApp</span>
                 <span className="font-semibold text-[#1a1612]">+972-54-690-5522</span>

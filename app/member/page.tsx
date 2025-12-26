@@ -27,7 +27,7 @@ export default async function MemberPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-900 flex flex-col">
-      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 flex-1 w-full">
+      <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 flex-1">
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
             Welcome, Supporter of The Holy Land
