@@ -238,7 +238,7 @@ export default async function HomePage() {
                 <div className="relative w-[85%] rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed] h-full">
                   <div className="relative w-full h-full">
                     <iframe
-                      src="https://www.youtube.com/embed/Z4DChZ7rpjk"
+                      src="https://www.youtube.com/embed/Z4DChZ7rpjk?rel=0"
                       className="absolute top-0 left-0 w-full h-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
