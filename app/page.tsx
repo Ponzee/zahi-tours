@@ -235,18 +235,14 @@ export default async function HomePage() {
               </div>
 
               <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-end items-end h-full">
-                <div className="relative w-[85%] rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
-                  <div className="relative w-full" style={{ paddingTop: '56.25%', height: '100%' }}>
-                    <div className="absolute inset-0">
-                      <iframe
-                        src="https://www.youtube.com/embed/Z4DChZ7rpjk?rel=0"
-                        className="w-full h-full"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        title="Zahi Shaked - About The Holy Land"
-                      />
-                    </div>
-                  </div>
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]" style={{ height: '100%', aspectRatio: '16/9', maxWidth: '85%' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/Z4DChZ7rpjk?rel=0"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    title="Zahi Shaked - About The Holy Land"
+                  />
                 </div>
               </div>
             </div>
