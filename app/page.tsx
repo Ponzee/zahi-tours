@@ -4,7 +4,7 @@ import SiteFooter from "@/components/SiteFooter";
 
 export default async function HomePage() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
 
       {/* Channel Banner - Mobile: Text first, then image */}
@@ -53,9 +53,9 @@ export default async function HomePage() {
       </section>
 
       {/* Main Content */}
-      <main id="main-content" className="flex-1">
+      <main id="main-content" className="flex-1 overflow-y-auto">
         {/* Tours & Video Section */}
-        <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
+        <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20 min-h-full flex flex-col">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Tours Text Card */}
@@ -114,10 +114,9 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
+        {/* Footer */}
+        <SiteFooter />
       </main>
-
-      {/* Footer */}
-      <SiteFooter />
     </div>
   );
 }

@@ -16,10 +16,10 @@ export default async function WatchPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-1">
-        <section className="py-12 md:py-16 lg:py-20 bg-white">
+      <main className="flex-1 overflow-y-auto">
+        <section className="py-12 md:py-16 lg:py-20 bg-white min-h-full flex flex-col">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
@@ -36,8 +36,8 @@ export default async function WatchPage() {
             </div>
           </div>
         </section>
+        <SiteFooter />
       </main>
-      <SiteFooter />
     </div>
   );
 }
