@@ -31,47 +31,11 @@ export default function Header() {
           </span>
         </Link>
         <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
-          <a 
-            href="/#tours" 
-            onClick={(e) => {
-              e.preventDefault();
-              if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                (window as any).scrollToSection("tours");
-                window.history.pushState(null, "", "/#tours");
-              }
-            }}
-            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
-          >
-            Watch
-          </a>
+          <Link href="/watch" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Watch</Link>
           <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Support</Link>
           <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Shop</Link>
-          <a 
-            href="/#about" 
-            onClick={(e) => {
-              e.preventDefault();
-              if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                (window as any).scrollToSection("about");
-                window.history.pushState(null, "", "/#about");
-              }
-            }}
-            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
-          >
-            About
-          </a>
-          <a 
-            href="/#contact" 
-            onClick={(e) => {
-              e.preventDefault();
-              if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                (window as any).scrollToSection("contact");
-                window.history.pushState(null, "", "/#contact");
-              }
-            }}
-            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
-          >
-            Contact
-          </a>
+          <Link href="/about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">About</Link>
+          <Link href="/contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <Link
@@ -113,50 +77,11 @@ export default function Header() {
       {mobileMenuOpen && (
         <div id="mobile-menu" className="md:hidden border-t border-[#e5ddd4] bg-white" role="menu">
           <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col gap-3" role="navigation" aria-label="Mobile navigation">
-            <a 
-              href="/#tours" 
-              className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors cursor-pointer" 
-              onClick={(e) => {
-                e.preventDefault();
-                setMobileMenuOpen(false);
-                if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                  (window as any).scrollToSection("tours");
-                  window.history.pushState(null, "", "/#tours");
-                }
-              }}
-            >
-              Watch
-            </a>
+            <Link href="/watch" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
             <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</Link>
             <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
-            <a 
-              href="/#about" 
-              className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors cursor-pointer" 
-              onClick={(e) => {
-                e.preventDefault();
-                setMobileMenuOpen(false);
-                if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                  (window as any).scrollToSection("about");
-                  window.history.pushState(null, "", "/#about");
-                }
-              }}
-            >
-              About
-            </a>
-            <a 
-              href="/#contact" 
-              className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors cursor-pointer" 
-              onClick={(e) => {
-                e.preventDefault();
-                setMobileMenuOpen(false);
-                if (typeof window !== "undefined" && (window as any).scrollToSection) {
-                  (window as any).scrollToSection("contact");
-                  window.history.pushState(null, "", "/#contact");
-                }
-              }}
-            >
-              Contact
-            </a>
+            <Link href="/about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <div className="pt-2 border-t border-[#e5ddd4] flex items-center gap-3">
               <Link
                 href="/shop/cart"
