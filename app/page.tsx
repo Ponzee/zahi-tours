@@ -219,13 +219,13 @@ export default async function HomePage() {
               </h2>
               <div className="mt-6 space-y-4 text-base md:text-lg text-[#3d3529] leading-relaxed">
                 <p>
-                  For over 20 years, Zahi has guided visitors through the Holy Land, blending history, Scripture, archaeology and everyday life. His YouTube channel has become one of the largest Holy Land travel archives online, with thousands of videos filmed on location.
+                  For more than 20 years, I've been guiding visitors through the Holy Land, weaving together history, Scripture, archaeology, and the rhythms of everyday life. What began on the road with small groups slowly found its way online, and my YouTube channel has since grown into one of the largest Holy Land travel archives, with thousands of videos filmed on location.
                 </p>
                 <p>
-                  What started as a way to help his guests remember their tours has grown into a global community of viewers who walk the streets of Jerusalem, the Galilee and the desert with him every week.
+                  At first, I recorded these videos simply to help my guests remember their tours. Over time, something unexpected happened. A global community formed. Today, people from all over the world walk the streets of Jerusalem, the Galilee, and the desert with me every week, right from their homes.
                 </p>
                 <p>
-                  Today, Zahi splits his time between guiding private groups on the ground and creating free educational content for anyone who loves the Holy Land.
+                  Now, I split my time between guiding private groups on the ground and creating free educational content for anyone who loves the Holy Land as deeply as I do.
                 </p>
               </div>
             </div>
