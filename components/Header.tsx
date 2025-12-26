@@ -31,11 +31,47 @@ export default function Header() {
           </span>
         </Link>
         <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
-          <Link href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Watch</Link>
+          <a 
+            href="/#tours" 
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== "undefined" && (window as any).scrollToSection) {
+                (window as any).scrollToSection("tours");
+                window.history.pushState(null, "", "/#tours");
+              }
+            }}
+            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
+          >
+            Watch
+          </a>
           <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Support</Link>
           <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Shop</Link>
-          <Link href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">About</Link>
-          <Link href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Contact</Link>
+          <a 
+            href="/#about" 
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== "undefined" && (window as any).scrollToSection) {
+                (window as any).scrollToSection("about");
+                window.history.pushState(null, "", "/#about");
+              }
+            }}
+            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
+          >
+            About
+          </a>
+          <a 
+            href="/#contact" 
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== "undefined" && (window as any).scrollToSection) {
+                (window as any).scrollToSection("contact");
+                window.history.pushState(null, "", "/#contact");
+              }
+            }}
+            className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded cursor-pointer"
+          >
+            Contact
+          </a>
         </nav>
         <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <Link

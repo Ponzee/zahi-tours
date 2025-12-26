@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import VideoCarousel from "@/components/video/VideoCarousel";
 import { fetchLatestVideos, fetchMostViewedVideos } from "@/lib/youtube";
 import SiteFooter from "@/components/SiteFooter";
+import SectionNavigator from "@/components/SectionNavigator";
 
 export default async function HomePage() {
   // Fetch both latest and most viewed videos server-side (cached for 1 hour)
@@ -13,12 +14,13 @@ export default async function HomePage() {
 
   return (
     <div className="bg-[#faf8f5] text-[#3d3529] overflow-x-hidden">
+      <SectionNavigator />
       <Header />
 
       {/* Main Content - Full Viewport Sections */}
       <main id="main-content" className="relative">
         {/* Tours & Video Section - Full Viewport */}
-        <section id="tours" className="min-h-screen flex items-center bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
+        <section id="tours" className="h-screen flex items-center bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Tours Text Card */}
@@ -79,7 +81,7 @@ export default async function HomePage() {
         </section>
 
         {/* Watch Section - Latest and Most Watched Carousels - Full Viewport */}
-        <section id="watch" className="min-h-screen flex flex-col justify-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+        <section id="watch" className="h-screen flex flex-col justify-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
@@ -98,7 +100,7 @@ export default async function HomePage() {
         </section>
 
         {/* About Section - Full Viewport */}
-        <section id="about" className="min-h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
+        <section id="about" className="h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[2fr_1.2fr] gap-10 lg:gap-12 items-start">
                 <div className="min-w-0">
@@ -139,7 +141,7 @@ export default async function HomePage() {
         </section>
 
         {/* Contact Section - Full Viewport */}
-        <section id="contact" className="min-h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
+        <section id="contact" className="h-screen flex items-center py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
