@@ -1,4 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
   title: "Accessibility Statement | The Holy Land - By Zahi Shaked",
@@ -108,8 +107,6 @@ export default function AccessibilityPage() {
           </section>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

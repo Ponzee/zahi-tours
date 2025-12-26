@@ -1,4 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
   title: "Terms of Service | The Holy Land - By Zahi Shaked",
@@ -145,8 +144,6 @@ export default function TermsPage() {
           </section>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

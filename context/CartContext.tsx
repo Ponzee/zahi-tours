@@ -46,7 +46,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       // Use requestIdleCallback for non-blocking writes, fallback to setTimeout
       const saveCart = () => {
         try {
-          localStorage.setItem("zahi-cart", JSON.stringify(items));
+      localStorage.setItem("zahi-cart", JSON.stringify(items));
         } catch (e) {
           console.error("Failed to save cart to localStorage", e);
         }

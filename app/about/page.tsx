@@ -1,5 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
-
 export const metadata = {
   title: "About | The Holy Land - By Zahi Shaked",
   description: "Learn about Zahi Shaked, a licensed Israeli tour guide with over 25 years of experience guiding visitors through the Holy Land.",
@@ -7,7 +5,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
+    <div className="h-full bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-4 md:py-6 lg:py-8 bg-gradient-to-b from-white via-[#faf8f5] to-white flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -48,7 +46,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        <SiteFooter />
       </main>
     </div>
   );

@@ -2,7 +2,6 @@ import { redirect } from "next/navigation";
 import { supabase } from "@/lib/supabaseClient";
 import { getActiveSubscriptionForUser } from "@/lib/getActiveSubscriptionForUser";
 import ManageSubscriptionButton from "@/components/ManageSubscriptionButton";
-import SiteFooter from "@/components/SiteFooter";
 
 async function getServerSideUser() {
   if (!supabase) return null;
@@ -130,7 +129,6 @@ export default async function MemberPage() {
           </div>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

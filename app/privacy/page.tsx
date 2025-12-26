@@ -1,4 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
   title: "Privacy Policy | The Holy Land - By Zahi Shaked",
@@ -166,8 +165,6 @@ export default function PrivacyPage() {
           </section>
         </div>
       </main>
-
-      <SiteFooter />
     </div>
   );
 }

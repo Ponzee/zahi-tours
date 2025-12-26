@@ -112,11 +112,11 @@ export default function AuthButton() {
       <a
         href="/account"
         className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150"
-        >
-          Sign In
-        </a>
-        <a
-          href="/account?signup=true"
+      >
+        Sign In
+      </a>
+      <a
+        href="/account?signup=true"
           className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors duration-150"
       >
         Sign Up

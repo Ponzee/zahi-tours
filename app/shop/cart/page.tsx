@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import SiteFooter from "@/components/SiteFooter";
 import { useCart } from "@/context/CartContext";
 
 export default function CartPage() {
@@ -49,7 +48,6 @@ export default function CartPage() {
             </div>
           </div>
         </main>
-        <SiteFooter />
       </div>
     );
   }
@@ -199,7 +197,6 @@ export default function CartPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
     </div>
   );
 }

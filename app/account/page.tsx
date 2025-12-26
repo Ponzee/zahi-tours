@@ -5,7 +5,6 @@ import { supabase } from "@/lib/supabaseClient";
 import { useRouter, useSearchParams } from "next/navigation";
 import ManageSubscriptionButton from "@/components/ManageSubscriptionButton";
 import { SITE_URL } from "@/lib/config";
-import SiteFooter from "@/components/SiteFooter";
 
 function AccountPageContent() {
   const [user, setUser] = useState<any>(null);
@@ -159,7 +158,6 @@ function AccountPageContent() {
         <div className="flex-1 flex items-center justify-center">
           <div className="text-[#3d3529]">Loading...</div>
         </div>
-        <SiteFooter />
       </div>
     );
   }
@@ -266,7 +264,6 @@ function AccountPageContent() {
             </div>
           </div>
         </div>
-        <SiteFooter />
       </div>
     );
   }
@@ -341,7 +338,6 @@ function AccountPageContent() {
           </div>
         </div>
       </div>
-      <SiteFooter />
     </div>
   );
 }

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
-import SiteFooter from "@/components/SiteFooter";
 
 const tiers = [
   {
@@ -89,7 +88,7 @@ export default function SupportPage() {
   };
 
   return (
-    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
+    <div className="h-full bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
 
       {/* Main Content */}
       <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
@@ -136,9 +135,6 @@ export default function SupportPage() {
             ))}
           </div>
         </div>
-
-        {/* Footer */}
-        <SiteFooter />
       </main>
     </div>
   );

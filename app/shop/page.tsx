@@ -1,4 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
 import ProductDescription from "./ProductDescription";
 import ProductGallery from "./ProductGallery";
@@ -85,7 +84,6 @@ export default async function ShopPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import SiteFooter from "@/components/SiteFooter";
 import Link from "next/link";
 
 export default function ShopSuccessPage() {
@@ -50,7 +49,6 @@ export default function ShopSuccessPage() {
           </div>
         </div>
       </main>
-      <SiteFooter />
     </div>
   );
 }
