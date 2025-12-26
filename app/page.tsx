@@ -231,12 +231,15 @@ export default async function HomePage() {
             </div>
 
             <div className="mt-8 lg:mt-0">
-              <div className="aspect-video rounded-2xl bg-gradient-to-br from-amber-100 to-amber-50 border border-[#e5ddd4] flex items-center justify-center text-center p-6 md:p-8 shadow-sm">
-                <div>
-                  <p className="font-semibold text-lg text-[#1a1612]">YouTube playlist</p>
-                  <p className="mt-2 text-sm md:text-base text-[#3d3529]">
-                    A curated playlist for viewers to watch before or between visits.
-                  </p>
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
+                <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/Z4DChZ7rpjk"
+                    className="absolute top-0 left-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    title="Zahi Shaked - About The Holy Land"
+                  />
                 </div>
               </div>
             </div>
