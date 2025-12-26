@@ -213,7 +213,7 @@ export default async function HomePage() {
         {/* About Section */}
         <section id="about" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="ml-[calc((95rem-80rem)/2)] mr-[calc((95rem-80rem)/2)] max-w-[95rem]">
+            <div className="ml-[calc((110rem-80rem)/2)] mr-[calc((110rem-80rem)/2)] max-w-[110rem]">
               <div className="grid lg:grid-cols-[2.2fr_1fr] gap-10 lg:gap-12 items-start">
                 <div className="min-w-0">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
