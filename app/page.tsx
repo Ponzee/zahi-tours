@@ -234,8 +234,8 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-end h-full">
-                <div className="relative w-[85%] h-full rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
+              <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-end items-center h-full">
+                <div className="relative w-[85%] rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]" style={{ aspectRatio: '16/9', maxHeight: '100%', width: 'auto' }}>
                   <iframe
                     src="https://www.youtube.com/embed/Z4DChZ7rpjk"
                     className="absolute top-0 left-0 w-full h-full"
