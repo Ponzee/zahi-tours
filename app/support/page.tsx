@@ -90,38 +90,38 @@ export default function SupportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
 
       {/* Main Content */}
-      <main id="main-content" className="flex-1">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
-          <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1a1612]">
+      <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
+          <div className="text-center mb-6 md:mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-2 text-[#1a1612]">
               Support Zahi's Work
             </h1>
-            <p className="text-base md:text-lg text-[#3d3529] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-base text-[#3d3529] max-w-2xl mx-auto leading-relaxed">
               Help Zahi keep documenting the Holy Land with independent, ad-light, educational videos. 
               Choose a membership tier that works for you.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {tiers.map((tier) => (
               <div
                 key={tier.id}
-                className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-all p-6 md:p-8 flex flex-col"
+                className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-all p-4 md:p-6 flex flex-col"
               >
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-tight mb-2 text-[#1a1612]">{tier.name}</h3>
-                  <div className="text-3xl md:text-4xl font-bold mb-2 text-[#1a1612]">
+                  <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 text-[#1a1612]">{tier.name}</h3>
+                  <div className="text-2xl md:text-3xl font-bold mb-1 text-[#1a1612]">
                     {tier.price}
-                    <span className="text-base md:text-lg font-normal text-[#3d3529]">/month</span>
+                    <span className="text-sm md:text-base font-normal text-[#3d3529]">/month</span>
                   </div>
-                  <p className="text-sm md:text-base text-[#3d3529] mb-6 leading-relaxed">{tier.description}</p>
-                  <ul className="space-y-3 mb-6">
+                  <p className="text-xs md:text-sm text-[#3d3529] mb-4 leading-relaxed">{tier.description}</p>
+                  <ul className="space-y-2 mb-4">
                     {tier.perks.map((perk, idx) => (
-                      <li key={idx} className="text-sm md:text-base text-[#3d3529] flex items-start leading-relaxed">
+                      <li key={idx} className="text-xs md:text-sm text-[#3d3529] flex items-start leading-relaxed">
                         <span className="text-[#c2410c] mr-2 font-bold">✓</span>
                         {perk}
                       </li>
@@ -130,7 +130,7 @@ export default function SupportPage() {
                 </div>
                 <button
                   onClick={() => handleBecomeSupporter(tier.id)}
-                  className="w-full rounded-full bg-[#c2410c] text-white px-5 py-3 text-sm font-medium hover:bg-[#9a3412] transition-colors mt-auto"
+                  className="w-full rounded-full bg-[#c2410c] text-white px-4 py-2 text-xs font-medium hover:bg-[#9a3412] transition-colors mt-auto"
                 >
                   Become a {tier.name}
                 </button>
@@ -138,10 +138,10 @@ export default function SupportPage() {
             ))}
           </div>
         </div>
-      </main>
 
-      {/* Footer */}
-      <SiteFooter />
+        {/* Footer */}
+        <SiteFooter />
+      </main>
     </div>
   );
 }

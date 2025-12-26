@@ -18,19 +18,19 @@ export default async function WatchPage() {
   return (
     <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-1 overflow-y-auto">
-        <section className="py-12 md:py-16 lg:py-20 bg-white min-h-full flex flex-col">
+      <main className="flex-1 overflow-hidden flex flex-col">
+        <section className="py-4 md:py-6 lg:py-8 bg-white flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="mb-10 md:mb-12">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
+            <div className="mb-6 md:mb-8">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                 Watch
               </h1>
-              <p className="mt-3 text-base md:text-lg text-[#3d3529] max-w-2xl">
+              <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-2xl">
                 Explore Zahi's latest videos and most-watched classics from the Holy Land.
               </p>
             </div>
 
-            <div className="space-y-12 md:space-y-16">
+            <div className="space-y-6 md:space-y-8">
               <VideoCarousel title="Latest from YouTube" videos={latestVideos} />
               <VideoCarousel title="Most Watched Classics" videos={mostViewedVideos} />
             </div>
