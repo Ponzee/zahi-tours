@@ -38,6 +38,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Suppress zustand deprecation warnings from Next.js internals in dev mode */}
+        {process.env.NODE_ENV === 'development' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  if (typeof window !== 'undefined' && window.console) {
+                    const originalWarn = console.warn;
+                    console.warn = function(...args) {
+                      const message = args.join(' ');
+                      // Filter out zustand deprecation warnings from Next.js internals
+                      if (message.includes('[DEPRECATED] Default export is deprecated') && 
+                          message.includes('zustand')) {
+                        return; // Suppress this warning
+                      }
+                      originalWarn.apply(console, args);
+                    };
+                  }
+                })();
+              `,
+            }}
+          />
+        )}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
