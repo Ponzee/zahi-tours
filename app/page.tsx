@@ -17,7 +17,7 @@ export default async function HomePage() {
 
       {/* Channel Banner - Mobile: Text first, then image */}
       <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-12 px-4">
-        <div className="w-full px-4 md:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land – By Zahi Shaked</p>
           <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
           <p className="max-w-full text-sm sm:text-base text-[#3d3529] mt-3 leading-relaxed">
