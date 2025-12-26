@@ -212,8 +212,8 @@ export default async function HomePage() {
 
         {/* About Section */}
         <section id="about" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
-          <div className="max-w-[110rem] mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[2.2fr_1.5fr] gap-10 lg:gap-12 items-start">
+          <div className="max-w-[100rem] mx-auto px-4 md:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-[2.2fr_1fr] gap-10 lg:gap-12 items-start">
                 <div className="min-w-0">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                   Hi, I'm Zahi
@@ -235,7 +235,7 @@ export default async function HomePage() {
               </div>
 
               <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-end">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
+                <div className="relative w-[85%] rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                     <iframe
                       src="https://www.youtube.com/embed/Z4DChZ7rpjk"
