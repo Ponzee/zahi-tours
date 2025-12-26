@@ -39,7 +39,7 @@ export default async function HomePage() {
 
       {/* Desktop: Channel Banner - Thin banner strip matching content width */}
       <section className="hidden md:block py-0">
-        <div className="w-full px-4 md:px-6 lg:px-8 relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
           <Image
             src="/channel-banner.jpg"
             alt="Zahi Shaked guiding at an ancient theater in Israel"
@@ -64,7 +64,7 @@ export default async function HomePage() {
       <main id="main-content" className="flex-1">
         {/* Tours & Video Section */}
         <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-12 md:py-16 lg:py-20">
-          <div className="w-full px-4 md:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Tours Text Card */}
               <div className="rounded-2xl bg-[#f5f2ed] p-6 md:p-8 lg:p-10 shadow-sm border border-[#e5ddd4]">
@@ -125,7 +125,7 @@ export default async function HomePage() {
 
         {/* Watch Section - Latest and Most Watched Carousels */}
         <section className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
-          <div className="w-full px-4 md:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                 Watch
@@ -144,7 +144,7 @@ export default async function HomePage() {
 
         {/* Explore Zahi's Work Section */}
         <section id="tours" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
-          <div className="w-full px-4 md:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-10 md:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                 Explore Zahi's work
@@ -251,7 +251,7 @@ export default async function HomePage() {
 
         {/* Contact Section */}
         <section id="contact" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-white">
-          <div className="w-full px-4 md:px-6 lg:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
             </h2>

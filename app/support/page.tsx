@@ -156,7 +156,7 @@ export default function SupportPage() {
 
       {/* Main Content */}
       <main id="main-content" className="flex-1">
-        <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1a1612]">
               Support Zahi's Work

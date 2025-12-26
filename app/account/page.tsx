@@ -168,7 +168,7 @@ function AccountPageContent() {
     return (
       <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
         <div className="flex-1">
-          <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 max-w-md mx-auto">
+          <div className="max-w-md mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
             <div className="rounded-2xl bg-[#f5f2ed] border border-[#e5ddd4] shadow-sm p-6 md:p-8">
               <h1 className="text-3xl font-bold tracking-tight mb-8 text-center text-[#1a1612]">
                 {isSignIn ? "Sign In" : "Create Account"}
@@ -273,7 +273,7 @@ function AccountPageContent() {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
-      <div className="w-full px-4 md:px-6 lg:px-8 py-12 md:py-16 flex-1 max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 flex-1">
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-[#1a1612]">
           Account
         </h1>
