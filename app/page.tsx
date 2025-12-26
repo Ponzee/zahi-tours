@@ -39,7 +39,7 @@ export default async function HomePage() {
 
       {/* Desktop: Channel Banner - Thin banner strip matching content width */}
       <section className="hidden md:block py-0">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative overflow-hidden rounded-b-2xl" style={{ height: '200px' }}>
+        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative overflow-hidden" style={{ height: '200px' }}>
           <Image
             src="/channel-banner.jpg"
             alt="Zahi Shaked guiding at an ancient theater in Israel"
