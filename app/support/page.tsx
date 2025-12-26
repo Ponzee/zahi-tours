@@ -1,11 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
-import AuthButton from "@/components/AuthButton";
+import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 
 const tiers = [
@@ -49,7 +47,6 @@ const tiers = [
 export default function SupportPage() {
   const [user, setUser] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -94,58 +91,7 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
-      {/* Header */}
-      <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20">
-        <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-          <Link 
-            href="/" 
-            className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer"
-            aria-label="Go to homepage"
-          >
-            <Image
-              src="/icon.png"
-              alt="Zahi Shaked Logo"
-              width={40}
-              height={40}
-              className="rounded-xl pointer-events-none"
-            />
-            <span className="font-semibold tracking-tight text-sm sm:text-base text-[#1a1612] pointer-events-none">
-              The Holy Land - By Zahi Shaked
-            </span>
-          </Link>
-          <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">
-            <Link href="/#tours" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Watch</Link>
-            <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Support</Link>
-            <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Shop</Link>
-            <Link href="/#about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">About</Link>
-            <Link href="/#contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors">Contact</Link>
-          </nav>
-          <div className="hidden md:flex items-center gap-3 flex-shrink-0">
-            <AuthButton />
-          </div>
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden rounded-lg px-3 py-2 text-sm font-medium text-[#1a1612] hover:bg-[#f5f2ed] transition-colors"
-            aria-label="Toggle menu"
-          >
-            Menu
-          </button>
-        </div>
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t border-[#e5ddd4] bg-white">
-            <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
-              <Link href="/#tours" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
-              <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Support</Link>
-              <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
-              <Link href="/#about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>About</Link>
-              <Link href="/#contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
-              <div className="pt-2 border-t border-[#e5ddd4]">
-                <AuthButton />
-              </div>
-            </nav>
-          </div>
-        )}
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main id="main-content" className="flex-1">
