@@ -110,7 +110,7 @@ export default function SupportPage() {
               className="rounded-xl pointer-events-none"
             />
             <span className="font-semibold tracking-tight text-sm sm:text-base text-[#1a1612] pointer-events-none">
-              The Holy Land – By Zahi Shaked
+              The Holy Land - By Zahi Shaked
             </span>
           </Link>
           <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center">

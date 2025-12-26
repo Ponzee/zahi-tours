@@ -8,7 +8,7 @@ export default function SiteFooter() {
   return (
     <footer className="border-t border-[#e5ddd4] bg-white py-6 px-4 text-sm text-[#3d3529]">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <p>© {year} The Holy Land – By Zahi Shaked.</p>
+        <p>© {year} The Holy Land - By Zahi Shaked.</p>
         <div className="flex flex-wrap items-center gap-4 text-[#1a1612]">
           <Link href="/privacy" className="hover:text-[#c2410c] transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">
             Privacy Policy

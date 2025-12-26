@@ -14,17 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Holy Land – By Zahi Shaked",
-  description: "Private, story-rich tours of the Holy Land with Zahi Shaked — expert guide, storyteller, and creator.",
+  title: "The Holy Land - By Zahi Shaked",
+  description: "Private, story-rich tours of the Holy Land with Zahi Shaked - expert guide, storyteller, and creator.",
   openGraph: {
-    title: "The Holy Land – By Zahi Shaked",
-    description: "Private, story-rich tours of the Holy Land with Zahi Shaked — expert guide, storyteller, and creator.",
+    title: "The Holy Land - By Zahi Shaked",
+    description: "Private, story-rich tours of the Holy Land with Zahi Shaked - expert guide, storyteller, and creator.",
     url: "https://zahi.tours",
     type: "website",
   },
   twitter: {
-    title: "The Holy Land – By Zahi Shaked",
-    description: "Private, story-rich tours of the Holy Land with Zahi Shaked — expert guide, storyteller, and creator.",
+    title: "The Holy Land - By Zahi Shaked",
+    description: "Private, story-rich tours of the Holy Land with Zahi Shaked - expert guide, storyteller, and creator.",
   },
 };
 

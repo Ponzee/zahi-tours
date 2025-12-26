@@ -18,7 +18,7 @@ export default async function HomePage() {
       {/* Channel Banner - Mobile: Text first, then image */}
       <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-12 px-4">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land – By Zahi Shaked</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land - By Zahi Shaked</p>
           <h1 className="text-2xl sm:text-3xl font-bold mt-2 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
           <p className="max-w-full text-sm sm:text-base text-[#3d3529] mt-3 leading-relaxed">
             Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
@@ -50,7 +50,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
           <div className="relative flex items-center justify-end px-6 lg:pl-[40%] h-full text-white">
             <div className="max-w-2xl ml-auto text-right lg:text-left">
-              <p className="text-sm font-semibold uppercase tracking-wide text-amber-200/90">The Holy Land – By Zahi Shaked</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-amber-200/90">The Holy Land - By Zahi Shaked</p>
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2 leading-tight">Walk the Holy Land with the guide you already know</h1>
               <p className="max-w-2xl text-sm sm:text-base text-slate-100/90 mt-2 leading-relaxed">
                 Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
@@ -72,7 +72,7 @@ export default async function HomePage() {
                   Private Holy Land tours, crafted personally by Zahi Shaked
                 </h2>
                 <p className="mt-4 text-base md:text-lg text-[#3d3529] leading-relaxed">
-                  From Jerusalem's Old City to the Galilee and desert, Zahi builds private tours around your pace and interests – Bible, history, archaeology or just great stories from his YouTube channel, brought to life in front of you.
+                  From Jerusalem's Old City to the Galilee and desert, Zahi builds private tours around your pace and interests - Bible, history, archaeology or just great stories from his YouTube channel, brought to life in front of you.
                 </p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <a
@@ -100,7 +100,7 @@ export default async function HomePage() {
                     className="absolute top-0 left-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    title="Zahi Shaked – The Holy Land"
+                    title="Zahi Shaked - The Holy Land"
                   />
                 </div>
               </div>
@@ -241,7 +241,7 @@ export default async function HomePage() {
                     className="absolute top-0 left-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    title="Zahi Shaked – About The Holy Land"
+                    title="Zahi Shaked - About The Holy Land"
                   />
                 </div>
               </div>

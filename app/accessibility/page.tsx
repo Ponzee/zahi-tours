@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
-  title: "Accessibility Statement | The Holy Land – By Zahi Shaked",
+  title: "Accessibility Statement | The Holy Land - By Zahi Shaked",
   description:
     "Our commitment to making zahi.tours accessible to all users, including those with disabilities.",
 };
@@ -13,7 +13,7 @@ const accessibilitySections = [
   {
     title: "Our Commitment",
     content: [
-      "The Holy Land – By Zahi Shaked is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to achieve WCAG 2.1 Level AA conformance.",
+      "The Holy Land - By Zahi Shaked is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to achieve WCAG 2.1 Level AA conformance.",
       "We believe that everyone should be able to explore and learn about the Holy Land, regardless of their abilities or the technology they use.",
     ],
   },
@@ -68,7 +68,7 @@ export default function AccessibilityPage() {
             Accessibility Statement
           </h1>
           <p className="mt-4 text-base md:text-lg leading-relaxed">
-            The Holy Land – By Zahi Shaked is committed to making our website accessible to all users,
+            The Holy Land - By Zahi Shaked is committed to making our website accessible to all users,
             including those with disabilities. This page outlines our accessibility features, standards,
             and how to report issues.
           </p>

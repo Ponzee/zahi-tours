@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 
 export const metadata = {
-  title: "Terms of Service | The Holy Land – By Zahi Shaked",
+  title: "Terms of Service | The Holy Land - By Zahi Shaked",
   description:
     "Terms that govern the use of zahi.tours, the membership program, and private tour services.",
 };
