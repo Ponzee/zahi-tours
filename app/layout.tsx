@@ -39,10 +39,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Suppress zustand warnings immediately before React loads */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof window !== 'undefined' && window.console) {
+                  const originalWarn = console.warn;
+                  console.warn = function(...args) {
+                    const message = args.map(a => String(a)).join(' ');
+                    if ((message.includes('[DEPRECATED]') || message.includes('DEPRECATED')) &&
+                        (message.includes('zustand') || message.includes('Default export is deprecated'))) {
+                      return;
+                    }
+                    originalWarn.apply(console, args);
+                  };
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* Suppress zustand deprecation warnings from Next.js internals */}
+        {/* Suppress zustand deprecation warnings from Next.js internals (backup) */}
         <SuppressWarnings />
         {/* Skip to main content link for screen readers */}
         <a
