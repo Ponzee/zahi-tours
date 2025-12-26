@@ -1,11 +1,9 @@
 import Image from "next/image";
-import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 
 export default async function HomePage() {
   return (
     <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
-      <Header />
 
       <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
         {/* Channel Banner - Mobile: Text first, then image */}

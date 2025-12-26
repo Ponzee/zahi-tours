@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import { fetchActiveProducts } from "@/lib/shop";
 import ProductDescription from "./ProductDescription";
@@ -12,7 +11,6 @@ export default async function ShopPage() {
 
   return (
     <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
-      <Header />
       <main id="main-content" className="flex-1">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <div className="text-center mb-12 md:mb-16">

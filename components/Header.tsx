@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo, memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AuthButton from "@/components/AuthButton";
 import { useCart } from "@/context/CartContext";
 
-export default function Header() {
+function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { getItemCount } = useCart();
-  const cartItemCount = getItemCount();
+  const { items } = useCart();
+  const cartItemCount = useMemo(() => 
+    items.reduce((count, item) => count + item.quantity, 0),
+    [items]
+  );
 
   return (
     <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20" role="banner">
@@ -116,3 +119,5 @@ export default function Header() {
     </header>
   );
 }
+
+export default memo(Header);

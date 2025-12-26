@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import VideoCarousel from "@/components/video/VideoCarousel";
 import { fetchLatestVideos, fetchMostViewedVideos } from "@/lib/youtube";
 import SiteFooter from "@/components/SiteFooter";
@@ -17,7 +16,6 @@ export default async function WatchPage() {
 
   return (
     <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
-      <Header />
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-2 md:py-3 lg:py-4 bg-white flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
