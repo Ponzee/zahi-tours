@@ -76,7 +76,7 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
         {showLeftButton && (
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-all text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-colors transition-shadow duration-150 text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
             aria-label="Scroll left"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
         {showRightButton && (
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-all text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-colors transition-shadow duration-150 text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
             aria-label="Scroll right"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

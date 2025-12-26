@@ -60,13 +60,13 @@ export default function AuthButton() {
       <div className="flex items-center gap-3">
         <a
           href="/account"
-          className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors"
+          className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150"
         >
           Sign In
         </a>
         <a
           href="/account?signup=true"
-          className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors"
+          className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors duration-150"
         >
           Sign Up
         </a>
@@ -80,7 +80,7 @@ export default function AuthButton() {
         <button className="rounded-full bg-[#c2410c] text-white text-sm px-4 py-2 hover:bg-[#9a3412] transition-colors whitespace-nowrap font-medium">
           {user.email?.split("@")[0]}
         </button>
-        <div className="absolute right-0 mt-2 w-56 bg-white border border-[#e5ddd4] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 overflow-hidden">
+        <div className="absolute right-0 mt-2 w-56 bg-white border border-[#e5ddd4] rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity transition-visibility duration-150 z-50 overflow-hidden">
           <div className="py-2">
             <a
               href="/account"
@@ -111,13 +111,13 @@ export default function AuthButton() {
     <div className="flex items-center gap-3">
       <a
         href="/account"
-        className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors"
-      >
-        Sign In
-      </a>
-      <a
-        href="/account?signup=true"
-        className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors"
+        className="text-sm text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150"
+        >
+          Sign In
+        </a>
+        <a
+          href="/account?signup=true"
+          className="text-sm rounded-full bg-[#c2410c] text-white px-4 py-2 hover:bg-[#9a3412] transition-colors duration-150"
       >
         Sign Up
       </a>

@@ -40,10 +40,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Save cart to localStorage whenever it changes
+  // Save cart to localStorage whenever it changes (debounced to avoid blocking)
   useEffect(() => {
     if (typeof window !== "undefined") {
-      localStorage.setItem("zahi-cart", JSON.stringify(items));
+      // Use requestIdleCallback for non-blocking writes, fallback to setTimeout
+      const saveCart = () => {
+        try {
+          localStorage.setItem("zahi-cart", JSON.stringify(items));
+        } catch (e) {
+          console.error("Failed to save cart to localStorage", e);
+        }
+      };
+
+      if (window.requestIdleCallback) {
+        const id = window.requestIdleCallback(saveCart, { timeout: 1000 });
+        return () => window.cancelIdleCallback(id);
+      } else {
+        const timeoutId = setTimeout(saveCart, 0);
+        return () => clearTimeout(timeoutId);
+      }
     }
   }, [items]);
 

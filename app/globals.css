@@ -84,3 +84,28 @@ textarea:focus-visible {
   outline: 2px solid #c2410c;
   outline-offset: 2px;
 }
+
+/* Performance optimizations */
+/* GPU acceleration for transforms */
+.group:hover img,
+.group:hover [style*="transform"] {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimize transitions - use shorter durations for better responsiveness */
+a,
+button {
+  transition-timing-function: ease-out;
+}
+
+/* Reduce paint complexity for hover states */
+.hover\:shadow-md:hover,
+.hover\:shadow-xl:hover {
+  will-change: box-shadow;
+}
+
+/* Optimize backdrop blur performance */
+.backdrop-blur {
+  will-change: backdrop-filter;
+}
