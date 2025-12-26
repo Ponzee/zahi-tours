@@ -213,7 +213,7 @@ export default async function HomePage() {
         {/* About Section */}
         <section id="about" className="py-12 md:py-16 lg:py-20 border-t border-[#e5ddd4] bg-gradient-to-b from-white via-[#faf8f5] to-white">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="max-w-4xl">
+            <div className="max-w-4xl mx-auto">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
                 Hi, I'm Zahi
               </h2>
@@ -233,8 +233,8 @@ export default async function HomePage() {
               </div>
             </div>
 
-            <div className="mt-10 md:mt-12">
-              <div className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
+            <div className="mt-10 md:mt-12 flex justify-center">
+              <div className="relative w-full max-w-3xl rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                 <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                   <iframe
                     src="https://www.youtube.com/embed/Z4DChZ7rpjk"
