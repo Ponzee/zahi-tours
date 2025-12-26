@@ -234,7 +234,7 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-start">
+              <div className="mt-8 lg:mt-0 lg:pt-[4.5rem] flex justify-end">
                 <div className="relative w-[75%] rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
                     <iframe
