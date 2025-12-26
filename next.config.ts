@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  reactCompiler: true,
+  // reactCompiler: true, // Disabled to avoid zustand deprecation warnings from internal dependencies
   images: {
     remotePatterns: [
       {
