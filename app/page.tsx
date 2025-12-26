@@ -219,10 +219,13 @@ export default async function HomePage() {
               </h2>
               <div className="mt-6 space-y-4 text-base md:text-lg text-[#3d3529] leading-relaxed">
                 <p>
-                  For more than 20 years, I've been guiding visitors through the Holy Land, weaving together history, Scripture, archaeology, and the rhythms of everyday life. What began on the road with small groups slowly found its way online, and my YouTube channel has since grown into one of the largest Holy Land travel archives, with thousands of videos filmed on location.
+                  For more than 25 years, I've been guiding visitors through the Holy Land, weaving together history, Scripture, archaeology, and the rhythms of everyday life. Along the way, I earned two university degrees in the religious history of Israel, a foundation that continues to shape how I teach, guide, and tell these stories. Learning, for me, never really stopped.
                 </p>
                 <p>
-                  At first, I recorded these videos simply to help my guests remember their tours. Over time, something unexpected happened. A global community formed. Today, people from all over the world walk the streets of Jerusalem, the Galilee, and the desert with me every week, right from their homes.
+                  What began as a simple way to help my guests remember their tours gradually found its way online. My YouTube channel has since grown into one of the largest Holy Land travel archives, with thousands of videos filmed on location.
+                </p>
+                <p>
+                  Over time, something unexpected happened. A global community formed. Today, people from all over the world walk the streets of Jerusalem, the Galilee, and the desert with me every week, right from their homes.
                 </p>
                 <p>
                   Now, I split my time between guiding private groups on the ground and creating free educational content for anyone who loves the Holy Land as deeply as I do.
