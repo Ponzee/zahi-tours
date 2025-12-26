@@ -8,19 +8,19 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-1">
-        <section className="py-12 md:py-16 lg:py-20 bg-white">
+      <main className="flex-1 overflow-hidden flex flex-col">
+        <section className="py-4 md:py-6 lg:py-8 bg-white flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
             </h1>
-            <p className="mt-4 text-base md:text-lg text-[#3d3529] max-w-3xl mx-auto">
+            <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl mx-auto">
               Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
-            <div className="mt-8 max-w-2xl mx-auto text-left space-y-4 text-base md:text-lg">
+            <div className="mt-6 max-w-2xl mx-auto text-left space-y-3 text-sm md:text-base">
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">WhatsApp</span>
                 <span className="font-semibold text-[#1a1612]">+972-54-690-5522</span>
@@ -58,8 +58,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+        <SiteFooter />
       </main>
-      <SiteFooter />
     </div>
   );
 }

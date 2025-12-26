@@ -8,17 +8,17 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
       <Header />
-      <main className="flex-1">
-        <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-b from-white via-[#faf8f5] to-white">
+      <main className="flex-1 overflow-hidden flex flex-col">
+        <section className="py-4 md:py-6 lg:py-8 bg-gradient-to-b from-white via-[#faf8f5] to-white flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-10 lg:gap-12 items-start">
+            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-6 lg:gap-8 items-start">
               <div className="min-w-0">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                   Hi, I'm Zahi
                 </h1>
-                <div className="mt-6 space-y-4 text-base md:text-lg text-[#3d3529] leading-relaxed">
+                <div className="mt-4 space-y-3 text-sm md:text-base text-[#3d3529] leading-relaxed">
                   <p>
                     For more than 25 years, I've been guiding visitors through the Holy Land, weaving together history, Scripture, archaeology, and the rhythms of everyday life. Along the way, I earned two university degrees in the religious history of Israel, a foundation that continues to shape how I teach, guide, and tell these stories. Learning, for me, never really stopped.
                   </p>
@@ -34,8 +34,8 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className="mt-8 lg:mt-0 lg:pt-[4.5rem]">
-                <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
+              <div className="mt-6 lg:mt-0 lg:pt-[3rem]">
+                <div className="relative w-full rounded-xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
                     <iframe
                       src="https://www.youtube.com/embed/Z4DChZ7rpjk?rel=0"
@@ -50,8 +50,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <SiteFooter />
       </main>
-      <SiteFooter />
     </div>
   );
 }

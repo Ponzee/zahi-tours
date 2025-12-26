@@ -39,7 +39,7 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
-    const cardWidth = 320; // Approximate card width including gap
+    const cardWidth = 260; // Approximate card width including gap (reduced from 320)
     const scrollAmount = cardWidth;
     
     container.scrollBy({
@@ -51,8 +51,8 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
   // Skeleton card component for loading/empty state
   const SkeletonCard = () => (
     <div
-      className="flex-shrink-0 rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] overflow-hidden"
-      style={{ width: '280px', minWidth: '280px', scrollSnapAlign: 'start' }}
+      className="flex-shrink-0 rounded-xl border border-[#e5ddd4] bg-[#f5f2ed] overflow-hidden"
+      style={{ width: '240px', minWidth: '240px', scrollSnapAlign: 'start' }}
     >
       <div className="relative aspect-video bg-gradient-to-br from-[#e5ddd4] to-[#d4c9bc] animate-pulse" />
       <div className="p-3">
@@ -67,7 +67,7 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
 
   return (
     <div className="w-full">
-      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612] mb-6">
+      <h3 className="text-base sm:text-lg md:text-xl font-bold tracking-tight text-[#1a1612] mb-3">
         {title}
       </h3>
       
@@ -88,7 +88,7 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
         {/* Scrollable container */}
         <div
           ref={scrollContainerRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto scroll-smooth scrollbar-hide px-1"
+          className="flex gap-3 md:gap-4 overflow-x-auto scroll-smooth scrollbar-hide px-1"
           style={{
             scrollSnapType: 'x mandatory',
             WebkitOverflowScrolling: 'touch',
