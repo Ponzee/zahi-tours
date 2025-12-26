@@ -100,7 +100,7 @@ export default async function HomePage() {
                     className="absolute top-0 left-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    title="Zahi Shaked - The Holy Land"
+                    title="Zahi Shaked – The Holy Land"
                   />
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default async function HomePage() {
           <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 lg:gap-12">
             <div>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612]">
-                Meet Zahi Shaked
+                Hi, I'm Zahi
               </h2>
               <div className="mt-6 space-y-4 text-base md:text-lg text-[#3d3529] leading-relaxed">
                 <p>
@@ -241,7 +241,7 @@ export default async function HomePage() {
                     className="absolute top-0 left-0 w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
-                    title="Zahi Shaked - About The Holy Land"
+                    title="Zahi Shaked – About The Holy Land"
                   />
                 </div>
               </div>
