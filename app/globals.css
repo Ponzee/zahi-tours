@@ -128,6 +128,10 @@ button {
 }
 
 /* Lite YouTube: instant thumbnail, iframe loads in background, cross-fade when ready */
+.lite-yt {
+  background: #0b0b0b; /* avoid white flash before thumbnail decodes */
+}
+
 .lite-yt .lite-yt-iframe,
 .lite-yt .lite-yt-thumb {
   transition: opacity 200ms ease-out;

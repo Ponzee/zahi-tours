@@ -13,6 +13,7 @@ export default function LiteYouTube({
   className?: string;
 }) {
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [swapReady, setSwapReady] = useState(false);
 
   const thumbnailUrl = useMemo(() => {
     // i.ytimg.com is already allowed in next.config.ts remotePatterns
@@ -30,7 +31,10 @@ export default function LiteYouTube({
   }, [videoId]);
 
   return (
-    <div className={`lite-yt relative w-full ${className}`} data-loaded={iframeLoaded ? "true" : "false"}>
+    <div
+      className={`lite-yt relative w-full ${className}`}
+      data-loaded={swapReady ? "true" : "false"}
+    >
       <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
         {/* Background-load the iframe immediately, but keep the thumbnail visible until the player is ready. */}
         <iframe
@@ -40,17 +44,22 @@ export default function LiteYouTube({
           allowFullScreen
           title={title}
           loading="eager"
-          onLoad={() => setIframeLoaded(true)}
+          onLoad={() => {
+            setIframeLoaded(true);
+            // Avoid a brief white flash: the iframe can fire onLoad before it actually paints.
+            // Waiting a tick yields a smoother cross-fade.
+            window.setTimeout(() => setSwapReady(true), 80);
+          }}
         />
 
-        <div className="lite-yt-thumb absolute inset-0" aria-hidden={iframeLoaded}>
+        <div className="lite-yt-thumb absolute inset-0" aria-hidden={swapReady}>
           <Image
             src={thumbnailUrl}
             alt={title}
             fill
             className="object-cover"
             sizes="(min-width: 1024px) 45vw, 100vw"
-            priority={false}
+            priority
           />
           <div className="absolute inset-0 bg-black/10" />
         </div>
