@@ -1,9 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import ProductGallery from "./ProductGallery";
 import CheckoutButton from "@/components/shop/CheckoutButton";
-import QuickViewModal from "@/components/shop/QuickViewModal";
+import DescriptionOverlay from "@/components/shop/DescriptionOverlay";
 
 type ShopProductClient = {
   id: string;
@@ -16,12 +16,7 @@ type ShopProductClient = {
 };
 
 export default function ShopGridClient({ products }: { products: ShopProductClient[] }) {
-  const [quickViewId, setQuickViewId] = useState<string | null>(null);
-
-  const quickViewProduct = useMemo(() => {
-    if (!quickViewId) return null;
-    return products.find((p) => p.id === quickViewId) ?? null;
-  }, [products, quickViewId]);
+  const [openDetailsId, setOpenDetailsId] = useState<string | null>(null);
 
   return (
     <>
@@ -35,7 +30,7 @@ export default function ShopGridClient({ products }: { products: ShopProductClie
           return (
             <article
               key={product.id}
-              className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col"
+              className="relative rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col"
             >
               <ProductGallery
                 alt={product.name}
@@ -72,34 +67,30 @@ export default function ShopGridClient({ products }: { products: ShopProductClie
                 <div className="mt-2 flex justify-center">
                   <button
                     type="button"
-                    onClick={() => setQuickViewId(product.id)}
+                    onClick={() => setOpenDetailsId(product.id)}
                     className="text-xs md:text-sm font-semibold text-[#c2410c] hover:text-[#9a3412] transition-colors"
                   >
-                    Quick View
+                    Details
                   </button>
                 </div>
               </div>
+
+              <DescriptionOverlay
+                open={openDetailsId === product.id}
+                onClose={() => setOpenDetailsId(null)}
+                product={{
+                  id: product.id,
+                  name: product.name,
+                  description: product.description,
+                  price_cents: product.price_cents,
+                  currency: product.currency,
+                  image_url: product.image_url,
+                }}
+              />
             </article>
           );
         })}
       </div>
-
-      <QuickViewModal
-        open={!!quickViewId}
-        onClose={() => setQuickViewId(null)}
-        product={
-          quickViewProduct
-            ? {
-                id: quickViewProduct.id,
-                name: quickViewProduct.name,
-                description: quickViewProduct.description,
-                price_cents: quickViewProduct.price_cents,
-                currency: quickViewProduct.currency,
-                image_url: quickViewProduct.image_url,
-              }
-            : null
-        }
-      />
     </>
   );
 }
