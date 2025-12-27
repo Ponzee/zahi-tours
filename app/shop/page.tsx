@@ -1,7 +1,5 @@
 import { fetchActiveProducts } from "@/lib/shop";
-import ProductDescription from "./ProductDescription";
-import ProductGallery from "./ProductGallery";
-import CheckoutButton from "@/components/shop/CheckoutButton";
+import ShopGridClient from "./ShopGridClient";
 
 export const revalidate = 60;
 
@@ -30,47 +28,7 @@ export default async function ShopPage() {
               Zahi’s next handcrafted item is being photographed. Check back soon.
             </div>
           ) : (
-            <div className="grid gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-              {products.map((product) => {
-                return (
-                <article
-                  key={product.id}
-                  className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-lg transition-shadow overflow-hidden flex flex-col"
-                >
-                  <ProductGallery
-                    alt={product.name}
-                    imageUrl={product.image_url}
-                    imageUrls={(product as any).image_urls || undefined}
-                  />
-                  <div className="p-3 md:p-4 flex-1 flex flex-col min-h-0">
-                    <h3 className="font-bold text-base md:text-lg tracking-tight text-[#1a1612] mb-2">
-                      {product.name}
-                    </h3>
-                    {/* Price and button - always visible at top */}
-                    <div className="mb-2 pb-2 border-b border-[#e5ddd4] flex items-baseline justify-between flex-shrink-0 gap-2">
-                      <span className="text-lg md:text-xl font-semibold text-[#1a1612]">
-                        {(product.price_cents / 100).toLocaleString(undefined, {
-                          style: "currency",
-                          currency: product.currency.toUpperCase(),
-                        })}
-                      </span>
-                      <CheckoutButton
-                        productId={product.id}
-                        productName={product.name}
-                        priceCents={product.price_cents}
-                        currency={product.currency}
-                        imageUrl={product.image_url}
-                      />
-                    </div>
-                    {/* Description - expands below price/button */}
-                    <div className="flex-1 w-full min-h-0 overflow-hidden">
-                      <ProductDescription text={product.description} />
-                    </div>
-                  </div>
-                </article>
-              );
-            })}
-            </div>
+            <ShopGridClient products={products} />
           )}
 
           <div className="mt-8 text-center text-sm text-[#3d3529]">
