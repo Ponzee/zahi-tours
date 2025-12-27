@@ -14,9 +14,9 @@ export default async function WatchPage() {
   ]);
 
   return (
-    <div className="h-full bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-hidden">
       <main className="flex-1 overflow-hidden flex flex-col">
-        <section className="py-2 md:py-3 lg:py-4 bg-white flex-1 min-h-0 overflow-y-auto">
+        <section className="py-2 md:py-3 lg:py-4 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-3 md:mb-4">
               <h1 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tight text-[#1a1612]">

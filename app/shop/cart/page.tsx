@@ -16,7 +16,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="bg-[#faf8f5] text-[#3d3529]">
+      <div>
         <main id="main-content">
           <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
             <div className="text-center">
@@ -56,7 +56,7 @@ export default function CartPage() {
   const currency = items[0]?.currency || "usd";
 
   return (
-    <div className="bg-[#faf8f5] text-[#3d3529]">
+    <div>
       <main id="main-content">
         <div className="max-w-4xl mx-auto px-4 py-12 md:py-16 lg:py-20">
           <div className="mb-8">

@@ -54,7 +54,7 @@ const accessibilitySections = [
 
 export default function AccessibilityPage() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#3d3529] flex flex-col">
+    <div className="min-h-screen flex flex-col">
 
       <main id="main-content" className="flex-1">
         <div className="max-w-5xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">

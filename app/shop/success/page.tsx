@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ShopSuccessPage() {
   return (
-    <div className="bg-[#faf8f5] text-[#3d3529]">
+    <div>
       <main id="main-content">
         <div className="max-w-2xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <div className="rounded-2xl border border-[#e5ddd4] bg-white p-8 md:p-12 text-center">

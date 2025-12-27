@@ -9,7 +9,7 @@ export default async function ShopPage() {
   const products = await fetchActiveProducts();
 
   return (
-    <div className="bg-[#faf8f5] text-[#3d3529]">
+    <div>
       <main id="main-content">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
           <div className="text-center mb-12 md:mb-16">

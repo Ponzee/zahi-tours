@@ -53,10 +53,7 @@ export default function RootLayout({
         </a>
         <CartProvider>
           <Header />
-          <LayoutWrapper>
-            {children}
-          </LayoutWrapper>
-          <SiteFooter />
+          <LayoutWrapper footer={<SiteFooter />}>{children}</LayoutWrapper>
         </CartProvider>
       </body>
     </html>

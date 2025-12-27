@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default async function HomePage() {
   return (
-    <div className="h-full bg-[#faf8f5] text-[#3d3529] flex flex-col overflow-hidden">
+    <div className="h-full flex flex-col overflow-hidden">
 
       <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
         {/* Channel Banner - Mobile: Text first, then image */}
-        <section className="md:hidden bg-gradient-to-b from-amber-50/50 via-white to-white py-6 px-4 flex-shrink-0">
+        <section className="md:hidden py-6 px-4 flex-shrink-0">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
             <p className="text-xs font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land - By Zahi Shaked</p>
             <h1 className="text-xl sm:text-2xl font-bold mt-1 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
@@ -51,7 +51,7 @@ export default async function HomePage() {
         </section>
 
         {/* Tours & Video Section */}
-        <section className="bg-gradient-to-b from-white via-[#faf8f5] to-white py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
+        <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-4 lg:gap-6 items-center">
               {/* Tours Text Card */}
