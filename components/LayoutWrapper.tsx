@@ -60,11 +60,10 @@ export default function LayoutWrapper({
           <>
             {/* Fill the area (may crop) */}
             <div
-              className="pointer-events-none absolute inset-0 opacity-90"
+              className="pointer-events-none absolute inset-0 opacity-40"
               style={{
                 ...coverStyle,
-                filter: "blur(18px) saturate(1.05)",
-                transform: "scale(1.06)",
+                filter: "saturate(1.02) brightness(0.98)",
               }}
               aria-hidden="true"
             />
@@ -94,11 +93,10 @@ export default function LayoutWrapper({
         <>
           {/* Fill the area (may crop) */}
           <div
-            className="pointer-events-none absolute inset-0 opacity-90"
+            className="pointer-events-none absolute inset-0 opacity-40"
             style={{
               ...coverStyle,
-              filter: "blur(18px) saturate(1.05)",
-              transform: "scale(1.06)",
+              filter: "saturate(1.02) brightness(0.98)",
             }}
             aria-hidden="true"
           />
