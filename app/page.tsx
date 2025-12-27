@@ -9,7 +9,6 @@ export default async function HomePage() {
         {/* Channel Banner - Mobile: Text first, then image */}
         <section className="md:hidden py-6 px-4 flex-shrink-0">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#c2410c]">The Holy Land - By Zahi Shaked</p>
             <h1 className="text-xl sm:text-2xl font-bold mt-1 text-[#1a1612] leading-tight">Walk the Holy Land with the guide you already know</h1>
             <p className="max-w-full text-xs sm:text-sm text-[#3d3529] mt-2 leading-relaxed">
               Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
@@ -41,7 +40,6 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-black/40 to-black/80" />
             <div className="relative flex items-center justify-end px-6 lg:pl-[40%] h-full text-white">
               <div className="max-w-2xl ml-auto text-right lg:text-left">
-                <p className="text-xs font-semibold uppercase tracking-wide text-amber-200/90">The Holy Land - By Zahi Shaked</p>
                 <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mt-1 leading-tight">Walk the Holy Land with the guide you already know</h1>
                 <p className="max-w-2xl text-xs sm:text-sm text-slate-100/90 mt-1 leading-relaxed">
                   Licensed Israeli tour guide and 190k+-subscriber YouTuber, turning stones, streets, and Bible stories into one unforgettable journey.
