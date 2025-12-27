@@ -59,25 +59,7 @@ export default function LiteYouTube({
             sizes="(min-width: 1024px) 45vw, 100vw"
             priority={false}
           />
-          <div className="absolute inset-0 bg-black/20" />
-
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-black/70 px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg">
-              <div
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-red-600"
-                aria-hidden="true"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-6 w-6 text-white ml-0.5"
-                  fill="currentColor"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
-              </div>
-              Play
-            </div>
-          </div>
+          <div className="absolute inset-0 bg-black/10" />
         </div>
       </div>
     </div>
