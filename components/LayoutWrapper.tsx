@@ -17,7 +17,7 @@ export default function LayoutWrapper({
     // IMPORTANT: "cover" will ALWAYS fill 100% of the area, but it will crop.
     // To prevent the "zoomed" feeling, we tune the focal point (backgroundPosition) per section image.
     if (!pathname || pathname === "/")
-      return { src: "/backgrounds/home.webp", position: "center 25%" };
+      return { src: "/backgrounds/homev2.webp", position: "center" };
     if (pathname.startsWith("/watch"))
       return { src: "/backgrounds/watch.webp", position: "center" };
     if (pathname.startsWith("/support"))
@@ -48,12 +48,6 @@ export default function LayoutWrapper({
         className="relative bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4"
         style={outerStyle}
       >
-        {bg?.src && (
-          <div
-            className="pointer-events-none absolute inset-0 bg-[#faf8f5]/75"
-            aria-hidden="true"
-          />
-        )}
         <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-6xl mx-auto w-full">
           {children}
           {footer}
@@ -69,12 +63,6 @@ export default function LayoutWrapper({
       className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
       style={outerStyle}
     >
-      {bg?.src && (
-        <div
-          className="pointer-events-none absolute inset-0 bg-[#faf8f5]/75"
-          aria-hidden="true"
-        />
-      )}
       <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-6xl mx-auto w-full h-full">
         <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
         {footer}
