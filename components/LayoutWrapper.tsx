@@ -31,15 +31,6 @@ export default function LayoutWrapper({
     return null;
   }, [pathname]);
 
-  const coverStyle = bg
-    ? ({
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: bg.position,
-        backgroundRepeat: "no-repeat",
-      } as const)
-    : undefined;
-
   const containStyle = bg
     ? ({
         backgroundImage: `url(${bg.src})`,
@@ -58,15 +49,6 @@ export default function LayoutWrapper({
       >
         {bg?.src && (
           <>
-            {/* Fill the area (may crop) */}
-            <div
-              className="pointer-events-none absolute inset-0 opacity-40"
-              style={{
-                ...coverStyle,
-                filter: "saturate(1.02) brightness(0.98)",
-              }}
-              aria-hidden="true"
-            />
             {/* Show the full image (no crop) */}
             <div
               className="pointer-events-none absolute inset-0"
@@ -91,15 +73,6 @@ export default function LayoutWrapper({
     >
       {bg?.src && (
         <>
-          {/* Fill the area (may crop) */}
-          <div
-            className="pointer-events-none absolute inset-0 opacity-40"
-            style={{
-              ...coverStyle,
-              filter: "saturate(1.02) brightness(0.98)",
-            }}
-            aria-hidden="true"
-          />
           {/* Show the full image (no crop) */}
           <div
             className="pointer-events-none absolute inset-0"
