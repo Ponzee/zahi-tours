@@ -1,4 +1,5 @@
 import Image from "next/image";
+import LiteYouTube from "@/components/video/LiteYouTube";
 
 export default async function HomePage() {
   return (
@@ -82,15 +83,10 @@ export default async function HomePage() {
 
               {/* YouTube Video Container */}
               <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
-                <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
-                  <iframe
-                    src="https://www.youtube.com/embed/ECjDgNEY8tQ"
-                    className="absolute top-0 left-0 w-full h-full"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                    title="Zahi Shaked - The Holy Land"
-                  />
-                </div>
+                <LiteYouTube
+                  videoId="ECjDgNEY8tQ"
+                  title="Zahi Shaked - The Holy Land"
+                />
               </div>
             </div>
 

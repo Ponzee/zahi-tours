@@ -1,3 +1,5 @@
+import LiteYouTube from "@/components/video/LiteYouTube";
+
 export const metadata = {
   title: "About | The Holy Land - By Zahi Shaked",
   description: "Learn about Zahi Shaked, a licensed Israeli tour guide with over 25 years of experience guiding visitors through the Holy Land.",
@@ -32,15 +34,10 @@ export default function AboutPage() {
 
               <div className="mt-6 lg:mt-0 lg:pt-[3rem]">
                 <div className="relative w-full rounded-xl overflow-hidden shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
-                  <div className="relative w-full" style={{ paddingTop: '56.25%' }}>
-                    <iframe
-                      src="https://www.youtube.com/embed/Z4DChZ7rpjk?rel=0"
-                      className="absolute top-0 left-0 w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                      title="Zahi Shaked - About The Holy Land"
-                    />
-                  </div>
+                  <LiteYouTube
+                    videoId="Z4DChZ7rpjk"
+                    title="Zahi Shaked - About The Holy Land"
+                  />
                 </div>
               </div>
             </div>
