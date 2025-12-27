@@ -18,15 +18,25 @@ export default function ShopGridClient({ products }: { products: ShopProductClie
   return (
     <>
       <div className="grid gap-4 md:gap-5 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-        {products.map((product) => (
-          <ShopProductCard key={product.id} product={product} />
+        {products.map((product, idx) => (
+          <ShopProductCard
+            key={product.id}
+            product={product}
+            imagePriority={idx < 10}
+          />
         ))}
       </div>
     </>
   );
 }
 
-function ShopProductCard({ product }: { product: ShopProductClient }) {
+function ShopProductCard({
+  product,
+  imagePriority,
+}: {
+  product: ShopProductClient;
+  imagePriority: boolean;
+}) {
   const [open, setOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -90,6 +100,8 @@ function ShopProductCard({ product }: { product: ShopProductClient }) {
         onSelect={setSelectedIndex}
         open={open}
         setOpen={setOpen}
+        priority={imagePriority}
+        quality={95}
         hoverLabel="View item"
         sidePanel={sidePanel}
       />

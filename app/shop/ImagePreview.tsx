@@ -106,6 +106,7 @@ export default function ImagePreview({
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 92vw, 60vw"
+                    quality={95}
                     priority
                   />
 

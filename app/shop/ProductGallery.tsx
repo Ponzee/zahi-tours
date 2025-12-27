@@ -12,6 +12,8 @@ interface ProductGalleryProps {
   onSelect?: (index: number) => void;
   open?: boolean;
   setOpen?: (value: boolean) => void;
+  priority?: boolean;
+  quality?: number;
   hoverLabel?: string;
   sidePanel?: React.ReactNode;
 }
@@ -24,6 +26,8 @@ export default function ProductGallery({
   onSelect,
   open,
   setOpen,
+  priority = false,
+  quality = 95,
   hoverLabel,
   sidePanel,
 }: ProductGalleryProps) {
@@ -32,12 +36,12 @@ export default function ProductGallery({
     
     // If image_urls array is provided, use it directly
     if (imageUrls && imageUrls.length > 0) {
-      imageUrls.forEach((img) => images.push(img.replace(/\.avif$/, ".webp")));
+      imageUrls.forEach((img) => images.push(img));
       return images;
     }
     
     // Otherwise, try to auto-detect images from base imageUrl
-    const base = imageUrl ? imageUrl.replace(/\.avif$/, ".webp") : null;
+    const base = imageUrl ?? null;
     if (base) {
       images.push(base);
       
@@ -81,8 +85,12 @@ export default function ProductGallery({
           alt={alt}
           fill
           className="object-cover"
-          sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-          loading="lazy"
+          // Overshoot on purpose so the browser picks a higher-res srcset candidate.
+          // (User requested max visual quality over perf.)
+          sizes="(min-width: 1536px) 420px, (min-width: 1280px) 380px, (min-width: 1024px) 340px, (min-width: 640px) 520px, 100vw"
+          quality={quality}
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
         />
         <ImagePreview
           src={current}
