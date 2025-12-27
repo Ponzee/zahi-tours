@@ -13,22 +13,29 @@ export default function LayoutWrapper({
   const pathname = usePathname();
   const isShopPage = pathname?.startsWith("/shop");
 
-  const backgroundImage = useMemo(() => {
-    // Swap these as you add more images under /public/backgrounds/*
-    if (!pathname || pathname === "/") return "/backgrounds/home.webp";
-    if (pathname.startsWith("/watch")) return "/backgrounds/watch.webp";
-    if (pathname.startsWith("/support")) return "/backgrounds/support.webp";
-    if (pathname.startsWith("/about")) return "/backgrounds/about.webp";
-    if (pathname.startsWith("/contact")) return "/backgrounds/contact.webp";
-    if (pathname.startsWith("/shop")) return "/backgrounds/shop.webp";
+  const bg = useMemo(() => {
+    // IMPORTANT: "cover" will ALWAYS fill 100% of the area, but it will crop.
+    // To prevent the "zoomed" feeling, we tune the focal point (backgroundPosition) per section image.
+    if (!pathname || pathname === "/")
+      return { src: "/backgrounds/home.webp", position: "center 25%" };
+    if (pathname.startsWith("/watch"))
+      return { src: "/backgrounds/watch.webp", position: "center" };
+    if (pathname.startsWith("/support"))
+      return { src: "/backgrounds/support.webp", position: "center" };
+    if (pathname.startsWith("/about"))
+      return { src: "/backgrounds/about.webp", position: "center" };
+    if (pathname.startsWith("/contact"))
+      return { src: "/backgrounds/contact.webp", position: "center" };
+    if (pathname.startsWith("/shop"))
+      return { src: "/backgrounds/shop.webp", position: "center" };
     return null;
   }, [pathname]);
 
-  const outerStyle = backgroundImage
+  const outerStyle = bg
     ? ({
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${bg.src})`,
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: bg.position,
         backgroundRepeat: "no-repeat",
       } as const)
     : undefined;
@@ -41,7 +48,7 @@ export default function LayoutWrapper({
         className="relative bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4"
         style={outerStyle}
       >
-        {backgroundImage && (
+        {bg?.src && (
           <div
             className="pointer-events-none absolute inset-0 bg-[#faf8f5]/75"
             aria-hidden="true"
@@ -62,7 +69,7 @@ export default function LayoutWrapper({
       className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
       style={outerStyle}
     >
-      {backgroundImage && (
+      {bg?.src && (
         <div
           className="pointer-events-none absolute inset-0 bg-[#faf8f5]/75"
           aria-hidden="true"
