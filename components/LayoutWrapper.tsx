@@ -17,7 +17,7 @@ export default function LayoutWrapper({
     // IMPORTANT: "cover" will ALWAYS fill 100% of the area, but it will crop.
     // To prevent the "zoomed" feeling, we tune the focal point (backgroundPosition) per section image.
     if (!pathname || pathname === "/")
-      return { src: "/backgrounds/homev2.webp", position: "center" };
+      return { src: "/backgrounds/homev3.webp", position: "center" };
     if (pathname.startsWith("/watch"))
       return { src: "/backgrounds/watch.webp", position: "center" };
     if (pathname.startsWith("/support"))
