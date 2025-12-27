@@ -14,28 +14,72 @@ export default function LayoutWrapper({
   const isShopPage = pathname?.startsWith("/shop");
 
   const bg = useMemo(() => {
-    // IMPORTANT: "cover" will ALWAYS fill 100% of the area, but it will crop.
-    // To prevent the "zoomed" feeling, we tune the focal point (backgroundPosition) per section image.
+    // Option 1 (chosen): use a WIDE desktop background per section so "cover" doesn't feel zoomed/cropped.
+    // Also allow a different mobile image (portrait/taller crop).
+    //
+    // For now, only home.webp exists, so we use it for both. When you add files like:
+    // - /public/backgrounds/home-desktop.webp (wide)
+    // - /public/backgrounds/home-mobile.webp (taller)
+    // swap the srcs below and it will look great on every monitor.
     if (!pathname || pathname === "/")
-      return { src: "/backgrounds/home.webp", position: "center 25%" };
+      return {
+        desktopSrc: "/backgrounds/home.webp",
+        mobileSrc: "/backgrounds/home.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     if (pathname.startsWith("/watch"))
-      return { src: "/backgrounds/watch.webp", position: "center" };
+      return {
+        desktopSrc: "/backgrounds/watch-desktop.webp",
+        mobileSrc: "/backgrounds/watch-mobile.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     if (pathname.startsWith("/support"))
-      return { src: "/backgrounds/support.webp", position: "center" };
+      return {
+        desktopSrc: "/backgrounds/support-desktop.webp",
+        mobileSrc: "/backgrounds/support-mobile.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     if (pathname.startsWith("/about"))
-      return { src: "/backgrounds/about.webp", position: "center" };
+      return {
+        desktopSrc: "/backgrounds/about-desktop.webp",
+        mobileSrc: "/backgrounds/about-mobile.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     if (pathname.startsWith("/contact"))
-      return { src: "/backgrounds/contact.webp", position: "center" };
+      return {
+        desktopSrc: "/backgrounds/contact-desktop.webp",
+        mobileSrc: "/backgrounds/contact-mobile.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     if (pathname.startsWith("/shop"))
-      return { src: "/backgrounds/shop.webp", position: "center" };
+      return {
+        desktopSrc: "/backgrounds/shop-desktop.webp",
+        mobileSrc: "/backgrounds/shop-mobile.webp",
+        desktopPos: "center",
+        mobilePos: "center",
+      };
     return null;
   }, [pathname]);
 
-  const containStyle = bg
+  const desktopBgStyle = bg
     ? ({
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "contain",
-        backgroundPosition: "center",
+        backgroundImage: `url(${bg.desktopSrc})`,
+        backgroundSize: "cover",
+        backgroundPosition: bg.desktopPos,
+        backgroundRepeat: "no-repeat",
+      } as const)
+    : undefined;
+
+  const mobileBgStyle = bg
+    ? ({
+        backgroundImage: `url(${bg.mobileSrc})`,
+        backgroundSize: "cover",
+        backgroundPosition: bg.mobilePos,
         backgroundRepeat: "no-repeat",
       } as const)
     : undefined;
@@ -47,14 +91,11 @@ export default function LayoutWrapper({
       <div
         className="relative bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
       >
-        {bg?.src && (
+        {bg && (
           <>
-            {/* Show the full image (no crop) */}
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={containStyle}
-              aria-hidden="true"
-            />
+            {/* One visible background per breakpoint (no overlays / no extra layers). */}
+            <div className="pointer-events-none absolute inset-0 md:hidden" style={mobileBgStyle} aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-0 hidden md:block" style={desktopBgStyle} aria-hidden="true" />
           </>
         )}
         <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-7xl mx-auto w-full">
@@ -71,14 +112,11 @@ export default function LayoutWrapper({
     <div
       className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
     >
-      {bg?.src && (
+      {bg && (
         <>
-          {/* Show the full image (no crop) */}
-          <div
-            className="pointer-events-none absolute inset-0"
-            style={containStyle}
-            aria-hidden="true"
-          />
+          {/* One visible background per breakpoint (no overlays / no extra layers). */}
+          <div className="pointer-events-none absolute inset-0 md:hidden" style={mobileBgStyle} aria-hidden="true" />
+          <div className="pointer-events-none absolute inset-0 hidden md:block" style={desktopBgStyle} aria-hidden="true" />
         </>
       )}
       <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-7xl mx-auto w-full h-full">
