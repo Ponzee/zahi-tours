@@ -107,7 +107,7 @@ export default function SupportPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.id}
-                className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-all p-4 md:p-6 flex flex-col"
+                className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 flex flex-col"
               >
                 <div className="flex-1">
                   <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 text-[#1a1612]">{tier.name}</h3>

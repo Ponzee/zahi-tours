@@ -101,7 +101,7 @@ export default function ProductGallery({
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`h-6 w-6 md:h-7 md:w-7 rounded-full border border-white/70 shadow-sm transition-all duration-200 ${
+                className={`h-6 w-6 md:h-7 md:w-7 rounded-full border border-white/70 shadow-sm transition-colors duration-200 ${
                   activeIndex === idx ? "bg-white scale-105" : "bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Show image ${idx + 1}`}

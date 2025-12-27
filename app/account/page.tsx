@@ -176,7 +176,7 @@ function AccountPageContent() {
               <div className="space-y-3 mb-6">
                 <button
                   onClick={() => handleOAuthSignIn('google')}
-                  className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-[#e5ddd4] bg-white px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] hover:border-[#c2410c] transition-all shadow-sm"
+                  className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-[#e5ddd4] bg-white px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] hover:border-[#c2410c] transition-colors shadow-sm"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -189,7 +189,7 @@ function AccountPageContent() {
 
                 <button
                   onClick={() => handleOAuthSignIn('facebook')}
-                  className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-[#e5ddd4] bg-white px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] hover:border-[#c2410c] transition-all shadow-sm"
+                  className="w-full flex items-center justify-center gap-3 rounded-xl border-2 border-[#e5ddd4] bg-white px-5 py-3 text-sm font-medium text-[#1a1612] hover:bg-[#faf8f5] hover:border-[#c2410c] transition-colors shadow-sm"
                 >
                   <svg className="w-5 h-5" fill="#1877F2" viewBox="0 0 24 24">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -223,7 +223,7 @@ function AccountPageContent() {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     autoComplete="email"
-                    className="w-full rounded-xl border border-[#e5ddd4] bg-white px-4 py-3 text-sm text-[#1a1612] focus:outline-none focus:ring-2 focus:ring-[#c2410c] focus:border-transparent transition-all"
+                    className="w-full rounded-xl border border-[#e5ddd4] bg-white px-4 py-3 text-sm text-[#1a1612] focus:outline-none focus:ring-2 focus:ring-[#c2410c] focus:border-transparent transition-colors"
                   />
                 </div>
 
@@ -239,7 +239,7 @@ function AccountPageContent() {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                     autoComplete={isSignIn ? "current-password" : "new-password"}
-                    className="w-full rounded-xl border border-[#e5ddd4] bg-white px-4 py-3 text-sm text-[#1a1612] focus:outline-none focus:ring-2 focus:ring-[#c2410c] focus:border-transparent transition-all"
+                    className="w-full rounded-xl border border-[#e5ddd4] bg-white px-4 py-3 text-sm text-[#1a1612] focus:outline-none focus:ring-2 focus:ring-[#c2410c] focus:border-transparent transition-colors"
                   />
                 </div>
 
@@ -287,7 +287,7 @@ function AccountPageContent() {
             </div>
             <button
               onClick={handleSignOut}
-              className="mt-4 rounded-full border-2 border-[#e5ddd4] px-4 py-2 text-sm font-medium text-[#1a1612] bg-white hover:bg-[#faf8f5] hover:border-[#c2410c] transition-all"
+              className="mt-4 rounded-full border-2 border-[#e5ddd4] px-4 py-2 text-sm font-medium text-[#1a1612] bg-white hover:bg-[#faf8f5] hover:border-[#c2410c] transition-colors"
             >
               Sign Out
             </button>

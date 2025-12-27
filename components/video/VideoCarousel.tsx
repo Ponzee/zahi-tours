@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import VideoCard from "./VideoCard";
 import { YouTubeVideo } from "@/lib/youtube";
 
@@ -13,28 +13,38 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(false);
+  const rafRef = useRef<number | null>(null);
 
-  const checkScrollButtons = () => {
+  const checkScrollButtons = useCallback(() => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
     const { scrollLeft, scrollWidth, clientWidth } = container;
     setShowLeftButton(scrollLeft > 0);
     setShowRightButton(scrollLeft < scrollWidth - clientWidth - 10); // 10px threshold
-  };
+  }, []);
+
+  const scheduleCheck = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null;
+      checkScrollButtons();
+    });
+  }, [checkScrollButtons]);
 
   useEffect(() => {
-    checkScrollButtons();
+    scheduleCheck();
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    container.addEventListener('scroll', checkScrollButtons);
-    window.addEventListener('resize', checkScrollButtons);
+    container.addEventListener("scroll", scheduleCheck, { passive: true });
+    window.addEventListener("resize", scheduleCheck);
 
     return () => {
-      container.removeEventListener('scroll', checkScrollButtons);
-      window.removeEventListener('resize', checkScrollButtons);
+      container.removeEventListener("scroll", scheduleCheck as EventListener);
+      window.removeEventListener("resize", scheduleCheck);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [videos]);
+  }, [videos, scheduleCheck]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
