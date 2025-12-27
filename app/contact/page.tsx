@@ -16,7 +16,7 @@ export default function ContactPage() {
               Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
-            <div className="mt-6 max-w-2xl space-y-3 text-sm md:text-base">
+            <div className="mt-6 max-w-3xl w-full space-y-3 text-sm md:text-base">
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">WhatsApp</span>
                 <span className="font-semibold text-[#1a1612]">+972-54-690-5522</span>
