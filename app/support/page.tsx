@@ -93,11 +93,11 @@ export default function SupportPage() {
       {/* Main Content */}
       <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
-          <div className="text-center mb-6 md:mb-8">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-2 text-[#1a1612]">
+          <div className="mb-6 md:mb-8">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
               Support Zahi's Work
             </h1>
-            <p className="text-sm md:text-base text-[#3d3529] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">
               Help Zahi keep documenting the Holy Land with independent, ad-light, educational videos. 
               Choose a membership tier that works for you.
             </p>

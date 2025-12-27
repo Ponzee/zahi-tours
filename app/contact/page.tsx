@@ -8,15 +8,15 @@ export default function ContactPage() {
     <div className="h-full flex flex-col overflow-hidden">
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
-          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
             </h1>
-            <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl mx-auto">
+            <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">
               Have a question about a video, thinking about supporting his work, or planning a future trip to Israel? Feel free to reach out.
             </p>
 
-            <div className="mt-6 max-w-2xl mx-auto text-left space-y-3 text-sm md:text-base">
+            <div className="mt-6 max-w-2xl space-y-3 text-sm md:text-base">
               <div className="flex items-center justify-between py-3 border-b border-[#e5ddd4]">
                 <span className="text-[#3d3529]">WhatsApp</span>
                 <span className="font-semibold text-[#1a1612]">+972-54-690-5522</span>
