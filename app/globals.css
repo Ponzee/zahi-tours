@@ -21,6 +21,15 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent layout shift when switching between non-scroll pages and /shop (scrollbar appears) */
+  scrollbar-gutter: stable;
+}
+
+/* Fallback for browsers that don't support scrollbar-gutter (desktop) */
+@media (min-width: 768px) {
+  html {
+    overflow-y: scroll;
+  }
 }
 
 body {

@@ -89,13 +89,13 @@ export default function ProductGallery({ alt, imageUrl, imageUrls }: ProductGall
           setOpen={setOpen}
         />
         {galleryImages.length > 1 && (
-          <div className="pointer-events-auto absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-3">
+          <div className="pointer-events-auto absolute bottom-2 left-1/2 flex -translate-x-1/2 items-center gap-2">
             {galleryImages.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setSelectedIndex(idx)}
-                className={`h-12 w-12 rounded-full border-2 border-white/70 shadow-sm transition-all duration-200 ${
-                  selectedIndex === idx ? "bg-white scale-110" : "bg-white/30 hover:bg-white/50"
+                className={`h-6 w-6 md:h-7 md:w-7 rounded-full border border-white/70 shadow-sm transition-all duration-200 ${
+                  selectedIndex === idx ? "bg-white scale-105" : "bg-white/30 hover:bg-white/50"
                 }`}
                 aria-label={`Show image ${idx + 1}`}
               />
