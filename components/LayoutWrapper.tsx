@@ -17,7 +17,7 @@ export default function LayoutWrapper({
     // IMPORTANT: "cover" will ALWAYS fill 100% of the area, but it will crop.
     // To prevent the "zoomed" feeling, we tune the focal point (backgroundPosition) per section image.
     if (!pathname || pathname === "/")
-      return { src: "/backgrounds/homev3.webp", position: "center" };
+      return { src: "/backgrounds/home.webp", position: "center 25%" };
     if (pathname.startsWith("/watch"))
       return { src: "/backgrounds/watch.webp", position: "center" };
     if (pathname.startsWith("/support"))
@@ -31,11 +31,20 @@ export default function LayoutWrapper({
     return null;
   }, [pathname]);
 
-  const outerStyle = bg
+  const coverStyle = bg
     ? ({
         backgroundImage: `url(${bg.src})`,
         backgroundSize: "cover",
         backgroundPosition: bg.position,
+        backgroundRepeat: "no-repeat",
+      } as const)
+    : undefined;
+
+  const containStyle = bg
+    ? ({
+        backgroundImage: `url(${bg.src})`,
+        backgroundSize: "contain",
+        backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       } as const)
     : undefined;
@@ -45,9 +54,28 @@ export default function LayoutWrapper({
     // Option B: white "page surface" with off-white outside.
     return (
       <div
-        className="relative bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4"
-        style={outerStyle}
+        className="relative bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
       >
+        {bg?.src && (
+          <>
+            {/* Fill the area (may crop) */}
+            <div
+              className="pointer-events-none absolute inset-0 opacity-90"
+              style={{
+                ...coverStyle,
+                filter: "blur(18px) saturate(1.05)",
+                transform: "scale(1.06)",
+              }}
+              aria-hidden="true"
+            />
+            {/* Show the full image (no crop) */}
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={containStyle}
+              aria-hidden="true"
+            />
+          </>
+        )}
         <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-6xl mx-auto w-full">
           {children}
           {footer}
@@ -61,8 +89,27 @@ export default function LayoutWrapper({
   return (
     <div
       className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
-      style={outerStyle}
     >
+      {bg?.src && (
+        <>
+          {/* Fill the area (may crop) */}
+          <div
+            className="pointer-events-none absolute inset-0 opacity-90"
+            style={{
+              ...coverStyle,
+              filter: "blur(18px) saturate(1.05)",
+              transform: "scale(1.06)",
+            }}
+            aria-hidden="true"
+          />
+          {/* Show the full image (no crop) */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={containStyle}
+            aria-hidden="true"
+          />
+        </>
+      )}
       <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-6xl mx-auto w-full h-full">
         <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
         {footer}
