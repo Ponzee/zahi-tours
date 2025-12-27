@@ -110,7 +110,7 @@ export default function LayoutWrapper({
   // Option B: white "page surface" with off-white outside.
   return (
     <div
-      className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 overflow-hidden"
+      className="relative flex-1 min-h-0 bg-[#faf8f5] px-4 md:px-6 lg:px-8 py-4 overflow-hidden"
     >
       {bg && (
         <>
