@@ -28,7 +28,7 @@ export default async function HomePage() {
         </div>
 
         {/* Desktop: Channel Banner - Thin banner strip matching content width */}
-        <section className="hidden md:block flex-shrink-0">
+        <section className="hidden md:block flex-shrink-0 mt-4">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 relative overflow-hidden" style={{ height: '140px' }}>
             <Image
               src="/channel-banner.jpg"
