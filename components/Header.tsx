@@ -16,7 +16,7 @@ function Header() {
 
   return (
     <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20" role="banner">
-      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <Link 
           href="/" 
           className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded"
@@ -79,7 +79,7 @@ function Header() {
       </div>
       {mobileMenuOpen && (
         <div id="mobile-menu" className="md:hidden border-t border-[#e5ddd4] bg-white" role="menu">
-          <nav className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col gap-3" role="navigation" aria-label="Mobile navigation">
+          <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col gap-3" role="navigation" aria-label="Mobile navigation">
             <Link href="/watch" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
             <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Support</Link>
             <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Shop</Link>

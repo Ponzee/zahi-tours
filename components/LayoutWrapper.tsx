@@ -57,7 +57,7 @@ export default function LayoutWrapper({
             />
           </>
         )}
-        <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-6xl mx-auto w-full">
+        <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-7xl mx-auto w-full">
           {children}
           {footer}
         </div>
@@ -81,7 +81,7 @@ export default function LayoutWrapper({
           />
         </>
       )}
-      <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-6xl mx-auto w-full h-full">
+      <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-7xl mx-auto w-full h-full">
         <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
         {footer}
       </div>
