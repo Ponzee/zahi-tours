@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
 import ImagePreview from "./ImagePreview";
 
@@ -66,18 +66,6 @@ export default function ProductGallery({
 
   const modalOpen = open !== undefined ? open : internalOpen;
   const setModalOpen = setOpen !== undefined ? setOpen : setInternalOpen;
-  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
-
-  // Preload all images when component mounts
-  useEffect(() => {
-    galleryImages.forEach((imgSrc) => {
-      const img = new window.Image();
-      img.src = imgSrc;
-      img.onload = () => {
-        setImagesLoaded((prev) => new Set(prev).add(imgSrc));
-      };
-    });
-  }, [galleryImages]);
 
   const current = galleryImages[activeIndex] || galleryImages[0];
 
@@ -86,21 +74,16 @@ export default function ProductGallery({
   return (
     <div className="w-full">
       <div className="group relative aspect-[3/4] cursor-zoom-in overflow-hidden rounded-b-none">
-        {/* Render all images with opacity transition for smooth switching */}
-        {galleryImages.map((imgSrc, idx) => (
-          <Image
-            key={imgSrc}
-            src={imgSrc}
-            alt={alt}
-            fill
-            className={`object-cover transition-opacity duration-300 ${
-              idx === activeIndex ? "opacity-100" : "opacity-0 absolute"
-            }`}
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            loading={idx === 0 ? "eager" : "lazy"}
-            priority={idx === 0}
-          />
-        ))}
+        {/* Render only the active image (avoid downloading/rendering hidden slides) */}
+        <Image
+          key={current}
+          src={current}
+          alt={alt}
+          fill
+          className="object-cover"
+          sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+          loading="lazy"
+        />
         <ImagePreview
           src={current}
           alt={alt}

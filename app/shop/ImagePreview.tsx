@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 
 interface ImagePreviewProps {
@@ -36,8 +36,10 @@ export default function ImagePreview({
   const setActiveIndex = onSelect !== undefined ? onSelect : setInternalIndex;
 
   const gallery = images && images.length > 0 ? images : [src];
-  const currentImage = gallery[activeIndex] || gallery[0];
-  const [imagesLoaded, setImagesLoaded] = useState<Set<string>>(new Set());
+  const currentImage = useMemo(
+    () => gallery[activeIndex] || gallery[0],
+    [activeIndex, gallery]
+  );
 
   // Preload all images when modal opens
   useEffect(() => {
@@ -46,9 +48,6 @@ export default function ImagePreview({
     gallery.forEach((imgSrc) => {
       const img = new window.Image();
       img.src = imgSrc;
-      img.onload = () => {
-        setImagesLoaded((prev) => new Set(prev).add(imgSrc));
-      };
     });
   }, [modalOpen, gallery]);
 
@@ -99,20 +98,16 @@ export default function ImagePreview({
               <div className="relative overflow-hidden rounded-[30px] shadow-[0_40px_90px_rgba(0,0,0,0.55)]">
                 <div className="absolute inset-0 rounded-[30px] bg-gradient-to-b from-white/15 to-black/40 blur-2xl opacity-40 pointer-events-none" />
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[30px] bg-[#0b0b0b] max-h-[80vh]">
-                  {/* Render all images with opacity transition for smooth switching */}
-                  {gallery.map((imgSrc, idx) => (
-                    <Image
-                      key={imgSrc}
-                      src={imgSrc}
-                      alt={alt}
-                      fill
-                      className={`object-cover transition-opacity duration-300 ${
-                        idx === activeIndex ? "opacity-100" : "opacity-0 absolute"
-                      }`}
-                      sizes="(max-width: 1024px) 92vw, 60vw"
-                      priority={idx === 0}
-                    />
-                  ))}
+                  {/* Render only the active image (preload effect above handles the rest) */}
+                  <Image
+                    key={currentImage}
+                    src={currentImage}
+                    alt={alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 92vw, 60vw"
+                    priority
+                  />
 
                   <button
                     onClick={() => setModalOpen(false)}
