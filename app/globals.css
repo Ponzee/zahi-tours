@@ -126,3 +126,30 @@ button {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Lite YouTube: instant thumbnail, iframe loads in background, cross-fade when ready */
+.lite-yt .lite-yt-iframe,
+.lite-yt .lite-yt-thumb {
+  transition: opacity 200ms ease-out;
+  will-change: opacity;
+}
+
+.lite-yt .lite-yt-iframe {
+  opacity: 0;
+}
+
+.lite-yt[data-loaded="true"] .lite-yt-iframe {
+  opacity: 1;
+}
+
+.lite-yt[data-loaded="true"] .lite-yt-thumb {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lite-yt .lite-yt-iframe,
+  .lite-yt .lite-yt-thumb {
+    transition: none;
+  }
+}

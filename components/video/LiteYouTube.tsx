@@ -30,14 +30,12 @@ export default function LiteYouTube({
   }, [videoId]);
 
   return (
-    <div className={`relative w-full ${className}`}>
+    <div className={`lite-yt relative w-full ${className}`} data-loaded={iframeLoaded ? "true" : "false"}>
       <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
         {/* Background-load the iframe immediately, but keep the thumbnail visible until the player is ready. */}
         <iframe
           src={iframeSrc}
-          className={`absolute top-0 left-0 w-full h-full transition-opacity duration-200 ${
-            iframeLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className="lite-yt-iframe absolute top-0 left-0 w-full h-full"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
           title={title}
@@ -45,12 +43,7 @@ export default function LiteYouTube({
           onLoad={() => setIframeLoaded(true)}
         />
 
-        <div
-          className={`absolute inset-0 transition-opacity duration-200 ${
-            iframeLoaded ? "opacity-0 pointer-events-none" : "opacity-100"
-          }`}
-          aria-hidden={iframeLoaded}
-        >
+        <div className="lite-yt-thumb absolute inset-0" aria-hidden={iframeLoaded}>
           <Image
             src={thumbnailUrl}
             alt={title}
