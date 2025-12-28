@@ -67,9 +67,9 @@ export default function ContactPage() {
                       <img
                         src="/icons/follow_journey.webp"
                         alt=""
-                        width={18}
-                        height={18}
-                        className="h-[18px] w-[18px] object-contain"
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 object-contain"
                         aria-hidden="true"
                       />
                       Follow my journey on
@@ -144,9 +144,9 @@ export default function ContactPage() {
                       <img
                         src="/icons/support_journey.webp"
                         alt=""
-                        width={18}
-                        height={18}
-                        className="h-[18px] w-[18px] object-contain"
+                        width={36}
+                        height={36}
+                        className="h-9 w-9 object-contain"
                         aria-hidden="true"
                       />
                       Support my journey on
