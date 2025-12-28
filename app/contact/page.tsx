@@ -79,7 +79,7 @@ export default function ContactPage() {
                         href="https://www.youtube.com/@zahishaked"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
                         aria-label="YouTube"
                         title="YouTube"
                       >
@@ -98,7 +98,7 @@ export default function ContactPage() {
                         href="https://www.facebook.com/zahishakedisraelitourguide"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
                         aria-label="Facebook"
                         title="Facebook"
                       >
@@ -117,7 +117,7 @@ export default function ContactPage() {
                         href="https://www.instagram.com/zahi_shaked_israeli_tour_guide"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
                         aria-label="Instagram"
                         title="Instagram"
                       >
@@ -155,7 +155,7 @@ export default function ContactPage() {
                       {/* Support (left) */}
                       <Link
                         href="/support"
-                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
                         aria-label="Support my journey"
                         title="Support my journey"
                       >
@@ -189,7 +189,7 @@ export default function ContactPage() {
                         href="https://linktr.ee/zahishakedtourguide"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
                         aria-label="Linktree"
                         title="Linktree"
                       >
