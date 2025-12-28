@@ -59,7 +59,7 @@ export default function ContactPage() {
                 <span className="text-[#3d3529]">Based in</span>
                 <span className="font-semibold text-[#1a1612] text-left">Jerusalem & Tel Aviv</span>
               </div>
-              <div className="pt-4 border-t border-[#e5ddd4] space-y-2 text-sm md:text-base">
+              <div className="mt-6 pt-6 border-t border-[#e5ddd4] space-y-4 text-sm md:text-base">
                 <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-8 items-start justify-items-start">
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
