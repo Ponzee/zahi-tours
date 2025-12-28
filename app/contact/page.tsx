@@ -130,29 +130,9 @@ export default function ContactPage() {
 
                   {/* Support */}
                   <div className="min-w-0 flex flex-col items-start">
-                    <p className="font-semibold text-[#1a1612] text-left">Support my journey</p>
+                    <p className="font-semibold text-[#1a1612] text-left">Support my journey on</p>
                     <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
-                      {/* Linktree (left) */}
-                      <a
-                        href="https://linktr.ee/zahishakedtourguide"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
-                        aria-label="Linktree"
-                        title="Linktree"
-                      >
-                        <span
-                          className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#39E09B]"
-                          aria-hidden="true"
-                        >
-                          <svg viewBox="0 0 24 24" className="h-5 w-5 text-black" fill="currentColor">
-                            <path d="M12 2l4.6 4.6-1.4 1.4L13 5.8V10h-2V5.8L8.8 8 7.4 6.6 12 2zm-1 10h2v10h-2V12z" />
-                          </svg>
-                        </span>
-                        <span className="text-xs md:text-sm font-semibold text-[#1a1612]">Linktree</span>
-                      </a>
-
-                      {/* Support (right) */}
+                      {/* Support (left) */}
                       <Link
                         href="/support"
                         className="inline-flex items-center gap-2 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
@@ -183,6 +163,26 @@ export default function ContactPage() {
                         </span>
                         <span className="text-xs md:text-sm font-semibold text-[#1a1612]">Support</span>
                       </Link>
+
+                      {/* Linktree (right) */}
+                      <a
+                        href="https://linktr.ee/zahishakedtourguide"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full border border-[#e5ddd4] bg-white px-3 py-2 shadow-sm hover:shadow-md transition-shadow whitespace-nowrap"
+                        aria-label="Linktree"
+                        title="Linktree"
+                      >
+                        <span
+                          className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#39E09B]"
+                          aria-hidden="true"
+                        >
+                          <svg viewBox="0 0 24 24" className="h-5 w-5 text-black" fill="currentColor">
+                            <path d="M12 2l4.6 4.6-1.4 1.4L13 5.8V10h-2V5.8L8.8 8 7.4 6.6 12 2zm-1 10h2v10h-2V12z" />
+                          </svg>
+                        </span>
+                        <span className="text-xs md:text-sm font-semibold text-[#1a1612]">Linktree</span>
+                      </a>
                     </div>
                   </div>
                 </div>
