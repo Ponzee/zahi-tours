@@ -142,7 +142,7 @@ export default function ContactPage() {
                   <div className="min-w-0 flex flex-col items-start">
                     <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
                       <img
-                        src="/icons/support_journey.webp"
+                        src="/icons/support_journey.png"
                         alt=""
                         width={36}
                         height={36}
