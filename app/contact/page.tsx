@@ -19,7 +19,7 @@ export default function ContactPage() {
             </p>
 
             <div className="mt-6 max-w-3xl w-full space-y-2 text-sm md:text-base">
-              <div className="grid grid-cols-[22px_110px_1fr] items-center gap-3 py-2 border-b border-[#e5ddd4]">
+              <div className="inline-grid grid-cols-[22px_110px_max-content] items-center gap-3 py-2 border-b border-[#e5ddd4]">
                 <span className="text-[#c2410c]" aria-hidden="true">
                   {/* WhatsApp (simple chat bubble) */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -28,10 +28,10 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="text-[#3d3529]">WhatsApp</span>
-                <span className="font-semibold text-[#1a1612] text-left">+972-54-690-5522</span>
+                <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">+972-54-690-5522</span>
               </div>
 
-              <div className="grid grid-cols-[22px_110px_1fr] items-center gap-3 py-2 border-b border-[#e5ddd4]">
+              <div className="inline-grid grid-cols-[22px_110px_max-content] items-center gap-3 py-2 border-b border-[#e5ddd4]">
                 <span className="text-[#c2410c]" aria-hidden="true">
                   {/* Email */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -42,13 +42,13 @@ export default function ContactPage() {
                 <span className="text-[#3d3529]">Email</span>
                 <a
                   href="mailto:zahishaked@gmail.com"
-                  className="font-semibold text-[#1a1612] hover:text-[#c2410c] text-left"
+                  className="font-semibold text-[#1a1612] hover:text-[#c2410c] text-left whitespace-nowrap"
                 >
                   zahishaked@gmail.com
                 </a>
               </div>
 
-              <div className="grid grid-cols-[22px_110px_1fr] items-center gap-3 py-2">
+              <div className="inline-grid grid-cols-[22px_110px_max-content] items-center gap-3 py-2">
                 <span className="text-[#c2410c]" aria-hidden="true">
                   {/* Location pin */}
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -57,9 +57,9 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="text-[#3d3529]">Based in</span>
-                <span className="font-semibold text-[#1a1612] text-left">Jerusalem & Tel Aviv</span>
+                <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">Jerusalem & Tel Aviv</span>
               </div>
-              <div className="mt-6 pt-6 border-t border-[#e5ddd4] space-y-4 text-sm md:text-base">
+              <div className="pt-6 border-t border-[#e5ddd4] space-y-4 text-sm md:text-base">
                 <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-8 items-start justify-items-start">
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
