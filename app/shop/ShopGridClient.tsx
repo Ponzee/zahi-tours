@@ -129,7 +129,7 @@ function ShopProductCard({
           </button>
         </div>
 
-        <div className="mt-3 pt-3 border-t border-[#e5ddd4] flex items-center justify-between gap-2">
+        <div className="mt-auto pt-3 border-t border-[#e5ddd4] flex items-center justify-between gap-2">
           <span className="text-lg md:text-xl font-semibold text-[#1a1612]">
             {priceLabel}
           </span>
