@@ -14,6 +14,13 @@ export default function LayoutWrapper({
   const isShopPage = pathname?.startsWith("/shop");
 
   const bg = useMemo(() => {
+    const fallback = {
+      desktopSrc: "/backgrounds/home.webp",
+      mobileSrc: "/backgrounds/home.webp",
+      desktopPos: "center",
+      mobilePos: "center",
+    };
+
     // Option 1 (chosen): use a WIDE desktop background per section so "cover" doesn't feel zoomed/cropped.
     // Also allow a different mobile image (portrait/taller crop).
     //
@@ -21,49 +28,17 @@ export default function LayoutWrapper({
     // - /public/backgrounds/home-desktop.webp (wide)
     // - /public/backgrounds/home-mobile.webp (taller)
     // swap the srcs below and it will look great on every monitor.
-    if (!pathname || pathname === "/")
-      return {
-        desktopSrc: "/backgrounds/home.webp",
-        mobileSrc: "/backgrounds/home.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    if (pathname.startsWith("/watch"))
-      return {
-        desktopSrc: "/backgrounds/watch-desktop.webp",
-        mobileSrc: "/backgrounds/watch-mobile.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    if (pathname.startsWith("/support"))
-      return {
-        desktopSrc: "/backgrounds/support-desktop.webp",
-        mobileSrc: "/backgrounds/support-mobile.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    if (pathname.startsWith("/about"))
-      return {
-        desktopSrc: "/backgrounds/about-desktop.webp",
-        mobileSrc: "/backgrounds/about-mobile.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    if (pathname.startsWith("/contact"))
-      return {
-        desktopSrc: "/backgrounds/contact-desktop.webp",
-        mobileSrc: "/backgrounds/contact-mobile.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    if (pathname.startsWith("/shop"))
-      return {
-        desktopSrc: "/backgrounds/shop-desktop.webp",
-        mobileSrc: "/backgrounds/shop-mobile.webp",
-        desktopPos: "center",
-        mobilePos: "center",
-      };
-    return null;
+    if (!pathname || pathname === "/") return fallback;
+
+    // TODO: Replace these fallbacks once you add actual files:
+    // /public/backgrounds/watch-desktop.webp, watch-mobile.webp, etc.
+    if (pathname.startsWith("/watch")) return fallback;
+    if (pathname.startsWith("/support")) return fallback;
+    if (pathname.startsWith("/about")) return fallback;
+    if (pathname.startsWith("/contact")) return fallback;
+    if (pathname.startsWith("/shop")) return fallback;
+
+    return fallback;
   }, [pathname]);
 
   const desktopBgStyle = bg

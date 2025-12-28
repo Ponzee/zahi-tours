@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -63,7 +64,17 @@ export default function ContactPage() {
                 <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-8 items-start justify-items-start">
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
-                    <p className="font-semibold text-[#1a1612] text-left">Follow my journey on</p>
+                    <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
+                      <Image
+                        src="/icons/FollowMe.webp"
+                        alt=""
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] object-contain"
+                        aria-hidden="true"
+                      />
+                      Follow my journey on
+                    </p>
                     <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
                       <a
                         href="https://www.youtube.com/@zahishaked"
