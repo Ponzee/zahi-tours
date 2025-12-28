@@ -64,18 +64,14 @@ export default function ContactPage() {
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
                     <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
-                      <span
-                        className="h-[18px] w-[18px] overflow-hidden rounded-[4px] bg-transparent"
+                      <img
+                        src="/icons/follow_journey.webp"
+                        alt=""
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] object-contain"
                         aria-hidden="true"
-                      >
-                        <img
-                          src="/icons/follow_journey.webp"
-                          alt=""
-                          width={18}
-                          height={18}
-                          className="h-full w-full object-cover origin-center scale-[1.6]"
-                        />
-                      </span>
+                      />
                       Follow my journey on
                     </p>
                     <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
@@ -145,18 +141,14 @@ export default function ContactPage() {
                   {/* Support */}
                   <div className="min-w-0 flex flex-col items-start">
                     <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
-                      <span
-                        className="h-[18px] w-[18px] overflow-hidden rounded-[4px] bg-transparent"
+                      <img
+                        src="/icons/support_journey.webp"
+                        alt=""
+                        width={18}
+                        height={18}
+                        className="h-[18px] w-[18px] object-contain"
                         aria-hidden="true"
-                      >
-                        <img
-                          src="/icons/support_journey.webp"
-                          alt=""
-                          width={18}
-                          height={18}
-                          className="h-full w-full object-cover origin-center scale-[1.6]"
-                        />
-                      </span>
+                      />
                       Support my journey on
                     </p>
                     <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
