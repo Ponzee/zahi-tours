@@ -4,7 +4,6 @@ export const metadata = {
 };
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -65,7 +64,7 @@ export default function ContactPage() {
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
                     <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
-                      <Image
+                      <img
                         src="/icons/FollowMe.webp"
                         alt=""
                         width={18}
