@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+import FollowSupportBlock from "@/components/FollowSupportBlock";
 
 export default function LayoutWrapper({
   children,
@@ -12,6 +13,12 @@ export default function LayoutWrapper({
 }) {
   const pathname = usePathname();
   const isShopPage = pathname?.startsWith("/shop");
+  const showFollowSupport =
+    !!pathname &&
+    pathname !== "/" &&
+    ["/watch", "/support", "/shop", "/about", "/contact"].some((p) =>
+      pathname.startsWith(p)
+    );
 
   const bg = useMemo(() => {
     const fallback = {
@@ -68,6 +75,7 @@ export default function LayoutWrapper({
         )}
         <div className="relative z-10 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden max-w-7xl mx-auto w-full">
           {children}
+          {showFollowSupport && <FollowSupportBlock />}
           {footer}
         </div>
       </div>
@@ -89,6 +97,7 @@ export default function LayoutWrapper({
       )}
       <div className="relative z-10 flex-1 min-h-0 bg-white rounded-2xl border border-[#e5ddd4] shadow-sm overflow-hidden flex flex-col max-w-7xl mx-auto w-full h-full">
         <div className="flex-1 min-h-0 overflow-hidden">{children}</div>
+        {showFollowSupport && <FollowSupportBlock />}
         {footer}
       </div>
     </div>
