@@ -28,17 +28,10 @@ export default function LayoutWrapper({
     // - /public/backgrounds/home-desktop.webp (wide)
     // - /public/backgrounds/home-mobile.webp (taller)
     // swap the srcs below and it will look great on every monitor.
+    // For now: ONLY the homepage uses the background image.
+    // Other pages should use the simple solid background until you decide.
     if (!pathname || pathname === "/") return fallback;
-
-    // TODO: Replace these fallbacks once you add actual files:
-    // /public/backgrounds/watch-desktop.webp, watch-mobile.webp, etc.
-    if (pathname.startsWith("/watch")) return fallback;
-    if (pathname.startsWith("/support")) return fallback;
-    if (pathname.startsWith("/about")) return fallback;
-    if (pathname.startsWith("/contact")) return fallback;
-    if (pathname.startsWith("/shop")) return fallback;
-
-    return fallback;
+    return null;
   }, [pathname]);
 
   const desktopBgStyle = bg
