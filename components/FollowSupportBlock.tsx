@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function FollowSupportBlock() {
   return (
-    <div className="border-t border-[#e5ddd4] bg-white">
+    <div className="bg-white">
       <div className="px-4 md:px-6 lg:px-8 py-4">
-        <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-8 items-start justify-items-start">
+        <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-10 items-start justify-center justify-items-center">
           {/* Follow */}
-          <div className="min-w-0 flex flex-col items-start">
-            <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
+          <div className="min-w-0 flex flex-col items-center text-center">
+            <p className="font-semibold text-[#1a1612] inline-flex items-center justify-center gap-2">
               <img
                 src="/icons/follow_journey.webp"
                 alt=""
@@ -21,7 +21,7 @@ export default function FollowSupportBlock() {
               Follow my journey on
             </p>
 
-            <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
+            <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-center gap-2">
               <a
                 href="https://www.youtube.com/@zahishaked"
                 target="_blank"
@@ -86,8 +86,8 @@ export default function FollowSupportBlock() {
           </div>
 
           {/* Support */}
-          <div className="min-w-0 flex flex-col items-start">
-            <p className="font-semibold text-[#1a1612] text-left inline-flex items-center gap-2">
+          <div className="min-w-0 flex flex-col items-center text-center">
+            <p className="font-semibold text-[#1a1612] inline-flex items-center justify-center gap-2">
               <img
                 src="/icons/support_journey.png"
                 alt=""
@@ -99,7 +99,7 @@ export default function FollowSupportBlock() {
               Support my journey on
             </p>
 
-            <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-start gap-2">
+            <div className="mt-3 flex flex-wrap sm:flex-nowrap items-center justify-center gap-2">
               <Link
                 href="/support"
                 className="inline-flex items-center gap-1 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-2 py-1.5 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
