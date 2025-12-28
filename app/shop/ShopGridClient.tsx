@@ -107,17 +107,22 @@ function ShopProductCard({
       />
 
       <div className="p-3 md:p-4 flex-1 flex flex-col min-h-0">
-        <h3 className="font-bold text-base md:text-lg tracking-tight text-[#1a1612] mb-1">
-          {product.name}
-        </h3>
-
-        {product.description ? (
-          <p className="text-xs md:text-sm text-[#3d3529] leading-relaxed clamp-2">
-            {product.description}
-          </p>
-        ) : (
-          <p className="text-xs text-[#8a7c6a]">No description yet.</p>
-        )}
+        {/* Fixed-height "title + mini-description" block so "View item" aligns across cards.
+            Description flexes to fill leftover space (shorter titles => more preview lines). */}
+        <div className="h-[120px] md:h-[140px] flex flex-col min-h-0">
+          <h3 className="shrink-0 font-bold text-base md:text-lg tracking-tight text-[#1a1612] leading-snug clamp-2">
+            {product.name}
+          </h3>
+          {product.description ? (
+            <p className="mt-1 flex-1 min-h-0 overflow-hidden text-xs md:text-sm text-[#3d3529] leading-relaxed">
+              {product.description}
+            </p>
+          ) : (
+            <p className="mt-1 flex-1 min-h-0 overflow-hidden text-xs text-[#8a7c6a]">
+              No description yet.
+            </p>
+          )}
+        </div>
 
         <div className="mt-1">
           <button
