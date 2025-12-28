@@ -53,7 +53,7 @@ export default function ContactPage() {
               </div>
 
               <div className="block py-2">
-                <div className="inline-grid grid-cols-[22px_110px_max-content] items-center gap-3">
+                <div className="inline-grid grid-cols-[22px_110px_max-content] items-center gap-3 border-b border-[#e5ddd4] pb-2">
                   <span className="text-[#c2410c]" aria-hidden="true">
                     {/* Location pin */}
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,7 +65,7 @@ export default function ContactPage() {
                   <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">Jerusalem & Tel Aviv</span>
                 </div>
               </div>
-              <div className="pt-6 border-t border-[#e5ddd4] space-y-4 text-sm md:text-base">
+              <div className="mt-8 space-y-4 text-sm md:text-base">
                 <div className="grid gap-6 sm:grid-cols-[max-content_max-content] sm:gap-8 items-start justify-items-start">
                   {/* Follow */}
                   <div className="min-w-0 flex flex-col items-start">
