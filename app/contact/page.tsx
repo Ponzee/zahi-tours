@@ -16,10 +16,12 @@ export default function ContactPage() {
                 <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                   Let&apos;s connect
                 </h1>
-                <p className="mt-4 text-base md:text-lg text-[#3d3529] max-w-3xl leading-relaxed">
+                <p className="mt-4 pb-[34px] md:pb-[38px] text-base md:text-lg text-[#3d3529] max-w-3xl leading-relaxed">
                   Have a question about a video, thinking about supporting his work,
-                  <span className="block">or planning a future trip to Israel?</span>
-                  <span className="block mt-2">Feel free to reach out.</span>
+                  <span className="block">
+                    or planning a future trip to Israel?{" "}
+                    <span className="whitespace-nowrap">Feel free to reach out.</span>
+                  </span>
                 </p>
               </div>
 
