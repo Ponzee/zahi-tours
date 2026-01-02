@@ -129,7 +129,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="h-full">
+              <div className="h-full lg:-ml-8">
                 <div className="relative w-full overflow-hidden rounded-xl shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full aspect-video">
                     <Image
