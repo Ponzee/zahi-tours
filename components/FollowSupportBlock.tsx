@@ -26,12 +26,12 @@ export default function FollowSupportBlock() {
                   href="https://www.youtube.com/@zahishaked"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center transition-opacity duration-150 hover:opacity-80"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
                   aria-label="YouTube"
                   title="YouTube"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#FF0000]" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="currentColor">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#FF0000] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.15)]" fill="currentColor">
                       <path d="M23.498 6.186a2.999 2.999 0 0 0-2.113-2.12C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.385.566a3 3 0 0 0-2.113 2.12A31.11 31.11 0 0 0 0 12a31.11 31.11 0 0 0 .502 5.814 2.999 2.999 0 0 0 2.113 2.12C4.495 20.5 12 20.5 12 20.5s7.505 0 9.385-.566a3 3 0 0 0 2.113-2.12A31.11 31.11 0 0 0 24 12a31.11 31.11 0 0 0-.502-5.814zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
                     </svg>
                   </span>
@@ -41,12 +41,12 @@ export default function FollowSupportBlock() {
                   href="https://www.facebook.com/zahishakedisraelitourguide"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center transition-opacity duration-150 hover:opacity-80"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
                   aria-label="Facebook"
                   title="Facebook"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2]" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="currentColor">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#1877F2] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.15)]" fill="currentColor">
                       <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-2.9h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.9H16.8L16.3 15h-2.6v7A10 10 0 0 0 22 12z" />
                     </svg>
                   </span>
@@ -56,19 +56,19 @@ export default function FollowSupportBlock() {
                   href="https://www.instagram.com/zahi_shaked_israeli_tour_guide"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center transition-opacity duration-150 hover:opacity-80"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
                   aria-label="Instagram"
                   title="Instagram"
                 >
                   <span
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-full shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]"
                     style={{
                       background:
                         "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
                     }}
                     aria-hidden="true"
                   >
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white" fill="currentColor">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.15)]" fill="currentColor">
                       <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.2A3.8 3.8 0 1 0 15.8 12 3.8 3.8 0 0 0 12 8.2zm6.1-.7a1.1 1.1 0 1 0-1.1-1.1 1.1 1.1 0 0 0 1.1 1.1zM12 10a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
                     </svg>
                   </span>
@@ -92,14 +92,14 @@ export default function FollowSupportBlock() {
               <div className="mt-3 flex items-center justify-center gap-4">
                 <Link
                   href="/support"
-                  className="inline-flex items-center transition-opacity duration-150 hover:opacity-80"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
                   aria-label="Support the path"
                   title="Support"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#c2410c]" aria-hidden="true">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#c2410c] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
                     <svg
                       viewBox="0 0 24 24"
-                      className="h-6 w-6 text-white"
+                      className="h-6 w-6 text-white drop-shadow-[0_1px_0_rgba(0,0,0,0.15)]"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="1.8"
@@ -120,12 +120,12 @@ export default function FollowSupportBlock() {
                   href="https://linktr.ee/zahishakedtourguide"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center transition-opacity duration-150 hover:opacity-80"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
                   aria-label="Linktree"
                   title="Linktree"
                 >
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#39E09B]" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-black" fill="currentColor">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#39E09B] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-black drop-shadow-[0_1px_0_rgba(255,255,255,0.25)]" fill="currentColor">
                       <path d="M12 2l4.6 4.6-1.4 1.4L13 5.8V10h-2V5.8L8.8 8 7.4 6.6 12 2zm-1 10h2v10h-2V12z" />
                     </svg>
                   </span>
