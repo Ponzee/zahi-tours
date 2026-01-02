@@ -108,7 +108,7 @@ export default function FollowSupportBlock() {
                 className="h-[clamp(34px,4vw,54px)] w-[clamp(34px,4vw,54px)] object-contain"
                 aria-hidden="true"
               />
-              Support my journey on
+              Support the journey
             </p>
 
             <div className="flex items-center justify-start gap-[clamp(12px,2vw,16px)]">
