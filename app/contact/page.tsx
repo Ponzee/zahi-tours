@@ -11,13 +11,14 @@ export default function ContactPage() {
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-4 lg:gap-6 items-stretch">
+            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-3 lg:gap-4 items-stretch">
               <div className="min-w-0 lg:col-span-2">
                 <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
-                  Get in touch with Zahi
+                  Let&apos;s connect
                 </h1>
                 <p className="mt-4 text-base md:text-lg text-[#3d3529] max-w-3xl leading-relaxed">
-                  Have a question about a video, thinking about supporting his work, or planning a future trip to Israel?
+                  Have a question about a video, thinking about supporting his work,
+                  <span className="block">or planning a future trip to Israel?</span>
                   <span className="block mt-2">Feel free to reach out.</span>
                 </p>
               </div>
