@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ContactPhotoRotator from "@/components/contact/ContactPhotoRotator";
 
 export const metadata = {
   title: "Contact | The Holy Land - By Zahi Shaked",
@@ -134,13 +134,19 @@ export default function ContactPage() {
               <div className="h-full lg:translate-x-[-144px]">
                 <div className="relative w-full overflow-hidden rounded-xl shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full aspect-video">
-                    <Image
-                      src="/contact/contact01.webp"
+                    <ContactPhotoRotator
+                      images={[
+                        "/contact/contact01.webp",
+                        "/contact/contact02.webp",
+                        "/contact/contact03.webp",
+                        "/contact/contact04.webp",
+                        "/contact/contact05.webp",
+                        "/contact/contact06.webp",
+                        "/contact/contact07.webp",
+                        "/contact/contact08.webp",
+                      ]}
                       alt="Zahi Shaked"
-                      fill
-                      className="object-cover"
-                      sizes="(min-width: 1024px) 35vw, 100vw"
-                      priority
+                      className="absolute inset-0"
                     />
                   </div>
                 </div>
