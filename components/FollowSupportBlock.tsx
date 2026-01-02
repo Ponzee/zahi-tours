@@ -6,10 +6,10 @@ export default function FollowSupportBlock() {
   return (
     <div className="bg-white">
       <div className="px-4 md:px-6 lg:px-8 py-4">
-        <div className="flex items-center justify-between gap-8 overflow-x-auto">
+        <div className="flex items-center justify-start gap-12 overflow-x-auto">
           {/* Follow */}
-          <div className="min-w-0 flex items-center justify-start gap-4 whitespace-nowrap">
-            <p className="font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
+          <div className="shrink-0 flex items-center justify-start gap-5 whitespace-nowrap">
+            <p className="shrink-0 font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
               <img
                 src="/icons/follow_journey.webp"
                 alt=""
@@ -21,7 +21,7 @@ export default function FollowSupportBlock() {
               Follow my journey on
             </p>
 
-            <div className="flex items-center justify-start gap-4">
+            <div className="shrink-0 flex items-center justify-start gap-4">
               <a
                 href="https://www.youtube.com/@zahishaked"
                 target="_blank"
@@ -86,8 +86,8 @@ export default function FollowSupportBlock() {
           </div>
 
           {/* Support */}
-          <div className="min-w-0 flex items-center justify-start gap-4 whitespace-nowrap">
-            <p className="font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
+          <div className="shrink-0 flex items-center justify-start gap-5 whitespace-nowrap">
+            <p className="shrink-0 font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
               <img
                 src="/icons/support_journey.webp"
                 alt=""
@@ -99,7 +99,7 @@ export default function FollowSupportBlock() {
               Support my journey on
             </p>
 
-            <div className="flex items-center justify-start gap-4">
+            <div className="shrink-0 flex items-center justify-start gap-4">
               <Link
                 href="/support"
                 className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
