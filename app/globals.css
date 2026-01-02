@@ -40,11 +40,11 @@ body {
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-eb-garamond), var(--font-geist-sans), system-ui, sans-serif;
+    font-family: var(--font-cormorant-upright), var(--font-geist-sans), system-ui, sans-serif;
   }
 
   .font-headline {
-    font-family: var(--font-cinzel-decorative), var(--font-geist-sans), system-ui, sans-serif;
+    font-family: var(--font-cormorant-upright), var(--font-geist-sans), system-ui, sans-serif;
   }
 }
 

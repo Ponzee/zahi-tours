@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel_Decorative, EB_Garamond, Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Upright, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -19,17 +19,10 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const ebGaramond = EB_Garamond({
-  variable: "--font-eb-garamond",
+const cormorantUpright = Cormorant_Upright({
+  variable: "--font-cormorant-upright",
   subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const cinzelDecorative = Cinzel_Decorative({
-  variable: "--font-cinzel-decorative",
-  subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });
@@ -57,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ebGaramond.variable} ${cinzelDecorative.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cormorantUpright.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Skip to main content link for screen readers */}
         <a
