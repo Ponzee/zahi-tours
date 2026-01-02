@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Eagle_Lake, Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Quintessential } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const eagleLake = Eagle_Lake({
-  variable: "--font-eagle-lake",
+const quintessential = Quintessential({
+  variable: "--font-quintessential",
   subsets: ["latin"],
   weight: "400",
   display: "swap",
@@ -50,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${eagleLake.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${quintessential.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Skip to main content link for screen readers */}
         <a
