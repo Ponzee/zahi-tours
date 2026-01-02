@@ -23,7 +23,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="min-w-0 w-full text-sm md:text-base flex flex-col h-full justify-between">
+              <div className="min-w-0 w-full lg:w-fit lg:justify-self-end text-sm md:text-base flex flex-col h-full justify-between">
                 <div className="block py-2">
                   <div className="inline-grid grid-cols-[32px_110px_max-content] items-center gap-3 border-b border-[#e5ddd4] pb-2">
                     <a
