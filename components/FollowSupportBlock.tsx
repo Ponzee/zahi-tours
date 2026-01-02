@@ -6,9 +6,9 @@ export default function FollowSupportBlock() {
   return (
     <div className="bg-white">
       <div className="px-4 md:px-6 lg:px-8 py-4">
-        <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center md:justify-start md:gap-x-10 md:gap-y-3">
+        <div className="flex items-center justify-between gap-8 overflow-x-auto">
           {/* Follow */}
-          <div className="min-w-0 flex flex-wrap items-center justify-start gap-4">
+          <div className="min-w-0 flex items-center justify-start gap-4 whitespace-nowrap">
             <p className="font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
               <img
                 src="/icons/follow_journey.webp"
@@ -21,12 +21,12 @@ export default function FollowSupportBlock() {
               Follow my journey on
             </p>
 
-            <div className="flex flex-wrap items-center justify-start gap-2">
+            <div className="flex items-center justify-start gap-4">
               <a
                 href="https://www.youtube.com/@zahishaked"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-2 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
                 aria-label="YouTube"
                 title="YouTube"
               >
@@ -45,7 +45,7 @@ export default function FollowSupportBlock() {
                 href="https://www.facebook.com/zahishakedisraelitourguide"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-2 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
                 aria-label="Facebook"
                 title="Facebook"
               >
@@ -64,7 +64,7 @@ export default function FollowSupportBlock() {
                 href="https://www.instagram.com/zahi_shaked_israeli_tour_guide"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-2 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
                 aria-label="Instagram"
                 title="Instagram"
               >
@@ -86,7 +86,7 @@ export default function FollowSupportBlock() {
           </div>
 
           {/* Support */}
-          <div className="min-w-0 flex flex-wrap items-center justify-start gap-4">
+          <div className="min-w-0 flex items-center justify-start gap-4 whitespace-nowrap">
             <p className="font-semibold text-[#1a1612] inline-flex items-center gap-3 whitespace-nowrap text-lg md:text-xl">
               <img
                 src="/icons/support_journey.webp"
@@ -99,10 +99,10 @@ export default function FollowSupportBlock() {
               Support my journey on
             </p>
 
-            <div className="flex flex-wrap items-center justify-start gap-2">
+            <div className="flex items-center justify-start gap-4">
               <Link
                 href="/support"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-2 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
                 aria-label="Support my journey"
                 title="Support my journey"
               >
@@ -134,7 +134,7 @@ export default function FollowSupportBlock() {
                 href="https://linktr.ee/zahishakedtourguide"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#e5ddd4] bg-[#f5f2ed] px-3 py-2 hover:bg-[#efe9e1] transition-colors duration-150 whitespace-nowrap"
+                className="inline-flex items-center gap-2 transition-colors duration-150 whitespace-nowrap hover:opacity-80"
                 aria-label="Linktree"
                 title="Linktree"
               >
