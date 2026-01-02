@@ -9,7 +9,7 @@ export default function FollowSupportBlock() {
         <div className="flex flex-wrap items-center justify-start gap-x-[clamp(24px,4vw,48px)] gap-y-3 overflow-x-hidden">
           {/* Follow */}
           <div className="flex items-center justify-start gap-[clamp(12px,2vw,20px)]">
-            <p className="font-semibold text-[#1a1612] inline-flex items-center gap-[clamp(8px,1.2vw,12px)] whitespace-nowrap text-[clamp(14px,1.6vw,20px)]">
+            <p className="font-display font-semibold text-[#1a1612] inline-flex items-center gap-[clamp(8px,1.2vw,12px)] whitespace-nowrap text-[clamp(14px,1.6vw,20px)]">
               <img
                 src="/icons/follow_journey.webp"
                 alt=""
@@ -99,7 +99,7 @@ export default function FollowSupportBlock() {
 
           {/* Support */}
           <div className="flex items-center justify-start gap-[clamp(12px,2vw,20px)]">
-            <p className="font-semibold text-[#1a1612] inline-flex items-center gap-[clamp(8px,1.2vw,12px)] whitespace-nowrap text-[clamp(14px,1.6vw,20px)]">
+            <p className="font-display font-semibold text-[#1a1612] inline-flex items-center gap-[clamp(8px,1.2vw,12px)] whitespace-nowrap text-[clamp(14px,1.6vw,20px)]">
               <img
                 src="/icons/support_journey.webp"
                 alt=""
