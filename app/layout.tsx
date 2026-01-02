@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel_Decorative, Geist, Geist_Mono } from "next/font/google";
+import { Cinzel_Decorative, EB_Garamond, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -27,6 +27,13 @@ const cinzelDecorative = Cinzel_Decorative({
   preload: true,
 });
 
+const ebGaramond = EB_Garamond({
+  variable: "--font-eb-garamond",
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
+
 export const metadata: Metadata = {
   title: "The Holy Land - By Zahi Shaked",
   description: "Private, story-rich tours of the Holy Land with Zahi Shaked - expert guide, storyteller, and creator.",
@@ -50,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cinzelDecorative.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cinzelDecorative.variable} ${ebGaramond.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Skip to main content link for screen readers */}
         <a
