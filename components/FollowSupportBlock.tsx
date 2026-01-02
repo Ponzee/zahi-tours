@@ -73,6 +73,37 @@ export default function FollowSupportBlock() {
                     </svg>
                   </span>
                 </a>
+
+                <a
+                  href="https://www.tiktok.com/@zahishaked"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
+                  aria-label="TikTok"
+                  title="TikTok"
+                >
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-black shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
+                    {/* TikTok note mark (with subtle cyan/pink offsets) */}
+                    <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
+                      <path
+                        d="M14 3c.7 2.4 2.6 4.3 5 5v3.2c-1.9-.1-3.6-.7-5-1.7V16a6 6 0 1 1-6-6c.5 0 1 .1 1.5.2v3.4c-.5-.3-1-.4-1.5-.4a2.8 2.8 0 1 0 2.8 2.8V3h3.2z"
+                        fill="#25F4EE"
+                        opacity="0.9"
+                        transform="translate(-0.7,0.7)"
+                      />
+                      <path
+                        d="M14 3c.7 2.4 2.6 4.3 5 5v3.2c-1.9-.1-3.6-.7-5-1.7V16a6 6 0 1 1-6-6c.5 0 1 .1 1.5.2v3.4c-.5-.3-1-.4-1.5-.4a2.8 2.8 0 1 0 2.8 2.8V3h3.2z"
+                        fill="#FE2C55"
+                        opacity="0.9"
+                        transform="translate(0.7,-0.7)"
+                      />
+                      <path
+                        d="M14 3c.7 2.4 2.6 4.3 5 5v3.2c-1.9-.1-3.6-.7-5-1.7V16a6 6 0 1 1-6-6c.5 0 1 .1 1.5.2v3.4c-.5-.3-1-.4-1.5-.4a2.8 2.8 0 1 0 2.8 2.8V3h3.2z"
+                        fill="#FFFFFF"
+                      />
+                    </svg>
+                  </span>
+                </a>
               </div>
             </div>
 
