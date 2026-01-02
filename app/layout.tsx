@@ -22,6 +22,7 @@ const geistMono = Geist_Mono({
 const eagleLake = Eagle_Lake({
   variable: "--font-eagle-lake",
   subsets: ["latin"],
+  weight: "400",
   display: "swap",
   preload: true,
 });
