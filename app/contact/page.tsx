@@ -40,7 +40,14 @@ export default function ContactPage() {
                       </svg>
                     </a>
                     <span className="text-[#3d3529]">WhatsApp</span>
-                    <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">+972-54-690-5522</span>
+                    <a
+                      href="https://wa.me/972546905522"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#1a1612] hover:text-[#c2410c] text-left whitespace-nowrap"
+                    >
+                      +972-54-690-5522
+                    </a>
                   </div>
                 </div>
 
@@ -109,7 +116,14 @@ export default function ContactPage() {
                       </svg>
                     </a>
                     <span className="text-[#3d3529]">Based in</span>
-                    <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">Jerusalem & Tel Aviv</span>
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=Jerusalem%2C%20Israel"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#1a1612] hover:text-[#c2410c] text-left whitespace-nowrap"
+                    >
+                      Jerusalem & Tel Aviv
+                    </a>
                   </div>
                 </div>
               </div>
