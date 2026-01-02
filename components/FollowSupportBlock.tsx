@@ -115,6 +115,57 @@ export default function FollowSupportBlock() {
                     </svg>
                   </span>
                 </Link>
+
+                <a
+                  href="https://buymeacoffee.com/zahishaked"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-xl"
+                  aria-label="Buy Me a Coffee"
+                  title="Buy Me a Coffee"
+                >
+                  <span
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFDD00] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]"
+                    aria-hidden="true"
+                  >
+                    {/* Simplified BMC cup mark */}
+                    <svg
+                      viewBox="0 0 64 64"
+                      className="h-7 w-7 text-black drop-shadow-[0_1px_0_rgba(255,255,255,0.25)]"
+                      fill="currentColor"
+                    >
+                      <path d="M18 20c0-2.2 1.8-4 4-4h18c2.2 0 4 1.8 4 4v2h2c4.4 0 8 3.6 8 8s-3.6 8-8 8h-2v2c0 6.6-5.4 12-12 12H28c-6.6 0-12-5.4-12-12V20zm28 18h2c2.2 0 4-1.8 4-4s-1.8-4-4-4h-2v8zM22 22v20c0 3.3 2.7 6 6 6h16c3.3 0 6-2.7 6-6V22H22z" />
+                      <path d="M24 14c0-2.2 1.8-4 4-4h3a4 4 0 0 1 4 4v1h-3v-1a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v2h-3v-2z" />
+                    </svg>
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.paypal.com/paypalme/zahishaked"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-2xl"
+                  aria-label="PayPal"
+                  title="PayPal"
+                >
+                  <span
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]"
+                    aria-hidden="true"
+                  >
+                    {/* Minimal PayPal-style mark (2-layer P) */}
+                    <svg viewBox="0 0 64 64" className="h-7 w-7" aria-hidden="true">
+                      <path
+                        d="M26 12h16c9 0 15 6.1 13.2 15.2C53.8 36.6 45.2 42 35.3 42H27.6l-2.2 12H16l7-40z"
+                        fill="#003087"
+                      />
+                      <path
+                        d="M29 16h13.5c6.5 0 10.8 4.4 9.5 10.9C50.7 33.9 44.6 38 37.8 38H30l-2 10H20l6-32z"
+                        fill="#009CDE"
+                        opacity="0.95"
+                      />
+                    </svg>
+                  </span>
+                </a>
               </div>
             </div>
           </div>
