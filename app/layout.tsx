@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Upright, Geist, Geist_Mono } from "next/font/google";
+import { Eagle_Lake, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import Header from "@/components/Header";
@@ -19,10 +19,9 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const cormorantUpright = Cormorant_Upright({
-  variable: "--font-cormorant-upright",
+const eagleLake = Eagle_Lake({
+  variable: "--font-eagle-lake",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
   preload: true,
 });
@@ -50,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${cormorantUpright.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${eagleLake.variable} antialiased min-h-screen flex flex-col`}
       >
         {/* Skip to main content link for screen readers */}
         <a
