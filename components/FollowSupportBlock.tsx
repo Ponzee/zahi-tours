@@ -17,7 +17,7 @@ export default function FollowSupportBlock() {
               className="h-[clamp(44px,5vw,64px)] w-[clamp(44px,5vw,64px)] object-contain"
               aria-hidden="true"
             />
-            <p className="mt-2 font-eb font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
+            <p className="mt-2 font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
               Stories from the road
             </p>
             <div className="mt-3 flex items-center justify-center gap-4">
@@ -85,7 +85,7 @@ export default function FollowSupportBlock() {
               className="h-[clamp(44px,5vw,64px)] w-[clamp(44px,5vw,64px)] object-contain"
               aria-hidden="true"
             />
-            <p className="mt-2 font-eb font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
+            <p className="mt-2 font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
               Support the path
             </p>
             <div className="mt-3 flex items-center justify-center gap-4">
