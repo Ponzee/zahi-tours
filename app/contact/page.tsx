@@ -11,7 +11,7 @@ export default function ContactPage() {
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-6 lg:gap-8 items-start">
+            <div className="grid lg:grid-cols-[2fr_1.2fr] gap-4 lg:gap-6 items-stretch">
               <div className="min-w-0 lg:col-span-2">
                 <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                   Get in touch with Zahi
@@ -22,7 +22,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="min-w-0 max-w-3xl w-full space-y-2 text-sm md:text-base">
+              <div className="min-w-0 w-full space-y-2 text-sm md:text-base flex flex-col h-full">
                 <div className="block py-2">
                   <div className="inline-grid grid-cols-[32px_110px_max-content] items-center gap-3 border-b border-[#e5ddd4] pb-2">
                     <a
@@ -41,6 +41,32 @@ export default function ContactPage() {
                     </a>
                     <span className="text-[#3d3529]">WhatsApp</span>
                     <span className="font-semibold text-[#1a1612] text-left whitespace-nowrap">+972-54-690-5522</span>
+                  </div>
+                </div>
+
+                <div className="block py-2">
+                  <div className="inline-grid grid-cols-[32px_110px_max-content] items-center gap-3 border-b border-[#e5ddd4] pb-2">
+                    <a
+                      href="https://www.facebook.com/zahishakedisraelitourguide"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#e5ddd4] bg-[#f5f2ed] hover:bg-[#efe9e1] transition-colors duration-150"
+                      aria-label="Open Facebook page"
+                      title="Open Facebook"
+                    >
+                      <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#c2410c]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                      </svg>
+                    </a>
+                    <span className="text-[#3d3529]">Facebook</span>
+                    <a
+                      href="https://www.facebook.com/zahishakedisraelitourguide"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-[#1a1612] hover:text-[#c2410c] text-left whitespace-nowrap"
+                    >
+                      zahishakedisraelitourguide
+                    </a>
                   </div>
                 </div>
 
@@ -67,7 +93,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="block py-2">
+                <div className="block py-2 mt-auto">
                   <div className="inline-grid grid-cols-[32px_110px_max-content] items-center gap-3 border-b border-[#e5ddd4] pb-2">
                     <a
                       href="https://www.google.com/maps/search/?api=1&query=Jerusalem%2C%20Israel"
@@ -88,7 +114,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-4 lg:mt-0">
+              <div className="h-full">
                 <div className="relative w-full overflow-hidden rounded-xl shadow-lg border border-[#e5ddd4] bg-[#f5f2ed]">
                   <div className="relative w-full aspect-video">
                     <Image
