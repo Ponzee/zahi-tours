@@ -159,27 +159,36 @@ export default function FollowSupportBlock() {
                     className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#FFDD00] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]"
                     aria-hidden="true"
                   >
-                    {/* Buy Me a Coffee style: cup + heart accent */}
-                    <svg viewBox="0 0 64 64" className="h-7 w-7" aria-hidden="true">
+                    {/* BMC-style cup outline + heart (crisp + centered) */}
+                    <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
                       <path
-                        d="M16 22c0-2.2 1.8-4 4-4h22c2.2 0 4 1.8 4 4v4h3c4.4 0 8 3.6 8 8s-3.6 8-8 8h-3v2c0 6.6-5.4 12-12 12H28c-6.6 0-12-5.4-12-12V22z"
-                        fill="#111827"
-                        opacity="0.92"
+                        d="M7 8h10v7a4 4 0 0 1-4 4h-2a4 4 0 0 1-4-4V8z"
+                        fill="none"
+                        stroke="#111827"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
-                        d="M22 26v20c0 3.3 2.7 6 6 6h16c3.3 0 6-2.7 6-6V26H22z"
-                        fill="#ffffff"
-                        opacity="0.92"
+                        d="M17 10h1.4a2.2 2.2 0 0 1 0 4.4H17"
+                        fill="none"
+                        stroke="#111827"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
-                        d="M49 44h3c2.2 0 4-1.8 4-4s-1.8-4-4-4h-3v8z"
-                        fill="#111827"
-                        opacity="0.92"
+                        d="M9 21h6"
+                        fill="none"
+                        stroke="#111827"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        opacity="0.9"
                       />
                       <path
-                        d="M32.7 33.2c1.1-1.3 3.2-1.3 4.3 0 1 1.2.8 2.9-.4 3.9l-3.8 3.2-3.8-3.2c-1.2-1-1.4-2.7-.4-3.9 1.1-1.3 3.2-1.3 4.1 0z"
+                        d="M12 12.2c.7-.8 2-.8 2.7 0 .6.7.5 1.8-.3 2.4L12 16.7l-2.4-2.1c-.8-.6-.9-1.7-.3-2.4.7-.8 2-.8 2.7 0z"
                         fill="#FF3B30"
-                        opacity="0.95"
                       />
                     </svg>
                   </span>
@@ -197,22 +206,24 @@ export default function FollowSupportBlock() {
                     className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]"
                     aria-hidden="true"
                   >
-                    {/* PayPal-style layered P (cleaner + more recognizable) */}
-                    <svg viewBox="0 0 64 64" className="h-7 w-7" aria-hidden="true">
-                      <path
-                        d="M28 12h16c9 0 15 6.2 13.2 15.4C55.7 36.8 47 42 37 42h-7l-2.4 14H18l7.6-44z"
-                        fill="#003087"
-                      />
-                      <path
-                        d="M26 16h16c6.8 0 11.4 4.5 10 11.2C50.4 35 44.2 39 37.5 39h-8.5l-1.6 9H20l6-32z"
-                        fill="#0070E0"
-                        opacity="0.95"
-                      />
-                      <path
-                        d="M26 16h7.8c4.1 0 6.9 2.6 6 6.7-.8 4-4.3 6.3-8.4 6.3H27l-1.2 7.2h-5.8l6-32z"
-                        fill="#00A0E6"
-                        opacity="0.9"
-                      />
+                    {/* PayPal-style layered P (centered + cleaner at small size) */}
+                    <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
+                      {/* back layer */}
+                      <g transform="translate(0.6,0.6)">
+                        <path
+                          d="M9 3h6a5 5 0 0 1 0 10h-3v8H9V3z"
+                          fill="#009CDE"
+                          opacity="0.95"
+                        />
+                        <path
+                          d="M12 6h3a2 2 0 0 1 0 4h-3V6z"
+                          fill="#ffffff"
+                          opacity="0.95"
+                        />
+                      </g>
+                      {/* front layer */}
+                      <path d="M9 3h6a5 5 0 0 1 0 10h-3v8H9V3z" fill="#003087" />
+                      <path d="M12 6h3a2 2 0 0 1 0 4h-3V6z" fill="#ffffff" />
                     </svg>
                   </span>
                 </a>
