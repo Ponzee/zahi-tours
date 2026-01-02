@@ -115,21 +115,6 @@ export default function FollowSupportBlock() {
                     </svg>
                   </span>
                 </Link>
-
-                <a
-                  href="https://linktr.ee/zahishakedtourguide"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 rounded-full"
-                  aria-label="Linktree"
-                  title="Linktree"
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#39E09B] shadow-sm ring-1 ring-black/10 transition-all duration-200 ease-out group-hover:-translate-y-0.5 group-hover:shadow-md group-hover:ring-black/20 group-hover:scale-[1.04] active:translate-y-0 active:scale-[0.98]" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" className="h-6 w-6 text-black drop-shadow-[0_1px_0_rgba(255,255,255,0.25)]" fill="currentColor">
-                      <path d="M12 2l4.6 4.6-1.4 1.4L13 5.8V10h-2V5.8L8.8 8 7.4 6.6 12 2zm-1 10h2v10h-2V12z" />
-                    </svg>
-                  </span>
-                </a>
               </div>
             </div>
           </div>
