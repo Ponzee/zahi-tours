@@ -9,7 +9,7 @@ export default function ContactPage() {
       <main className="flex-1 overflow-hidden flex flex-col">
         <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
+            <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
               Get in touch with Zahi
             </h1>
             <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">

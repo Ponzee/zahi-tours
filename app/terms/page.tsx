@@ -83,7 +83,7 @@ export default function TermsPage() {
           <p className="uppercase text-xs font-semibold tracking-wide text-[#c2410c]">
             Last updated: {LAST_UPDATED}
           </p>
-          <h1 className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#1a1612]">
+          <h1 className="font-headline mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-[#1a1612]">
             Terms of Service
           </h1>
           <p className="mt-4 text-base md:text-lg leading-relaxed">
@@ -94,7 +94,7 @@ export default function TermsPage() {
           <div className="mt-10 space-y-8">
             {termsSections.map((section) => (
               <section key={section.title} className="bg-white rounded-2xl border border-[#e5ddd4] p-6 md:p-8 shadow-sm">
-                <h2 className="text-2xl font-semibold tracking-tight text-[#1a1612]">
+                <h2 className="font-headline text-2xl font-semibold tracking-tight text-[#1a1612]">
                   {section.title}
                 </h2>
                 <ul className="mt-4 space-y-3 list-disc list-inside text-sm md:text-base leading-relaxed">
@@ -107,7 +107,7 @@ export default function TermsPage() {
           </div>
 
           <section className="mt-10 bg-white rounded-2xl border border-[#e5ddd4] p-6 md:p-8 shadow-sm">
-            <h2 className="text-2xl font-semibold tracking-tight text-[#1a1612]">
+            <h2 className="font-headline text-2xl font-semibold tracking-tight text-[#1a1612]">
               Contact
             </h2>
             <div className="mt-4 space-y-3 text-sm md:text-base leading-relaxed">
