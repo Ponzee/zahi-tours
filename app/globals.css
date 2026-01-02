@@ -40,7 +40,7 @@ body {
 
 @layer utilities {
   .font-display {
-    font-family: var(--font-fraunces), var(--font-geist-sans), system-ui, sans-serif;
+    font-family: var(--font-eb-garamond), var(--font-geist-sans), system-ui, sans-serif;
   }
 }
 
