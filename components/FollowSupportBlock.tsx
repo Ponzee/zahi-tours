@@ -43,7 +43,7 @@ export default function FollowSupportBlock() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
             {/* Left: Follow */}
             <div className="flex flex-col items-center justify-center text-center">
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-2">
                 <img
                   src="/icons/follow_journey.webp"
                   alt=""
@@ -118,7 +118,7 @@ export default function FollowSupportBlock() {
 
             {/* Right: Support */}
             <div className="flex flex-col items-center justify-center text-center">
-              <div className="flex items-center justify-center gap-3">
+              <div className="flex items-center justify-center gap-2">
                 <img
                   src="/icons/support_journey.webp"
                   alt=""
