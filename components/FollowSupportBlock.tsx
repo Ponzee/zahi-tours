@@ -43,17 +43,20 @@ export default function FollowSupportBlock() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 items-center">
             {/* Left: Follow */}
             <div className="flex flex-col items-center justify-center text-center">
-              <img
-                src="/icons/follow_journey.webp"
-                alt=""
-                width={54}
-                height={54}
-                className="h-[clamp(44px,5vw,64px)] w-[clamp(44px,5vw,64px)] object-contain"
-                aria-hidden="true"
-              />
-              <p className="mt-2 font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
-                Stories from the road
-              </p>
+              <div className="flex items-center justify-center gap-3">
+                <img
+                  src="/icons/follow_journey.webp"
+                  alt=""
+                  width={54}
+                  height={54}
+                  className="h-[clamp(34px,4vw,48px)] w-[clamp(34px,4vw,48px)] object-contain"
+                  aria-hidden="true"
+                />
+                <p className="font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
+                  Stories from the road
+                </p>
+              </div>
+
               <div className="mt-3 flex items-center justify-center gap-4">
                 <SocialButton
                   href="https://www.youtube.com/@zahishaked"
@@ -115,17 +118,20 @@ export default function FollowSupportBlock() {
 
             {/* Right: Support */}
             <div className="flex flex-col items-center justify-center text-center">
-              <img
-                src="/icons/support_journey.webp"
-                alt=""
-                width={54}
-                height={54}
-                className="h-[clamp(44px,5vw,64px)] w-[clamp(44px,5vw,64px)] object-contain"
-                aria-hidden="true"
-              />
-              <p className="mt-2 font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
-                Support the path
-              </p>
+              <div className="flex items-center justify-center gap-3">
+                <img
+                  src="/icons/support_journey.webp"
+                  alt=""
+                  width={54}
+                  height={54}
+                  className="h-[clamp(34px,4vw,48px)] w-[clamp(34px,4vw,48px)] object-contain"
+                  aria-hidden="true"
+                />
+                <p className="font-cormorant font-bold tracking-tight text-[#1a1612] text-[clamp(16px,1.8vw,22px)]">
+                  Support the path
+                </p>
+              </div>
+
               <div className="mt-3 flex items-center justify-center gap-4">
                 <Link
                   href="/support"
