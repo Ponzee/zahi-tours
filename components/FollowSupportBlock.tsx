@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type React from "react";
 
 export default function FollowSupportBlock() {
   const SocialButton = ({
@@ -158,6 +159,21 @@ export default function FollowSupportBlock() {
                     </svg>
                   </span>
                 </Link>
+
+                <SocialButton
+                  href="https://theholyland.tours/shop"
+                  label="The Holy Land Shop"
+                  bg="#111827"
+                  iconColor="#FFFFFF"
+                  roundedClass="rounded-full"
+                >
+                  <img
+                    src="/icons/holy_land_shop_logo.png"
+                    alt=""
+                    className="h-8 w-8 rounded-full object-cover"
+                    aria-hidden="true"
+                  />
+                </SocialButton>
 
                 <SocialButton
                   href="https://buymeacoffee.com/zahishaked"
