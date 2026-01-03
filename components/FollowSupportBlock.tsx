@@ -158,7 +158,7 @@ export default function FollowSupportBlock() {
                   label="Buy Me a Coffee"
                   bg="#FFDD00"
                   iconColor="#111827"
-                  roundedClass="rounded-xl"
+                  roundedClass="rounded-full"
                 >
                   {/* from public/brands/buymeacoffee.svg */}
                   <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
@@ -171,7 +171,7 @@ export default function FollowSupportBlock() {
                   label="PayPal"
                   bg="#FFFFFF"
                   iconColor="#003087"
-                  roundedClass="rounded-2xl"
+                  roundedClass="rounded-full"
                 >
                   {/* from public/brands/paypal.svg */}
                   <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
