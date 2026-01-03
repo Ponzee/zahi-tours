@@ -17,7 +17,7 @@ export default function ContactPage() {
                   Let&apos;s connect
                 </h1>
                 <p className="mt-4 pb-[34px] md:pb-[38px] text-base md:text-lg text-[#3d3529] max-w-3xl leading-relaxed">
-                  Have a question about a video, thinking about supporting his work,
+                  Have a question about a video, thinking about supporting my work,
                   <span className="block">
                     or planning a future trip to Israel?{" "}
                     <span className="whitespace-nowrap">Feel free to reach out.</span>
