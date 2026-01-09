@@ -19,7 +19,7 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <Link 
           href="/" 
-          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded"
+          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded sm:-ml-12"
           aria-label="Go to homepage"
         >
           <Image
