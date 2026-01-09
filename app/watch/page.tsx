@@ -19,7 +19,7 @@ export default async function WatchPage() {
         <section className="py-2 md:py-3 lg:py-4 flex-1 min-h-0 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-3 md:mb-4">
-              <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
+              <h1 className="font-headline pl-0 sm:pl-12 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                 Watch
               </h1>
               <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">

@@ -271,7 +271,7 @@ function AccountPageContent() {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="max-w-3xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 flex-1">
-        <h1 className="font-headline text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-[#1a1612]">
+        <h1 className="font-headline pl-0 sm:pl-12 text-3xl sm:text-4xl font-bold tracking-tight mb-8 text-[#1a1612]">
           Account
         </h1>
 

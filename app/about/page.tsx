@@ -13,7 +13,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="grid lg:grid-cols-[2fr_1.2fr] gap-6 lg:gap-8 items-start">
               <div className="min-w-0">
-                <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
+                <h1 className="font-headline pl-0 sm:pl-12 text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
                   Hi, I'm Zahi
                 </h1>
                 <div className="mt-4 space-y-3 text-sm md:text-base text-[#3d3529] leading-relaxed">
