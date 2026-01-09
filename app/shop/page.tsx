@@ -13,15 +13,17 @@ export default async function ShopPage() {
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-6 md:mb-8">
               <div className="text-center">
-                <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
-                  The Holy Land shop
-                </h1>
-                <img
-                  src="/icons/holy_land_shop_logo.webp"
-                  alt=""
-                  className="mt-3 h-[72px] w-[72px] rounded-full object-cover mx-auto"
-                  aria-hidden="true"
-                />
+                <div className="flex items-center justify-center gap-4">
+                  <img
+                    src="/icons/holy_land_shop_logo.webp"
+                    alt=""
+                    className="h-[72px] w-[72px] rounded-full object-cover"
+                    aria-hidden="true"
+                  />
+                  <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
+                    The Holy Land shop
+                  </h1>
+                </div>
                 <p className="mt-3 text-sm md:text-base text-[#3d3529] max-w-2xl mx-auto leading-relaxed">
                   I choose these pieces with care in Jerusalem and often bless them on location. For
                   some purchases, I’ll film a short blessing video so you can share the moment from
