@@ -170,7 +170,7 @@ export default function FollowSupportBlock() {
                   <img
                     src="/icons/holy_land_shop_logo.webp"
                     alt=""
-                    className="h-8 w-8 rounded-full object-cover"
+                    className="h-11 w-11 rounded-full object-cover"
                     aria-hidden="true"
                   />
                 </SocialButton>
