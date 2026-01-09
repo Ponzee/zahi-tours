@@ -47,9 +47,6 @@ function ShopProductCard({
 
   const sidePanel = (
     <div className="min-w-0">
-      <p className="text-xs font-semibold uppercase tracking-wide text-[#c2410c]">
-        View item
-      </p>
       <h3 className="mt-1 text-lg md:text-2xl font-bold tracking-tight text-[#1a1612]">
         {product.name}
       </h3>
