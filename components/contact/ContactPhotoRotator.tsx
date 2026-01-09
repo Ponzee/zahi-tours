@@ -16,7 +16,7 @@ type Props = {
 export default function ContactPhotoRotator({
   images,
   alt = "Zahi Shaked",
-  intervalMs = 5200,
+  intervalMs = 4200,
   fadeMs = 700,
   className,
 }: Props) {
