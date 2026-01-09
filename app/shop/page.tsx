@@ -13,15 +13,15 @@ export default async function ShopPage() {
           <div className="mb-6 md:mb-8">
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
               <div className="flex items-center gap-3 min-w-0">
-                <img
-                  src="/icons/holy_land_shop_logo.webp"
-                  alt=""
-                  className="h-12 w-12 rounded-full object-cover shrink-0"
-                  aria-hidden="true"
-                />
                 <h1 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-[#1a1612] min-w-0">
                   The Holy Land shop
                 </h1>
+                <img
+                  src="/icons/holy_land_shop_logo.webp"
+                  alt=""
+                  className="h-18 w-18 rounded-full object-cover shrink-0"
+                  aria-hidden="true"
+                />
               </div>
 
               <p className="text-sm md:text-base text-[#3d3529] sm:ml-auto max-w-2xl sm:max-w-none sm:flex-1">
