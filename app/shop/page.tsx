@@ -23,8 +23,9 @@ export default async function ShopPage() {
                   aria-hidden="true"
                 />
                 <p className="mt-3 text-sm md:text-base text-[#3d3529] max-w-2xl mx-auto leading-relaxed">
-                  Thoughtful journals, prints, and digital resources inspired by Zahi’s tours.
-                  Reserve your favorites below and be the first to know when they ship.
+                  Each item here is chosen with care in Jerusalem and often blessed on location. For
+                  some purchases, I’ll film a short blessing video so you can share the moment from
+                  the Holy Land. Thank you for supporting the journey and helping me keep creating.
                 </p>
               </div>
             </div>
