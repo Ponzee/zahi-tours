@@ -92,49 +92,60 @@ export default function SupportPage() {
 
       {/* Main Content */}
       <main id="main-content" className="flex-1 overflow-hidden flex flex-col">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
-          <div className="mb-6 md:mb-8">
-            <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
-              Support Zahi's Work
-            </h1>
-            <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">
-              Help Zahi keep documenting the Holy Land with independent, ad-light, educational videos. 
-              Choose a membership tier that works for you.
-            </p>
-          </div>
+        <section className="py-4 md:py-6 lg:py-8 flex-1 min-h-0 overflow-y-auto">
+          <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+            <div className="mb-6 md:mb-8">
+              <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
+                Support Zahi&apos;s Work
+              </h1>
+              <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">
+                Help Zahi keep documenting the Holy Land with independent, ad-light, educational
+                videos. Choose a membership tier that works for you.
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {tiers.map((tier) => (
-              <div
-                key={tier.id}
-                className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 flex flex-col"
-              >
-                <div className="flex-1">
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 text-[#1a1612]">{tier.name}</h3>
-                  <div className="text-2xl md:text-3xl font-bold mb-1 text-[#1a1612]">
-                    {tier.price}
-                    <span className="text-sm md:text-base font-normal text-[#3d3529]">/month</span>
-                  </div>
-                  <p className="text-xs md:text-sm text-[#3d3529] mb-4 leading-relaxed">{tier.description}</p>
-                  <ul className="space-y-2 mb-4">
-                    {tier.perks.map((perk, idx) => (
-                      <li key={idx} className="text-xs md:text-sm text-[#3d3529] flex items-start leading-relaxed">
-                        <span className="text-[#c2410c] mr-2 font-bold">✓</span>
-                        {perk}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button
-                  onClick={() => handleBecomeSupporter(tier.id)}
-                  className="w-full rounded-full bg-[#c2410c] text-white px-4 py-2 text-xs font-medium hover:bg-[#9a3412] transition-colors mt-auto"
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {tiers.map((tier) => (
+                <div
+                  key={tier.id}
+                  className="rounded-2xl border border-[#e5ddd4] bg-[#f5f2ed] shadow-sm hover:shadow-md transition-shadow p-4 md:p-6 flex flex-col"
                 >
-                  Become a {tier.name}
-                </button>
-              </div>
-            ))}
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-1 text-[#1a1612]">
+                      {tier.name}
+                    </h3>
+                    <div className="text-2xl md:text-3xl font-bold mb-1 text-[#1a1612]">
+                      {tier.price}
+                      <span className="text-sm md:text-base font-normal text-[#3d3529]">
+                        /month
+                      </span>
+                    </div>
+                    <p className="text-xs md:text-sm text-[#3d3529] mb-4 leading-relaxed">
+                      {tier.description}
+                    </p>
+                    <ul className="space-y-2 mb-4">
+                      {tier.perks.map((perk, idx) => (
+                        <li
+                          key={idx}
+                          className="text-xs md:text-sm text-[#3d3529] flex items-start leading-relaxed"
+                        >
+                          <span className="text-[#c2410c] mr-2 font-bold">✓</span>
+                          {perk}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <button
+                    onClick={() => handleBecomeSupporter(tier.id)}
+                    className="w-full rounded-full bg-[#c2410c] text-white px-4 py-2 text-xs font-medium hover:bg-[#9a3412] transition-colors mt-auto"
+                  >
+                    Become a {tier.name}
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );
