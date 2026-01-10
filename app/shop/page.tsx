@@ -17,7 +17,7 @@ export default async function ShopPage() {
   return (
     <div>
       <main id="main-content">
-        <section className="py-4 md:py-6 lg:py-8">
+        <section className="pt-4 md:pt-6 lg:pt-8 pb-2 md:pb-3 lg:pb-4">
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-6 md:mb-8">
               <div className="text-center">
@@ -59,7 +59,7 @@ export default async function ShopPage() {
               <ShopGridClient products={products} />
             )}
 
-            <div className="mt-6 max-w-2xl mx-auto">
+                <div className="mt-6 md:mt-7 lg:mt-8 max-w-2xl mx-auto">
               <div className="rounded-2xl border border-[#e5ddd4] bg-[#faf8f5] px-6 py-4 shadow-sm text-center">
                 <p className="text-[15px] md:text-base leading-relaxed text-[#3d3529] italic">
                   Curious about a product, shipping, or something you’d like me to bring from
