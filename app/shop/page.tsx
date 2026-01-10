@@ -59,16 +59,17 @@ export default async function ShopPage() {
               <ShopGridClient products={products} />
             )}
 
-            <div className="mt-8 text-sm text-[#3d3529]">
+            <div className="mt-8 text-sm text-[#3d3529] text-center">
               <p>
-                Want to suggest merch ideas? Email{" "}
+                Questions about a product, shipping, or something you’d like me to bring from
+                Jerusalem? Email{" "}
                 <a
                   href="mailto:zahishaked@gmail.com"
                   className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
                 >
                   zahishaked@gmail.com
-                </a>{" "}
-                with your request.
+                </a>
+                .
               </p>
             </div>
           </div>
