@@ -33,7 +33,7 @@ function Header() {
             The Holy Land - By Zahi Shaked
           </span>
         </Link>
-        <nav className="hidden md:flex gap-4 lg:gap-6 text-sm items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
+        <nav className="hidden md:flex gap-4 lg:gap-6 text-2xl items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
           <Link href="/watch" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Watch</Link>
           <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Support</Link>
           <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Shop</Link>
@@ -80,11 +80,11 @@ function Header() {
       {mobileMenuOpen && (
         <div id="mobile-menu" className="md:hidden border-t border-[#e5ddd4] bg-white" role="menu">
           <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col gap-3" role="navigation" aria-label="Mobile navigation">
-            <Link href="/watch" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
-            <Link href="/support" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Support</Link>
-            <Link href="/shop" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
-            <Link href="/about" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>About</Link>
-            <Link href="/contact" className="py-2 text-sm font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+            <Link href="/watch" className="py-2 text-2xl font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Watch</Link>
+            <Link href="/support" className="py-2 text-2xl font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Support</Link>
+            <Link href="/shop" className="py-2 text-2xl font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+            <Link href="/about" className="py-2 text-2xl font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>About</Link>
+            <Link href="/contact" className="py-2 text-2xl font-medium text-[#1a1612] hover:text-[#c2410c] transition-colors duration-150" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             <div className="pt-2 border-t border-[#e5ddd4] flex items-center gap-3">
               <Link
                 href="/shop/cart"
