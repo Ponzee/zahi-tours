@@ -3,7 +3,7 @@ import { fetchLatestVideos, fetchMostViewedVideosLastYear } from "@/lib/youtube"
 import type React from "react";
 
 export const metadata = {
-  title: "Watch | The Holy Land - By Zahi Shaked",
+  title: "Stories | The Holy Land - By Zahi Shaked",
   description: "Explore Zahi's latest videos and most-watched classics from the Holy Land.",
 };
 
@@ -106,7 +106,7 @@ export default async function WatchPage() {
           <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div className="mb-6 md:mb-8">
               <h1 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#1a1612]">
-                Watch
+                Stories
               </h1>
               <p className="mt-2 text-sm md:text-base text-[#3d3529] max-w-3xl leading-relaxed">
                 Explore Zahi's latest videos and most-watched classics from the Holy Land.
