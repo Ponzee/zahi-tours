@@ -16,6 +16,7 @@ export default function AuthButton() {
       return;
     }
 
+    // Defer auth check to avoid blocking initial render
     const checkUser = async () => {
       if (!supabase) return;
       try {
@@ -28,17 +29,30 @@ export default function AuthButton() {
       }
     };
 
-    checkUser();
-
-    if (!supabase) return;
-
+    // Set up auth state listener immediately (non-blocking)
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setUser(session?.user ?? null);
       setLoading(false);
     });
 
+    // Use requestIdleCallback or setTimeout to defer initial auth check
+    let idleCallbackId: number | null = null;
+    let timeoutId: NodeJS.Timeout | null = null;
+
+    if (typeof window !== "undefined" && window.requestIdleCallback) {
+      idleCallbackId = window.requestIdleCallback(checkUser, { timeout: 200 });
+    } else {
+      timeoutId = setTimeout(checkUser, 0);
+    }
+
     return () => {
       subscription.unsubscribe();
+      if (idleCallbackId !== null && typeof window !== "undefined" && window.cancelIdleCallback) {
+        window.cancelIdleCallback(idleCallbackId);
+      }
+      if (timeoutId !== null) {
+        clearTimeout(timeoutId);
+      }
     };
   }, []);
 

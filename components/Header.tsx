@@ -15,7 +15,7 @@ function Header() {
   );
 
   return (
-    <header className="border-b border-[#e5ddd4] bg-white/90 backdrop-blur sticky top-0 z-20" role="banner">
+    <header className="border-b border-[#e5ddd4] bg-white sticky top-0 z-20" role="banner">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <Link 
           href="/" 

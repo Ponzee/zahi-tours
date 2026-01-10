@@ -26,16 +26,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
 
-  // Load cart from localStorage on mount
+  // Load cart from localStorage on mount (defer to avoid blocking initial render)
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const savedCart = localStorage.getItem("zahi-cart");
-      if (savedCart) {
+      // Use requestIdleCallback or setTimeout to defer localStorage read
+      const loadCart = () => {
         try {
-          setItems(JSON.parse(savedCart));
+          const savedCart = localStorage.getItem("zahi-cart");
+          if (savedCart) {
+            setItems(JSON.parse(savedCart));
+          }
         } catch (e) {
           console.error("Failed to load cart from localStorage", e);
         }
+      };
+
+      if (window.requestIdleCallback) {
+        const id = window.requestIdleCallback(loadCart, { timeout: 100 });
+        return () => window.cancelIdleCallback(id);
+      } else {
+        const timeoutId = setTimeout(loadCart, 0);
+        return () => clearTimeout(timeoutId);
       }
     }
   }, []);
@@ -46,7 +57,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       // Use requestIdleCallback for non-blocking writes, fallback to setTimeout
       const saveCart = () => {
         try {
-          localStorage.setItem("zahi-cart", JSON.stringify(items));
+      localStorage.setItem("zahi-cart", JSON.stringify(items));
         } catch (e) {
           console.error("Failed to save cart to localStorage", e);
         }
@@ -112,13 +123,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(
     () => ({
-      items,
-      addToCart,
-      removeFromCart,
-      updateQuantity,
-      clearCart,
-      getTotalPrice,
-      getItemCount,
+        items,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        clearCart,
+        getTotalPrice,
+        getItemCount,
     }),
     [items, addToCart, removeFromCart, updateQuantity, clearCart, getTotalPrice, getItemCount]
   );
