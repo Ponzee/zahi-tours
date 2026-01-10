@@ -59,18 +59,20 @@ export default async function ShopPage() {
               <ShopGridClient products={products} />
             )}
 
-            <div className="mt-8 text-sm text-[#3d3529] text-center">
-              <p>
-                Curious about a product, shipping, or something you’d like me to bring from
-                Jerusalem? Just send me an email at{" "}
-                <a
-                  href="mailto:zahishaked@gmail.com"
-                  className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
-                >
-                  zahishaked@gmail.com
-                </a>
-                .
-              </p>
+            <div className="mt-6 max-w-2xl mx-auto">
+              <div className="rounded-2xl border border-[#e5ddd4] bg-[#faf8f5] px-6 py-4 shadow-sm text-center">
+                <p className="text-[15px] md:text-base leading-relaxed text-[#3d3529] italic">
+                  Curious about a product, shipping, or something you’d like me to bring from
+                  Jerusalem? Just send me an email at{" "}
+                  <a
+                    href="mailto:zahishaked@gmail.com"
+                    className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
+                  >
+                    zahishaked@gmail.com
+                  </a>
+                  .
+                </p>
+              </div>
             </div>
           </div>
         </section>
