@@ -36,16 +36,16 @@ export default async function ShopPage() {
                 {/* A/B/C styling variants for live review */}
                 <div className="mt-5 max-w-2xl mx-auto">
                   <div className="rounded-2xl border border-[#e5ddd4] bg-[#faf8f5] px-6 py-4 shadow-sm text-left">
-                    <div className="flex items-center justify-end">
-                      <span className="text-[#c2410c]/70" aria-hidden="true">
+                    <div className="flex items-start gap-3">
+                      <span className="mt-[2px] text-[#c2410c]/70 shrink-0" aria-hidden="true">
                         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
                           <path d="M7.2 17.2H4.4c-1 0-1.8-.8-1.8-1.8v-2.9C2.6 9.7 4.1 7.1 6.8 5.4c.7-.4 1.6-.2 2 .5.4.7.2 1.6-.5 2-1.8 1.1-2.8 2.8-2.8 4.6v.2h1.7c1 0 1.8.8 1.8 1.8v2.7c0 1-.8 1.8-1.8 1.8zm14.2 0h-2.8c-1 0-1.8-.8-1.8-1.8v-2.9c0-2.8 1.5-5.4 4.2-7.1.7-.4 1.6-.2 2 .5.4.7.2 1.6-.5 2-1.8 1.1-2.8 2.8-2.8 4.6v.2h1.7c1 0 1.8.8 1.8 1.8v2.7c0 1-.8 1.8-1.8 1.8z" />
                         </svg>
                       </span>
+                      <p className="text-[15px] md:text-base leading-relaxed text-[#3d3529] italic">
+                        {shopIntro}
+                      </p>
                     </div>
-                    <p className="mt-2 text-[15px] md:text-base leading-relaxed text-[#3d3529] italic">
-                      {shopIntro}
-                    </p>
                   </div>
                 </div>
               </div>
