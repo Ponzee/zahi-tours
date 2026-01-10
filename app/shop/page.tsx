@@ -34,13 +34,9 @@ export default async function ShopPage() {
                 </div>
 
                 {/* A/B/C styling variants for live review */}
-                <div className="mt-5 space-y-4 max-w-2xl mx-auto">
-                  {/* Option A: Quote card */}
+                <div className="mt-5 max-w-2xl mx-auto">
                   <div className="rounded-2xl border border-[#e5ddd4] bg-[#faf8f5] px-6 py-4 shadow-sm text-left">
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a7c6a]">
-                        Style A
-                      </span>
+                    <div className="flex items-center justify-end">
                       <span className="text-[#c2410c]/70" aria-hidden="true">
                         <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
                           <path d="M7.2 17.2H4.4c-1 0-1.8-.8-1.8-1.8v-2.9C2.6 9.7 4.1 7.1 6.8 5.4c.7-.4 1.6-.2 2 .5.4.7.2 1.6-.5 2-1.8 1.1-2.8 2.8-2.8 4.6v.2h1.7c1 0 1.8.8 1.8 1.8v2.7c0 1-.8 1.8-1.8 1.8zm14.2 0h-2.8c-1 0-1.8-.8-1.8-1.8v-2.9c0-2.8 1.5-5.4 4.2-7.1.7-.4 1.6-.2 2 .5.4.7.2 1.6-.5 2-1.8 1.1-2.8 2.8-2.8 4.6v.2h1.7c1 0 1.8.8 1.8 1.8v2.7c0 1-.8 1.8-1.8 1.8z" />
@@ -48,32 +44,6 @@ export default async function ShopPage() {
                       </span>
                     </div>
                     <p className="mt-2 text-[15px] md:text-base leading-relaxed text-[#3d3529] italic">
-                      {shopIntro}
-                    </p>
-                  </div>
-
-                  {/* Option B: Accent line + lead */}
-                  <div className="rounded-2xl border border-[#e5ddd4] bg-white px-6 py-4 shadow-[0_8px_24px_rgba(0,0,0,0.06)] text-left">
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a7c6a]">
-                      Style B
-                    </span>
-                    <div className="mt-3 h-[2px] w-16 rounded-full bg-[#c2410c]/60" />
-                    <p className="mt-3 text-[15px] md:text-base leading-relaxed text-[#3d3529]">
-                      <span className="font-semibold tracking-wide text-[#1a1612]">
-                        I choose these pieces with care in Jerusalem,
-                      </span>{" "}
-                      and many are blessed at holy sites here in the city. For some purchases, I’ll
-                      film a short blessing video so you can share the moment from the Holy Land.
-                      Thank you for your support – it helps me keep creating.
-                    </p>
-                  </div>
-
-                  {/* Option C: Glass panel */}
-                  <div className="rounded-2xl bg-white/70 backdrop-blur px-6 py-4 ring-1 ring-black/10 shadow-[0_10px_30px_rgba(0,0,0,0.08)] text-left">
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-[#8a7c6a]">
-                      Style C
-                    </span>
-                    <p className="mt-2 text-[15px] md:text-base leading-relaxed text-[#3d3529]">
                       {shopIntro}
                     </p>
                   </div>
