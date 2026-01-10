@@ -10,8 +10,8 @@ export const metadata = {
 export default async function WatchPage() {
   // Latest: refreshes every 6 hours. "Last year most watched": refreshes once per day.
   const [latestVideos, lastYearMostViewedVideos] = await Promise.all([
-    fetchLatestVideos(6),
-    fetchMostViewedVideosLastYear(6),
+    fetchLatestVideos(12),
+    fetchMostViewedVideosLastYear(12),
   ]);
 
   const PlaceholderRow = ({ title }: { title: string }) => (

@@ -19,8 +19,10 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
     const { scrollLeft, scrollWidth, clientWidth } = container;
-    setShowLeftButton(scrollLeft > 0);
-    setShowRightButton(scrollLeft < scrollWidth - clientWidth - 10); // 10px threshold
+    // Always show buttons for circular scrolling (but can still hide if content fits)
+    const canScroll = scrollWidth > clientWidth;
+    setShowLeftButton(canScroll);
+    setShowRightButton(canScroll);
   }, []);
 
   const scheduleCheck = useCallback(() => {
@@ -49,13 +51,26 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
   const scroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
     const container = scrollContainerRef.current;
-    const cardWidth = 260; // Approximate card width including gap (reduced from 320)
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+    const cardWidth = 260; // Approximate card width including gap
     const scrollAmount = cardWidth;
+    const maxScroll = scrollWidth - clientWidth;
     
-    container.scrollBy({
-      left: direction === 'left' ? -scrollAmount : scrollAmount,
-      behavior: 'smooth',
-    });
+    if (direction === 'right') {
+      // If at or near the end, wrap to start
+      if (scrollLeft >= maxScroll - 10) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    } else {
+      // If at or near the start, wrap to end
+      if (scrollLeft <= 10) {
+        container.scrollTo({ left: maxScroll, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
+    }
   };
 
   // Skeleton card component for loading/empty state
@@ -82,12 +97,12 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
       </h3>
       
       <div className="relative">
-        {/* Left scroll button - desktop only */}
+        {/* Left scroll button - desktop only, always shown if content overflows */}
         {showLeftButton && (
           <button
             onClick={() => scroll('left')}
             className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-colors transition-shadow duration-150 text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
-            aria-label="Scroll left"
+            aria-label="Scroll left (wraps to end)"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -122,12 +137,12 @@ export default function VideoCarousel({ title, videos }: VideoCarouselProps) {
           </div>
         )}
 
-        {/* Right scroll button - desktop only */}
+        {/* Right scroll button - desktop only, always shown if content overflows */}
         {showRightButton && (
           <button
             onClick={() => scroll('right')}
             className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 items-center justify-center rounded-full bg-white/95 backdrop-blur border border-[#e5ddd4] shadow-lg hover:bg-white hover:shadow-xl transition-colors transition-shadow duration-150 text-[#1a1612] hover:text-[#c2410c] focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
-            aria-label="Scroll right"
+            aria-label="Scroll right (wraps to start)"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
