@@ -16,10 +16,10 @@ function Header() {
 
   return (
     <header className="border-b border-[#e5ddd4] bg-white sticky top-0 z-20" role="banner">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 h-16 relative flex items-center justify-between gap-4">
         <Link 
           href="/" 
-          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded"
+          className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded z-10"
           aria-label="Go to homepage"
         >
           <Image
@@ -33,14 +33,14 @@ function Header() {
             The Holy Land - By Zahi Shaked
           </span>
         </Link>
-        <nav className="hidden md:flex gap-4 lg:gap-6 text-sm sm:text-base items-center flex-1 justify-center" role="navigation" aria-label="Main navigation">
+        <nav className="hidden md:flex gap-4 lg:gap-6 text-sm sm:text-base items-center absolute left-1/2 -translate-x-1/2" role="navigation" aria-label="Main navigation">
           <Link href="/watch" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Stories</Link>
           <Link href="/support" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Support</Link>
           <Link href="/shop" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Shop</Link>
           <Link href="/about" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">About</Link>
           <Link href="/contact" className="hover:text-[#c2410c] whitespace-nowrap transition-colors focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2 focus-visible:rounded">Contact</Link>
         </nav>
-        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0 z-10">
           <Link
             href="/shop/cart"
             className="relative p-2 hover:bg-[#f5f2ed] rounded-lg transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[#c2410c] focus-visible:outline-offset-2"
