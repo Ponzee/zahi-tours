@@ -61,8 +61,8 @@ export default async function ShopPage() {
 
             <div className="mt-8 text-sm text-[#3d3529] text-center">
               <p>
-                Questions about a product, shipping, or something you’d like me to bring from
-                Jerusalem? Email{" "}
+                Curious about a product, shipping, or something you’d like me to bring from
+                Jerusalem? Just send me an email at{" "}
                 <a
                   href="mailto:zahishaked@gmail.com"
                   className="text-[#c2410c] font-semibold hover:text-[#9a3412]"
