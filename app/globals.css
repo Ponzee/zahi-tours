@@ -50,6 +50,10 @@ body {
   .font-cormorant {
     font-family: var(--font-cormorant-upright), var(--font-geist-sans), system-ui, sans-serif;
   }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to));
+  }
 }
 
 /* Prevent sticky header from covering in-page anchors */
